@@ -49,18 +49,21 @@ export default function BusinessUnits() {
         <button 
           onClick={() => setActiveService('organizer')}
           className={`px-6 py-3 rounded-full flex items-center gap-2 text-sm font-medium transition-all ${activeService === 'organizer' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'bg-white text-gray-600 border border-gray-200 hover:border-blue-300'}`}
+          data-testid="button-service-organizer"
         >
           <Globe size={16} /> Event Organizer
         </button>
         <button 
           onClick={() => setActiveService('consulting')}
           className={`px-6 py-3 rounded-full flex items-center gap-2 text-sm font-medium transition-all ${activeService === 'consulting' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'bg-white text-gray-600 border border-gray-200 hover:border-blue-300'}`}
+          data-testid="button-service-consulting"
         >
           <Briefcase size={16} /> Consulting
         </button>
         <button 
           onClick={() => setActiveService('production')}
           className={`px-6 py-3 rounded-full flex items-center gap-2 text-sm font-medium transition-all ${activeService === 'production' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'bg-white text-gray-600 border border-gray-200 hover:border-blue-300'}`}
+          data-testid="button-service-production"
         >
           <Users size={16} /> Production
         </button>

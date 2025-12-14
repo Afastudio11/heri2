@@ -15,11 +15,11 @@ export default function Rewards() {
             </p>
 
             <div className="space-y-4">
-              <div className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-colors cursor-pointer">
+              <div className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-colors cursor-pointer" data-testid="card-reward-0">
                 <h4 className="font-bold text-lg mb-1">ASEAN Blue Economy Forum</h4>
                 <p className="text-sm text-gray-400">Manajemen event lengkap untuk pertemuan Menteri Ekonomi ASEAN, termasuk gala dinner dan penanganan VVIP.</p>
               </div>
-              <div className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-colors cursor-pointer">
+              <div className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-colors cursor-pointer" data-testid="card-reward-1">
                 <h4 className="font-bold text-lg mb-1">MotoGP Mandalika Side Events</h4>
                 <p className="text-sm text-gray-400">Manajemen kerumunan dan dukungan multimedia untuk event olahraga internasional.</p>
               </div>
@@ -27,7 +27,7 @@ export default function Rewards() {
           </div>
 
           <div className="relative">
-            <div className="relative z-10 bg-gradient-to-br from-gray-800 to-gray-900 p-8 md:p-12 rounded-[2rem] border border-gray-700 shadow-2xl">
+            <div className="relative z-10 bg-gradient-to-br from-gray-800 to-gray-900 p-8 md:p-12 rounded-[2rem] border border-gray-700 shadow-2xl" data-testid="card-testimonial">
               <div className="text-5xl text-yellow-500 mb-6 font-serif">❝</div>
               
               <p className="text-xl md:text-2xl text-gray-200 italic leading-relaxed mb-8">

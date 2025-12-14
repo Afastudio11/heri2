@@ -42,6 +42,7 @@ export default function Footer() {
         <a 
           href="#contact"
           className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white h-14 px-10 rounded-full font-bold transition-all shadow-xl shadow-blue-600/30"
+          data-testid="link-footer-cta"
         >
           Hubungi Kami Sekarang <ArrowRight size={18} />
         </a>

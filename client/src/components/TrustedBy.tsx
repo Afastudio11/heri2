@@ -14,7 +14,7 @@ export default function TrustedBy() {
       <div className="relative w-full max-w-7xl mx-auto px-6">
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
            {clients.map((client, i) => (
-             <div key={i} className="flex items-center gap-2 font-bold text-lg md:text-xl text-gray-500 hover:text-blue-600 transition-colors cursor-default select-none">
+             <div key={i} className="flex items-center gap-2 font-bold text-lg md:text-xl text-gray-500 hover:text-blue-600 transition-colors cursor-default select-none" data-testid={`text-client-${i}`}>
                 <div className="w-2 h-2 rounded-full bg-blue-500"></div>
                 {client}
              </div>

@@ -5,7 +5,6 @@ import About from '@/components/About';
 import BusinessUnits from '@/components/BusinessUnits';
 import Rewards from '@/components/Rewards';
 import Portfolio from '@/components/Portfolio';
-import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -13,12 +12,11 @@ export default function Home() {
     <div className="min-h-screen bg-white text-slate-900 font-sans overflow-x-hidden">
       <Navbar />
       <Hero />
+      <About />
       <TrustedBy />
       <BusinessUnits />
       <Rewards />
       <Portfolio />
-      <About />
-      <Contact />
       <Footer />
     </div>
   );

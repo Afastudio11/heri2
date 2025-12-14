@@ -1,7 +1,7 @@
 import { Link } from 'wouter';
-import { ArrowLeft, CheckCircle, Target, Users, FileText, TrendingUp, Shield, Globe, Building2, Landmark, Briefcase } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { CheckCircle, Target, Users, FileText, TrendingUp, Shield, Globe, Building2, Landmark, Briefcase } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const services = [
@@ -28,9 +28,9 @@ const stats = [
 export default function Consulting() {
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
-      <div className="bg-[#1F68F5] text-white">
+      <Navbar />
+      <div className="bg-[#1F68F5] text-white pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <Link href="/"><Button variant="ghost" className="text-white hover:bg-white/20 mb-8"><ArrowLeft className="w-4 h-4 mr-2" />Kembali ke Beranda</Button></Link>
           <div className="max-w-4xl py-12 md:py-20">
             <div className="inline-block bg-white/20 rounded-full px-4 py-2 mb-6"><span className="text-sm font-semibold">Skyled Pro Consulting</span></div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Membangun Kepercayaan, Mengawal Keberlanjutan</h1>

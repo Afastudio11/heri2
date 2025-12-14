@@ -90,7 +90,7 @@ export default function Navbar() {
                 <div className="absolute top-full left-0 pt-2 z-50">
                   <div className="w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2">
                     {BUSINESS_UNITS.map((unit) => (
-                      <a
+                      <Link
                         key={unit.id}
                         href={unit.link}
                         onClick={() => setIsBusinessOpen(false)}
@@ -99,7 +99,7 @@ export default function Navbar() {
                       >
                         <span className="font-semibold text-blue-600">{unit.title}</span>
                         <p className="text-xs text-gray-500 mt-0.5">{unit.subtitle}</p>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -167,7 +167,7 @@ export default function Navbar() {
               {isMobileBusinessOpen && (
                 <div className="pl-6 pb-2 space-y-1">
                   {BUSINESS_UNITS.map((unit) => (
-                    <a
+                    <Link
                       key={unit.id}
                       href={unit.link}
                       className="block px-3 py-3 text-sm text-gray-600 hover:text-blue-600"
@@ -175,7 +175,7 @@ export default function Navbar() {
                       data-testid={`link-mobile-business-unit-${unit.id}`}
                     >
                       <span className="font-semibold text-blue-600">{unit.title}</span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}

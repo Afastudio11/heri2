@@ -39,8 +39,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center gap-4">
-          <a 
-            href="#home" 
+          <Link 
+            href="/" 
             className="flex-shrink-0 flex items-center gap-2 cursor-pointer"
             data-testid="link-home-logo"
           >
@@ -56,7 +56,7 @@ export default function Navbar() {
             }`}>
               Skyled Pro <span className="font-light opacity-80 text-sm">INDONESIA</span>
             </span>
-          </a>
+          </Link>
 
           <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((item) => (
@@ -109,7 +109,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex">
             <a 
-              href="#contact"
+              href="/#contact"
               data-testid="link-partner-cta"
             >
               <Button 
@@ -182,7 +182,7 @@ export default function Navbar() {
             </div>
             
             <a 
-              href="#contact" 
+              href="/#contact" 
               className="block w-full mt-4 text-center bg-blue-600 text-white font-semibold px-6 py-4 rounded-xl"
               onClick={() => setIsOpen(false)}
               data-testid="link-mobile-partner-cta"

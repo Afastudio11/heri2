@@ -70,10 +70,10 @@ export const CONTACT_INFO = {
 };
 
 export const NAV_LINKS = [
-  { name: 'Beranda', href: '#home' },
-  { name: 'Tentang', href: '#about' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Kontak', href: '#contact' },
+  { name: 'Beranda', href: '/' },
+  { name: 'Tentang', href: '/#about' },
+  { name: 'Portfolio', href: '/#portfolio' },
+  { name: 'Kontak', href: '/#contact' },
 ];
 
 export const SERVICE_LINKS = [

@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import BusinessUnits from '@/components/BusinessUnits';
+import Portfolio from '@/components/Portfolio';
 import ClientsShowcase from '@/components/ClientsShowcase';
 import FeaturedProjects from '@/components/FeaturedProjects';
 import Contact from '@/components/Contact';
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <About />
       <BusinessUnits />
+      <Portfolio />
       <ClientsShowcase />
       <FeaturedProjects />
       <Contact />

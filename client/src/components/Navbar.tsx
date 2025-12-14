@@ -81,6 +81,7 @@ export default function Navbar() {
               onMouseLeave={() => setIsBusinessOpen(false)}
             >
               <button 
+                onClick={() => setIsBusinessOpen(!isBusinessOpen)}
                 className={`font-medium text-sm transition-colors hover:opacity-75 flex items-center gap-1 ${
                   isScrolled ? 'text-gray-700' : 'text-white'
                 }`}
@@ -91,14 +92,16 @@ export default function Navbar() {
               {isBusinessOpen && (
                 <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
                   {BUSINESS_UNITS.map((unit) => (
-                    <Link
+                    <a
                       key={unit.id}
                       href={unit.link}
-                      className="block px-4 py-3 hover:bg-gray-50 transition-colors"
+                      onClick={() => setIsBusinessOpen(false)}
+                      className="block px-4 py-3 hover:bg-gray-50 transition-colors cursor-pointer"
+                      data-testid={`link-business-unit-${unit.id}`}
                     >
                       <span className={`font-semibold ${unit.textColor}`}>{unit.title}</span>
                       <p className="text-xs text-gray-500 mt-0.5">{unit.subtitle}</p>
-                    </Link>
+                    </a>
                   ))}
                 </div>
               )}
@@ -163,14 +166,15 @@ export default function Navbar() {
               {isMobileBusinessOpen && (
                 <div className="pl-6 pb-2 space-y-1">
                   {BUSINESS_UNITS.map((unit) => (
-                    <Link
+                    <a
                       key={unit.id}
                       href={unit.link}
                       className="block px-3 py-3 text-sm text-gray-600 hover:text-skyled-blue"
                       onClick={() => setIsOpen(false)}
+                      data-testid={`link-mobile-business-unit-${unit.id}`}
                     >
                       <span className={`font-semibold ${unit.textColor}`}>{unit.title}</span>
-                    </Link>
+                    </a>
                   ))}
                 </div>
               )}

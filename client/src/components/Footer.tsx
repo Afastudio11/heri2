@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, MapPin } from 'lucide-react';
+import { Link } from 'wouter';
 import { LogoIcon } from './Navbar';
 import { CONTACT_INFO, BUSINESS_UNITS } from '@/lib/constants';
 
@@ -33,13 +34,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {BUSINESS_UNITS.map((unit) => (
                 <li key={unit.id}>
-                  <a 
-                    href="#business" 
+                  <Link 
+                    href={unit.link} 
                     className="hover:text-white transition-colors"
                     data-testid={`link-footer-${unit.id}`}
                   >
                     {unit.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

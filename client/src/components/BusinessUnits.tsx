@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'wouter';
 import { BUSINESS_UNITS } from '@/lib/constants';
 
 export default function BusinessUnits() {
@@ -47,13 +48,13 @@ export default function BusinessUnits() {
               </div>
               
               <div className="p-6 bg-gray-50 border-t border-gray-100">
-                <a 
-                  href="#contact" 
+                <Link 
+                  href={unit.link} 
                   className={`flex items-center justify-between gap-2 w-full font-bold ${unit.textColor} group-hover:opacity-80 transition-opacity`}
                   data-testid={`link-consult-${unit.id}`}
                 >
-                  Consult Now <ArrowRight size={18} />
-                </a>
+                  Lihat Detail <ArrowRight size={18} />
+                </Link>
               </div>
             </div>
           ))}

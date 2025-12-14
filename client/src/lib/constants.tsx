@@ -10,7 +10,8 @@ export const BUSINESS_UNITS = [
     icon: <Globe2 size={40} />,
     color: "bg-blue-600",
     textColor: "text-blue-600",
-    bgLight: "bg-blue-50"
+    bgLight: "bg-blue-50",
+    link: "/event-organizer"
   },
   {
     id: 'consulting',
@@ -21,7 +22,8 @@ export const BUSINESS_UNITS = [
     icon: <Briefcase size={40} />,
     color: "bg-amber-500",
     textColor: "text-amber-600",
-    bgLight: "bg-amber-50"
+    bgLight: "bg-amber-50",
+    link: "/consulting"
   },
   {
     id: 'production',
@@ -32,7 +34,8 @@ export const BUSINESS_UNITS = [
     icon: <Shirt size={40} />,
     color: "bg-teal-500",
     textColor: "text-teal-600",
-    bgLight: "bg-teal-50"
+    bgLight: "bg-teal-50",
+    link: "/production"
   }
 ];
 
@@ -74,4 +77,10 @@ export const NAV_LINKS = [
   { name: 'Business Units', href: '#business' },
   { name: 'Portfolio', href: '#portfolio' },
   { name: 'Contact', href: '#contact' },
+];
+
+export const SERVICE_LINKS = [
+  { name: 'Event Organizer', href: '/event-organizer' },
+  { name: 'Consulting', href: '/consulting' },
+  { name: 'Production', href: '/production' },
 ];

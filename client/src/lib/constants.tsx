@@ -5,8 +5,8 @@ export const BUSINESS_UNITS = [
     id: 'events',
     title: "Event Organizer",
     subtitle: "Skyled Pro Indonesia",
-    description: "A leading event organizer handling every aspect of planning, design, and execution. We specialize in MICE, Crowd Management, and high-quality production.",
-    features: ["MICE & Corporate Events", "Crowd & Flow Management", "Multimedia & Streaming", "Stage & Visual Production"],
+    description: "Event organizer terkemuka yang menangani setiap aspek perencanaan, desain, dan eksekusi. Kami mengkhususkan diri dalam MICE, Crowd Management, dan produksi berkualitas tinggi.",
+    features: ["MICE & Acara Korporat", "Manajemen Kerumunan & Alur", "Multimedia & Streaming", "Produksi Panggung & Visual"],
     icon: <Globe2 size={40} />,
     color: "bg-blue-600",
     textColor: "text-blue-600",
@@ -17,8 +17,8 @@ export const BUSINESS_UNITS = [
     id: 'consulting',
     title: "Consulting",
     subtitle: "Skyled Pro Consulting",
-    description: "Your strategic partner for building trust and business sustainability. We bridge the gap between Social License to Operate (SLO), CSR, and ESG.",
-    features: ["SLO (Social License to Operate)", "CSR & CCR Strategies", "ESG Roadmap & Reporting", "Social Mapping & Research"],
+    description: "Mitra strategis Anda untuk membangun kepercayaan dan keberlanjutan bisnis. Kami menjembatani kesenjangan antara Social License to Operate (SLO), CSR, dan ESG.",
+    features: ["SLO (Social License to Operate)", "Strategi CSR & CCR", "Roadmap & Pelaporan ESG", "Pemetaan Sosial & Riset"],
     icon: <Briefcase size={40} />,
     color: "bg-amber-500",
     textColor: "text-amber-600",
@@ -29,8 +29,8 @@ export const BUSINESS_UNITS = [
     id: 'production',
     title: "Production",
     subtitle: "Skyled Production",
-    description: "High-quality custom textile and merchandise solutions. Professional, fast, and customized to elevate your brand identity.",
-    features: ["Custom Textiles (Uniforms, Jerseys)", "Corporate Merchandise", "Printing Services", "Souvenirs & Gifts"],
+    description: "Solusi tekstil dan merchandise custom berkualitas tinggi. Profesional, cepat, dan dikustomisasi untuk mengangkat identitas brand Anda.",
+    features: ["Tekstil Custom (Seragam, Jersey)", "Merchandise Korporat", "Layanan Percetakan", "Souvenir & Hadiah"],
     icon: <Shirt size={40} />,
     color: "bg-teal-500",
     textColor: "text-teal-600",
@@ -41,18 +41,18 @@ export const BUSINESS_UNITS = [
 
 export const CORE_VALUES = [
   {
-    title: "Client Focus",
-    description: "We prioritize your vision and satisfaction above all else.",
+    title: "Fokus Klien",
+    description: "Kami mengutamakan visi dan kepuasan Anda di atas segalanya.",
     icon: <Users size={32} />
   },
   {
-    title: "Creativity",
-    description: "Innovative solutions tailored to unique needs and challenges.",
+    title: "Kreativitas",
+    description: "Solusi inovatif yang disesuaikan dengan kebutuhan dan tantangan unik.",
     icon: <Lightbulb size={32} />
   },
   {
-    title: "Integrity",
-    description: "Maintaining the highest ethical and professional standards.",
+    title: "Integritas",
+    description: "Menjaga standar etika dan profesionalisme tertinggi.",
     icon: <ShieldCheck size={32} />
   }
 ];
@@ -65,18 +65,15 @@ export const CLIENTS = [
 
 export const CONTACT_INFO = {
   address: "Indonesia",
-  phone1: "+62 878 8318 4796",
-  phone2: "0896 3096 3302",
-  email: "cv.skyledproindonesia@gmail.com",
-  email2: "FDLpradana@gmail.com"
+  phone: "+62 878 8318 4796",
+  email: "cv.skyledproindonesia@gmail.com"
 };
 
 export const NAV_LINKS = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Business Units', href: '#business' },
+  { name: 'Beranda', href: '#home' },
+  { name: 'Tentang', href: '#about' },
   { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Kontak', href: '#contact' },
 ];
 
 export const SERVICE_LINKS = [

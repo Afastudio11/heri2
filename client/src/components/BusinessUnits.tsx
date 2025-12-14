@@ -7,10 +7,10 @@ export default function BusinessUnits() {
     <section id="business" className="py-24 bg-slate-50" data-testid="section-business">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-skyled-blue font-bold tracking-widest uppercase text-sm">Our Ecosystem</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-skyled-navy mt-2 mb-6">Three Pillars of Excellence</h2>
+          <span className="text-skyled-blue font-bold tracking-widest uppercase text-sm">Ekosistem Kami</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-skyled-navy mt-2 mb-6">Tiga Pilar Keunggulan</h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
-            We operate through three specialized divisions, each dedicated to providing top-tier solutions in their respective fields.
+            Kami beroperasi melalui tiga divisi spesialis, masing-masing berdedikasi untuk menyediakan solusi terbaik di bidangnya.
           </p>
         </div>
 
@@ -35,7 +35,7 @@ export default function BusinessUnits() {
                 </p>
 
                 <div className="mt-auto">
-                  <h5 className="font-semibold text-gray-900 mb-4 text-sm border-b border-gray-100 pb-2">Key Services</h5>
+                  <h5 className="font-semibold text-gray-900 mb-4 text-sm border-b border-gray-100 pb-2">Layanan Utama</h5>
                   <ul className="space-y-3">
                     {unit.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">

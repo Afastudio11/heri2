@@ -107,11 +107,6 @@ export default function Production() {
               <span className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">Tumbler</span>
               <span className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">Merchandise</span>
             </div>
-            <a href="#contact">
-              <Button size="lg" className="bg-white text-teal-600 hover:bg-gray-100 font-bold text-lg px-8 py-6 rounded-full">
-                Pesan Sekarang
-              </Button>
-            </a>
           </div>
         </div>
       </div>
@@ -246,27 +241,6 @@ export default function Production() {
                 <span className="font-medium text-slate-700">{client}</span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Siap Membuat Produk Custom Anda?</h2>
-          <p className="text-xl text-slate-300 mb-8">
-            Hubungi kami untuk konsultasi dan penawaran terbaik untuk kebutuhan textile dan merchandise Anda.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/6289630963302" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg px-8 py-6 rounded-full w-full sm:w-auto">
-                WhatsApp: 0896 3096 3302
-              </Button>
-            </a>
-            <a href="mailto:cv.skyledproindonesia@gmail.com">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900 font-bold text-lg px-8 py-6 rounded-full w-full sm:w-auto">
-                Email Kami
-              </Button>
-            </a>
           </div>
         </div>
       </section>

@@ -97,11 +97,6 @@ export default function Consulting() {
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
               Pionir integrasi SLO–CSR–ESG, end-to-end services yang berbicara pada bisnis sekaligus komunitas.
             </p>
-            <a href="#contact">
-              <Button size="lg" className="bg-white text-amber-600 hover:bg-gray-100 font-bold text-lg px-8 py-6 rounded-full">
-                Konsultasi Gratis
-              </Button>
-            </a>
           </div>
         </div>
       </div>
@@ -198,27 +193,6 @@ export default function Consulting() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Siap Membangun Keberlanjutan Bisnis Anda?</h2>
-          <p className="text-xl text-slate-300 mb-8">
-            Konsultasikan kebutuhan SLO, CSR, dan ESG perusahaan Anda bersama tim ahli kami.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/6289630963302" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg px-8 py-6 rounded-full w-full sm:w-auto">
-                WhatsApp: +62 896 3096 3302
-              </Button>
-            </a>
-            <a href="mailto:cv.skyledproindonesia@gmail.com">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900 font-bold text-lg px-8 py-6 rounded-full w-full sm:w-auto">
-                Email Kami
-              </Button>
-            </a>
           </div>
         </div>
       </section>

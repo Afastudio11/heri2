@@ -21,7 +21,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-500 leading-relaxed mb-6 max-w-md">
-              A strategic holding company delivering excellence in Event Management, Strategic Consulting, and Creative Production.
+              Perusahaan holding strategis yang menghadirkan keunggulan dalam Manajemen Event, Konsultasi Strategis, dan Produksi Kreatif.
             </p>
             <div className="flex items-center gap-2 text-gray-500">
               <MapPin size={16} />
@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Our Divisions</h4>
+            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Divisi Kami</h4>
             <ul className="space-y-3">
               {BUSINESS_UNITS.map((unit) => (
                 <li key={unit.id}>
@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Connect</h4>
+            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Hubungi Kami</h4>
             <ul className="space-y-3">
               <li>
                 <a 
@@ -60,11 +60,11 @@ export default function Footer() {
               </li>
               <li>
                 <a 
-                  href={`tel:${CONTACT_INFO.phone1.replace(/\s+/g, '')}`} 
+                  href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`} 
                   className="hover:text-white transition-colors"
                   data-testid="link-footer-phone"
                 >
-                  {CONTACT_INFO.phone1}
+                  {CONTACT_INFO.phone}
                 </a>
               </li>
             </ul>
@@ -91,7 +91,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
           <p data-testid="text-copyright">
-            {currentYear} Skyled Pro Indonesia. All rights reserved.
+            {currentYear} Skyled Pro Indonesia. Hak cipta dilindungi.
           </p>
         </div>
       </div>

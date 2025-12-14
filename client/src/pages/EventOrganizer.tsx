@@ -74,9 +74,9 @@ const portfolioEvents = [
 ];
 
 const coreValues = [
-  { title: "Client Focus", icon: <Users className="w-6 h-6" /> },
-  { title: "Creativity", icon: <Lightbulb className="w-6 h-6" /> },
-  { title: "Integrity", icon: <Shield className="w-6 h-6" /> }
+  { title: "Fokus Klien", icon: <Users className="w-6 h-6" /> },
+  { title: "Kreativitas", icon: <Lightbulb className="w-6 h-6" /> },
+  { title: "Integritas", icon: <Shield className="w-6 h-6" /> }
 ];
 
 export default function EventOrganizer() {
@@ -99,7 +99,7 @@ export default function EventOrganizer() {
               Event Man Power and Production
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              Leading event organizer and production company renowned for expertise and innovation in creating exceptional, high-quality events.
+              Event organizer dan perusahaan produksi terkemuka yang dikenal karena keahlian dan inovasi dalam menciptakan event berkualitas tinggi yang luar biasa.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
               {coreValues.map((value, index) => (
@@ -109,11 +109,6 @@ export default function EventOrganizer() {
                 </div>
               ))}
             </div>
-            <a href="#contact">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-bold text-lg px-8 py-6 rounded-full">
-                Hubungi Kami
-              </Button>
-            </a>
           </div>
         </div>
       </div>
@@ -121,9 +116,9 @@ export default function EventOrganizer() {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Man Power Provide</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Penyedia Tenaga Kerja</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              We provide your needs with professional and experienced personnel
+              Kami menyediakan kebutuhan Anda dengan personel yang profesional dan berpengalaman
             </p>
           </div>
 
@@ -154,9 +149,9 @@ export default function EventOrganizer() {
       <section className="py-16 md:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Event Provide</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Layanan Event</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              Complete production solutions for your events
+              Solusi produksi lengkap untuk event Anda
             </p>
           </div>
 
@@ -185,7 +180,7 @@ export default function EventOrganizer() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">New Media Art</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              Cutting-edge interactive and immersive experiences
+              Pengalaman interaktif dan imersif dengan teknologi terdepan
             </p>
           </div>
 
@@ -205,9 +200,9 @@ export default function EventOrganizer() {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Events Portfolio</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Portfolio Event Kami</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              We serve the best quality for our clients
+              Kami memberikan kualitas terbaik untuk klien kami
             </p>
           </div>
 
@@ -217,27 +212,6 @@ export default function EventOrganizer() {
                 <p className="text-slate-800 font-medium">{event}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's Create Unforgettable Events Together</h2>
-          <p className="text-xl text-slate-300 mb-8">
-            Contact us to discuss your event needs and let our experienced team bring your vision to life.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/6289630963302" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-6 rounded-full w-full sm:w-auto">
-                WhatsApp: 0896 3096 3302
-              </Button>
-            </a>
-            <a href="mailto:cv.skyledproindonesia@gmail.com">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900 font-bold text-lg px-8 py-6 rounded-full w-full sm:w-auto">
-                Email Kami
-              </Button>
-            </a>
           </div>
         </div>
       </section>

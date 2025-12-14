@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { NAV_LINKS } from '@/lib/constants';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link } from 'wouter';
+import { NAV_LINKS, BUSINESS_UNITS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 
 export const LogoIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
@@ -14,6 +15,8 @@ export const LogoIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isBusinessOpen, setIsBusinessOpen] = useState(false);
+  const [isMobileBusinessOpen, setIsMobileBusinessOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,6 +74,35 @@ export default function Navbar() {
                 {item.name}
               </a>
             ))}
+            
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsBusinessOpen(true)}
+              onMouseLeave={() => setIsBusinessOpen(false)}
+            >
+              <button 
+                className={`font-medium text-sm transition-colors hover:opacity-75 flex items-center gap-1 ${
+                  isScrolled ? 'text-gray-700' : 'text-white'
+                }`}
+              >
+                Unit Bisnis <ChevronDown size={16} className={`transition-transform ${isBusinessOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isBusinessOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
+                  {BUSINESS_UNITS.map((unit) => (
+                    <Link
+                      key={unit.id}
+                      href={unit.link}
+                      className="block px-4 py-3 hover:bg-gray-50 transition-colors"
+                    >
+                      <span className={`font-semibold ${unit.textColor}`}>{unit.title}</span>
+                      <p className="text-xs text-gray-500 mt-0.5">{unit.subtitle}</p>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="hidden md:flex">
@@ -85,7 +117,7 @@ export default function Navbar() {
                     : 'bg-white text-skyled-navy hover:bg-gray-100'
                 }`}
               >
-                Partner With Us
+                Bermitra Dengan Kami
               </Button>
             </a>
           </div>
@@ -118,13 +150,39 @@ export default function Navbar() {
                 {item.name}
               </a>
             ))}
+            
+            <div className="border-b border-gray-50">
+              <button
+                className="w-full flex items-center justify-between px-3 py-4 text-base font-bold text-gray-800"
+                onClick={() => setIsMobileBusinessOpen(!isMobileBusinessOpen)}
+              >
+                Unit Bisnis
+                <ChevronDown size={20} className={`transition-transform ${isMobileBusinessOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isMobileBusinessOpen && (
+                <div className="pl-6 pb-2 space-y-1">
+                  {BUSINESS_UNITS.map((unit) => (
+                    <Link
+                      key={unit.id}
+                      href={unit.link}
+                      className="block px-3 py-3 text-sm text-gray-600 hover:text-skyled-blue"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span className={`font-semibold ${unit.textColor}`}>{unit.title}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            
             <a 
               href="#contact" 
               className="block w-full mt-4 text-center bg-skyled-navy text-white font-bold px-6 py-4 rounded-xl"
               onClick={() => setIsOpen(false)}
               data-testid="link-mobile-partner-cta"
             >
-              Partner With Us
+              Bermitra Dengan Kami
             </a>
           </div>
         </div>

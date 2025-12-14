@@ -3,11 +3,11 @@ import { Quote } from 'lucide-react';
 const PROJECTS = [
   {
     title: "ASEAN Blue Economy Forum",
-    description: "Full event management for ASEAN Economic Ministers meeting, including gala dinners and VVIP handling."
+    description: "Manajemen event lengkap untuk pertemuan Menteri Ekonomi ASEAN, termasuk gala dinner dan penanganan VVIP."
   },
   {
     title: "MotoGP Mandalika Side Events",
-    description: "Crowd management and multimedia support for international sporting events."
+    description: "Manajemen kerumunan dan dukungan multimedia untuk event olahraga internasional."
   }
 ];
 
@@ -22,9 +22,9 @@ export default function FeaturedProjects() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-amber-400 font-bold tracking-widest uppercase text-sm mb-2 block">Track Record</span>
-            <h2 className="text-4xl font-bold mb-6">Delivering Excellence on National & International Scale</h2>
+            <h2 className="text-4xl font-bold mb-6">Menghadirkan Keunggulan di Skala Nasional & Internasional</h2>
             <p className="text-gray-400 mb-8 text-lg">
-              From high-level ministerial meetings to large-scale outdoor festivals, our portfolio showcases our versatility and commitment to quality.
+              Dari pertemuan tingkat menteri hingga festival outdoor berskala besar, portfolio kami menunjukkan fleksibilitas dan komitmen kami terhadap kualitas.
             </p>
             <div className="space-y-6">
               {PROJECTS.map((project, idx) => (
@@ -51,9 +51,9 @@ export default function FeaturedProjects() {
             <div className="absolute bottom-8 left-8 right-8 z-20">
               <Quote className="text-amber-400 mb-4 h-8 w-8" />
               <p className="text-lg font-medium italic text-white mb-4">
-                "Skyled Pro Indonesia delivered exceptional quality and professionalism for our international summit. Truly a reliable partner."
+                "Skyled Pro Indonesia menghadirkan kualitas dan profesionalisme luar biasa untuk summit internasional kami. Benar-benar mitra yang dapat diandalkan."
               </p>
-              <p className="text-sm text-gray-300 font-bold uppercase tracking-wider">— Ministry Representative</p>
+              <p className="text-sm text-gray-300 font-bold uppercase tracking-wider">— Perwakilan Kementerian</p>
             </div>
           </div>
         </div>

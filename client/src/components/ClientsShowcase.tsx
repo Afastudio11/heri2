@@ -6,7 +6,7 @@ export default function ClientsShowcase() {
   return (
     <section id="portfolio" className="py-20 bg-white border-y border-gray-100 overflow-hidden" data-testid="section-clients">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <h2 className="text-3xl font-bold text-skyled-navy">Trusted By Leading Organizations</h2>
+        <h2 className="text-3xl font-bold text-skyled-navy">Dipercaya oleh Organisasi Terkemuka</h2>
       </div>
       
       <div className="relative w-full">

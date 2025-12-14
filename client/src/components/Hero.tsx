@@ -30,7 +30,7 @@ export default function Hero() {
         <div className="text-center max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8 animate-fade-in">
             <Layers size={16} className="text-skyled-light" />
-            <span className="text-sm font-medium tracking-wide">Integrated Business Solutions</span>
+            <span className="text-sm font-medium tracking-wide">Solusi Bisnis Terintegrasi</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-tight">
@@ -41,10 +41,10 @@ export default function Hero() {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-            A strategic holding company delivering excellence in <br className="hidden md:block"/>
-            <span className="text-white font-semibold">Event Management</span>, 
-            <span className="text-amber-400 font-semibold"> Strategic Consulting</span>, and 
-            <span className="text-teal-400 font-semibold"> Creative Production</span>.
+            Perusahaan holding strategis yang menghadirkan keunggulan dalam <br className="hidden md:block"/>
+            <span className="text-white font-semibold">Manajemen Event</span>, 
+            <span className="text-amber-400 font-semibold"> Konsultan Strategis</span>, dan 
+            <span className="text-teal-400 font-semibold"> Produksi Kreatif</span>.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -53,7 +53,7 @@ export default function Hero() {
                 size="lg"
                 className="w-full sm:w-auto px-8 py-6 bg-white text-skyled-navy rounded-full font-bold text-lg transition-all shadow-xl flex items-center justify-center gap-2"
               >
-                Explore Our Divisions <ArrowDown size={20} />
+                Jelajahi Divisi Kami <ArrowDown size={20} />
               </Button>
             </a>
             <a href="#contact" data-testid="link-contact-hero">
@@ -62,7 +62,7 @@ export default function Hero() {
                 size="lg"
                 className="w-full sm:w-auto px-8 py-6 bg-transparent border border-white/30 text-white rounded-full font-bold text-lg transition-all backdrop-blur-sm"
               >
-                Contact Us
+                Hubungi Kami
               </Button>
             </a>
           </div>

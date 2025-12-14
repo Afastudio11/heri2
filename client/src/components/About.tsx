@@ -2,11 +2,11 @@ import { CheckCircle2 } from 'lucide-react';
 import { CORE_VALUES } from '@/lib/constants';
 
 const MISSION_ITEMS = [
-  'Deliver High-Quality Services',
-  'Realize Client Visions',
-  'Create Unforgettable Experiences',
-  'Maintain Ethical Standards',
-  'Adapt and Innovate'
+  'Memberikan Layanan Berkualitas Tinggi',
+  'Mewujudkan Visi Klien',
+  'Menciptakan Pengalaman Tak Terlupakan',
+  'Menjaga Standar Etika',
+  'Beradaptasi dan Berinovasi'
 ];
 
 export default function About() {
@@ -15,13 +15,13 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl font-bold text-skyled-navy mb-6">About The Company</h2>
+            <h2 className="text-4xl font-bold text-skyled-navy mb-6">Tentang Perusahaan</h2>
             <div className="w-20 h-1.5 bg-skyled-accent mb-8"></div>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Skyled Pro Indonesia is a leading group of companies renowned for expertise and innovation. We handle every aspect of business support, from creating exceptional events to providing strategic consulting for sustainability.
+              Skyled Pro Indonesia adalah grup perusahaan terkemuka yang dikenal karena keahlian dan inovasinya. Kami menangani setiap aspek dukungan bisnis, mulai dari menciptakan event luar biasa hingga menyediakan konsultasi strategis untuk keberlanjutan.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              By leveraging the latest technology and a team of experienced professionals, Skyled Pro Indonesia is dedicated to delivering unforgettable experiences tailored to the unique vision and needs of each client.
+              Dengan memanfaatkan teknologi terkini dan tim profesional berpengalaman, Skyled Pro Indonesia berdedikasi untuk memberikan pengalaman tak terlupakan yang disesuaikan dengan visi dan kebutuhan unik setiap klien.
             </p>
             
             <div className="grid gap-4">
@@ -46,17 +46,17 @@ export default function About() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-skyled-navy to-skyled-accent rounded-[40px] transform rotate-3 opacity-10"></div>
             <div className="bg-slate-100 p-8 rounded-[40px] relative z-10 border border-white shadow-xl">
-              <h3 className="text-2xl font-bold text-skyled-navy mb-6">Vision & Mission</h3>
+              <h3 className="text-2xl font-bold text-skyled-navy mb-6">Visi & Misi</h3>
               
               <div className="mb-8">
-                <span className="text-xs font-bold uppercase tracking-wider text-skyled-accent mb-2 block">Our Vision</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-skyled-accent mb-2 block">Visi Kami</span>
                 <p className="text-gray-700 italic border-l-4 border-skyled-gold pl-4">
-                  "To be the leading name in the industry by prioritizing innovation, creativity, and high quality, creating inspiring experiences for every client."
+                  "Menjadi nama terdepan di industri dengan mengutamakan inovasi, kreativitas, dan kualitas tinggi, menciptakan pengalaman yang menginspirasi setiap klien."
                 </p>
               </div>
 
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-skyled-accent mb-4 block">Our Mission</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-skyled-accent mb-4 block">Misi Kami</span>
                 <ul className="space-y-3">
                   {MISSION_ITEMS.map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-700" data-testid={`text-mission-${i}`}>

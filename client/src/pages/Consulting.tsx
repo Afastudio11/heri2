@@ -78,7 +78,7 @@ const stats = [
 export default function Consulting() {
   return (
     <div className="min-h-screen bg-slate-50">
-      <div className="bg-gradient-to-br from-amber-600 via-amber-500 to-orange-500 text-white">
+      <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Link href="/">
             <Button variant="ghost" className="text-white hover:bg-white/20 mb-8">
@@ -209,20 +209,17 @@ export default function Consulting() {
             Konsultasikan kebutuhan SLO, CSR, dan ESG perusahaan Anda bersama tim ahli kami.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/6287883184796" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/6289630963302" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg px-8 py-6 rounded-full w-full sm:w-auto">
-                WhatsApp: +62 878 8318 4796
+                WhatsApp: +62 896 3096 3302
               </Button>
             </a>
-            <a href="mailto:FDLpradana@gmail.com">
+            <a href="mailto:cv.skyledproindonesia@gmail.com">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900 font-bold text-lg px-8 py-6 rounded-full w-full sm:w-auto">
                 Email Kami
               </Button>
             </a>
           </div>
-          <p className="text-slate-400 mt-8">
-            <strong>Fadhil Muhammad Pradana</strong> - Senior Consultant
-          </p>
         </div>
       </section>
 

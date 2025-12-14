@@ -81,7 +81,7 @@ const whyChooseUs = [
 export default function Production() {
   return (
     <div className="min-h-screen bg-slate-50">
-      <div className="bg-gradient-to-br from-teal-600 via-teal-500 to-emerald-500 text-white">
+      <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Link href="/">
             <Button variant="ghost" className="text-white hover:bg-white/20 mb-8">

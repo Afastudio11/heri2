@@ -82,7 +82,7 @@ export default function Navbar() {
             >
               <button 
                 onClick={() => setIsBusinessOpen(!isBusinessOpen)}
-                className={`font-medium text-sm transition-colors hover:opacity-75 flex items-center gap-1 ${
+                className={`font-medium text-sm transition-colors hover:opacity-75 flex items-center gap-1 py-2 ${
                   isScrolled ? 'text-gray-700' : 'text-white'
                 }`}
               >
@@ -90,19 +90,21 @@ export default function Navbar() {
               </button>
               
               {isBusinessOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
-                  {BUSINESS_UNITS.map((unit) => (
-                    <a
-                      key={unit.id}
-                      href={unit.link}
-                      onClick={() => setIsBusinessOpen(false)}
-                      className="block px-4 py-3 hover:bg-gray-50 transition-colors cursor-pointer"
-                      data-testid={`link-business-unit-${unit.id}`}
-                    >
-                      <span className={`font-semibold ${unit.textColor}`}>{unit.title}</span>
-                      <p className="text-xs text-gray-500 mt-0.5">{unit.subtitle}</p>
-                    </a>
-                  ))}
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2">
+                    {BUSINESS_UNITS.map((unit) => (
+                      <a
+                        key={unit.id}
+                        href={unit.link}
+                        onClick={() => setIsBusinessOpen(false)}
+                        className="block px-4 py-3 hover:bg-gray-50 transition-colors cursor-pointer"
+                        data-testid={`link-business-unit-${unit.id}`}
+                      >
+                        <span className={`font-semibold ${unit.textColor}`}>{unit.title}</span>
+                        <p className="text-xs text-gray-500 mt-0.5">{unit.subtitle}</p>
+                      </a>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

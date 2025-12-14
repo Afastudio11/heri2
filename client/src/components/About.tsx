@@ -1,117 +1,98 @@
-import { CheckCircle2, Award, Building2, Globe2, Shield, Users, Lightbulb, ShieldCheck } from 'lucide-react';
-
-const STATS = [
-  { number: '100+', label: 'Event Terselenggara', icon: <Award size={24} /> },
-  { number: '50+', label: 'Klien Terpercaya', icon: <Building2 size={24} /> },
-  { number: '10+', label: 'Event Internasional', icon: <Globe2 size={24} /> },
-  { number: '3', label: 'Unit Bisnis', icon: <Shield size={24} /> }
-];
-
-const CORE_VALUES = [
-  { title: "Fokus Klien", description: "Kami mengutamakan visi dan kepuasan Anda di atas segalanya.", icon: <Users size={28} /> },
-  { title: "Kreativitas", description: "Solusi inovatif yang disesuaikan dengan kebutuhan unik.", icon: <Lightbulb size={28} /> },
-  { title: "Integritas", description: "Menjaga standar etika dan profesionalisme tertinggi.", icon: <ShieldCheck size={28} /> }
-];
-
-const SERVICES = [
-  "Event Management & MICE",
-  "Crowd & Flow Management",
-  "Stage Production",
-  "Multimedia & Streaming",
-  "CSR & ESG Consulting",
-  "Textile & Merchandise"
-];
+import { Check, User, Activity, ShieldCheck } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-[#FAFAFA]" data-testid="section-about">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tentang Kami</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-            Skyled Pro Indonesia - Mitra terpercaya Anda dalam menciptakan pengalaman luar biasa
+    <section id="about" className="py-20 max-w-7xl mx-auto px-4 bg-white" data-testid="section-about">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold text-gray-900 mb-4">Tentang Kami</h2>
+        <p className="text-gray-500 max-w-2xl mx-auto">
+          Skyled Pro Indonesia - Mitra terpercaya Anda dalam menciptakan pengalaman luar biasa
+        </p>
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-12 items-start">
+        <div className="flex-1">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">Tentang Perusahaan</h3>
+          <p className="text-gray-600 mb-6 leading-relaxed">
+            <span className="font-bold text-gray-900">Skyled Pro Indonesia</span> adalah perusahaan event organizer dan production terkemuka yang dikenal karena keahlian dan inovasinya dalam menciptakan event berkualitas tinggi. Kami menangani setiap aspek perencanaan, desain, dan eksekusi event dengan fokus pada detail dan kreativitas.
           </p>
-        </div>
+          <p className="text-gray-600 mb-8 leading-relaxed">
+            Kami telah dipercaya menangani berbagai event prestisius, mulai dari ASEAN Blue Economy Forum, UNESCO Global Geopark Youth Forum, hingga Side Event MotoGP Mandalika.
+          </p>
 
-        <div className="grid md:grid-cols-4 gap-6 mb-16">
-          {STATS.map((stat, idx) => (
-            <div 
-              key={idx}
-              className="text-center p-6 bg-white rounded-2xl border border-gray-100 hover:shadow-lg transition-all"
-              data-testid={`card-stat-${idx}`}
-            >
-              <div className="inline-flex items-center justify-center w-14 h-14 bg-[#F5F8FF] text-[#1F68F5] rounded-xl mb-4">
-                {stat.icon}
-              </div>
-              <div className="text-3xl font-bold text-gray-900 mb-1">{stat.number}</div>
-              <div className="text-sm text-gray-500">{stat.label}</div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
+              <div className="text-3xl font-bold text-blue-600 mb-1">100+</div>
+              <div className="text-xs text-gray-600">Event Terselenggara</div>
             </div>
-          ))}
+            <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
+              <div className="text-3xl font-bold text-blue-600 mb-1">50+</div>
+              <div className="text-xs text-gray-600">Klien Terpercaya</div>
+            </div>
+          </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Tentang Perusahaan</h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              <strong>Skyled Pro Indonesia</strong> adalah perusahaan event organizer dan production terkemuka yang dikenal karena keahlian dan inovasinya dalam menciptakan event berkualitas tinggi. Kami menangani setiap aspek perencanaan, desain, dan eksekusi event dengan fokus pada detail dan kreativitas.
+        <div className="flex-1 w-full space-y-6">
+          <div className="bg-blue-600 text-white p-8 rounded-[2rem] shadow-xl shadow-blue-600/20 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-2xl"></div>
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <Activity size={20} /> Visi
+            </h3>
+            <p className="text-blue-50 italic leading-relaxed">
+              "Menjadi nama terdepan di industri event organizer dengan mengutamakan inovasi, kreativitas, dan kualitas tinggi, serta menciptakan pengalaman event yang tak terlupakan."
             </p>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Kami telah dipercaya menangani berbagai event prestisius, mulai dari ASEAN Blue Economy Forum, UNESCO Global Geopark Youth Forum, hingga Side Event MotoGP Mandalika.
-            </p>
-            
-            <div className="bg-white p-6 rounded-2xl border border-gray-100">
-              <h4 className="font-semibold text-gray-900 mb-4">Layanan Unggulan:</h4>
-              <div className="grid grid-cols-2 gap-3">
-                {SERVICES.map((service, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-gray-600" data-testid={`text-service-${i}`}>
-                    <CheckCircle2 size={16} className="text-[#1F68F5] flex-shrink-0" />
-                    {service}
+          </div>
+
+          <div className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-lg">
+            <h3 className="text-xl font-bold mb-6 text-gray-900">Misi</h3>
+            <ul className="space-y-4">
+              {[
+                "Memberikan layanan berkualitas tinggi",
+                "Mewujudkan visi klien dengan presisi",
+                "Menciptakan pengalaman tak terlupakan",
+                "Menjaga standar etika dan profesional"
+              ].map((misi, i) => (
+                <li key={i} className="flex items-start gap-3 text-gray-600 text-sm" data-testid={`text-mission-${i}`}>
+                  <div className="mt-1 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">
+                    <Check size={12} />
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          <div className="space-y-6">
-            <div className="bg-[#1F68F5] p-8 rounded-2xl text-white">
-              <h3 className="text-xl font-bold mb-4">Visi</h3>
-              <p className="text-white/90 leading-relaxed">
-                "Menjadi nama terdepan di industri event organizer dengan mengutamakan inovasi, kreativitas, dan kualitas tinggi, serta menciptakan pengalaman event yang tak terlupakan."
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Misi</h3>
-              <ul className="space-y-3">
-                {["Memberikan layanan berkualitas tinggi", "Mewujudkan visi klien dengan presisi", "Menciptakan pengalaman tak terlupakan", "Menjaga standar etika dan profesional"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3" data-testid={`text-mission-${i}`}>
-                    <CheckCircle2 size={18} className="text-[#1F68F5] flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                  {misi}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {CORE_VALUES.map((val, idx) => (
-            <div 
-              key={idx} 
-              className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-lg transition-all"
-              data-testid={`card-value-${idx}`}
-            >
-              <div className="p-3 bg-[#F5F8FF] rounded-xl text-[#1F68F5]">
-                {val.icon}
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-900 text-lg mb-1">{val.title}</h4>
-                <p className="text-sm text-gray-500">{val.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="mt-20 grid md:grid-cols-3 gap-6">
+        <ValueCard 
+          icon={<User size={24} />} 
+          title="Fokus Klien" 
+          desc="Kami mengutamakan visi dan kepuasan Anda di atas segalanya." 
+        />
+        <ValueCard 
+          icon={<Activity size={24} />} 
+          title="Kreativitas" 
+          desc="Solusi inovatif yang disesuaikan dengan kebutuhan unik." 
+        />
+        <ValueCard 
+          icon={<ShieldCheck size={24} />} 
+          title="Integritas" 
+          desc="Menjaga standar etika dan profesionalisme tertinggi." 
+        />
       </div>
     </section>
   );
 }
+
+const ValueCard = ({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) => (
+  <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:border-blue-200 transition-colors" data-testid={`card-value-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+    <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 flex-shrink-0">
+      {icon}
+    </div>
+    <div>
+      <h4 className="font-bold text-gray-900 mb-2">{title}</h4>
+      <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
+    </div>
+  </div>
+);

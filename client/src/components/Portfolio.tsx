@@ -1,110 +1,93 @@
 import { useState } from 'react';
-import { MapPin, Calendar, Users, ArrowRight } from 'lucide-react';
 
-const PORTFOLIO_EVENTS = [
+const portfolioItems = [
   {
-    id: 1,
+    id: "01",
+    category: "International Event",
     title: "ASEAN Blue Economy Forum",
     subtitle: "Pertemuan Menteri Ekonomi ASEAN",
-    description: "Manajemen event lengkap untuk pertemuan tingkat menteri ASEAN, termasuk roundtable discussion, gala dinner, dan penanganan VVIP.",
-    category: "International Event",
+    desc: "Manajemen event lengkap untuk pertemuan tingkat menteri ASEAN, termasuk roundtable discussion.",
     location: "Belitung, Bangka Belitung",
-    highlights: ["Minister Meeting", "Gala Dinner", "VVIP Handling", "Airport Protocol"]
+    tags: ["Minister Meeting", "Gala Dinner", "VVIP Handling"]
   },
   {
-    id: 2,
+    id: "02",
+    category: "Sports Event",
     title: "Side Event MotoGP Mandalika",
     subtitle: "Mandalika International Circuit",
-    description: "Dukungan multimedia dan manajemen kerumunan untuk event olahraga internasional di Sirkuit Internasional Mandalika.",
-    category: "Sports Event",
+    desc: "Dukungan multimedia dan manajemen kerumunan untuk event olahraga internasional di Sirkuit Mandalika.",
     location: "Lombok, NTB",
-    highlights: ["Crowd Management", "Multimedia Support", "Production"]
+    tags: ["Crowd Management", "Multimedia Support", "Production"]
   },
   {
-    id: 3,
+    id: "03",
+    category: "International Forum",
     title: "UNESCO Global Geopark Youth Forum",
     subtitle: "The 1st UNESCO Global Geopark Youth Forum",
-    description: "Penyelenggaraan forum pemuda global UNESCO dengan peserta internasional, termasuk tur edukatif dan aktivitas outdoor.",
-    category: "International Forum",
+    desc: "Penyelenggaraan forum pemuda global UNESCO dengan peserta internasional, termasuk tur edukatif.",
     location: "Gunung Batur, Bali & Belitung",
-    highlights: ["Youth Forum", "Geoventure", "Island Hopping"]
+    tags: ["Youth Forum", "Geoventure", "Island Hopping"]
   },
   {
-    id: 4,
+    id: "04",
+    category: "Government Event",
     title: "Insight Sharing Session Kominfo",
     subtitle: "Transformasi Digital di 6 Sektor Strategis",
-    description: "Penyelenggaraan sesi berbagi wawasan Kementerian Kominfo tentang transformasi digital di sektor strategis Indonesia.",
-    category: "Government Event",
+    desc: "Penyelenggaraan sesi berbagi wawasan Kementerian Kominfo tentang transformasi digital.",
     location: "Jakarta",
-    highlights: ["Ministry Event", "Digital Transformation", "Panel Discussion"]
+    tags: ["Ministry Event", "Digital Transformation", "Panel Discussion"]
   },
   {
-    id: 5,
+    id: "05",
+    category: "Sports Event",
     title: "Run for Geopark Indonesia",
     subtitle: "Geoventure",
-    description: "Event lari bertema geopark dengan rute melewati destinasi wisata alam Indonesia yang menakjubkan.",
-    category: "Sports Event",
+    desc: "Event lari bertema geopark dengan rute melewati destinasi wisata alam Indonesia yang menakjubkan.",
     location: "Belitung",
-    highlights: ["Running Event", "Geopark Tour", "Eco Tourism"]
+    tags: ["Running Event", "Geopark Tour", "Eco Tourism"]
   },
   {
-    id: 6,
+    id: "06",
+    category: "Government Event",
     title: "Peluncuran Buku Roadmap Blue Economy",
     subtitle: "Bappenas",
-    description: "Upacara peluncuran buku Roadmap Blue Economy oleh Bappenas dengan kehadiran pejabat tinggi negara.",
-    category: "Government Event",
+    desc: "Upacara peluncuran buku Roadmap Blue Economy oleh Bappenas dengan kehadiran pejabat tinggi.",
     location: "Jakarta",
-    highlights: ["Book Launch", "Bappenas", "Blue Economy"]
-  },
-  {
-    id: 7,
-    title: "Women and Girls at the Frontline of Climate Change",
-    subtitle: "International Conference",
-    description: "Konferensi internasional tentang peran perempuan dalam menghadapi perubahan iklim dengan pembicara dari berbagai negara.",
-    category: "International Event",
-    location: "Indonesia",
-    highlights: ["Climate Action", "Women Empowerment", "International"]
-  },
-  {
-    id: 8,
-    title: "Dinner Under The Stars",
-    subtitle: "Private Gala Dinner",
-    description: "Penyelenggaraan gala dinner privat dengan konsep outdoor mewah dan entertainment berkualitas tinggi.",
-    category: "Private Event",
-    location: "Belitung",
-    highlights: ["Gala Dinner", "Entertainment", "Exclusive"]
+    tags: ["Book Launch", "Bappenas", "Blue Economy"]
   }
 ];
 
-const CATEGORIES = ["Semua", "International Event", "Government Event", "Sports Event", "Private Event", "International Forum"];
+const categories = ["Semua", "International Event", "Government Event", "Sports Event", "International Forum"];
 
 export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState("Semua");
+  const [activeFilter, setActiveFilter] = useState("Semua");
 
-  const filteredEvents = activeCategory === "Semua" 
-    ? PORTFOLIO_EVENTS 
-    : PORTFOLIO_EVENTS.filter(e => e.category === activeCategory);
+  const filteredItems = activeFilter === "Semua" 
+    ? portfolioItems 
+    : portfolioItems.filter(item => item.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-24 bg-gradient-to-b from-slate-50 to-white" data-testid="section-portfolio">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-skyled-accent font-bold tracking-widest uppercase text-sm mb-2 block">Portfolio</span>
-          <h2 className="text-4xl font-bold text-skyled-navy mb-4">Event Yang Telah Kami Tangani</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+    <section id="portfolio" className="py-24 bg-white relative" data-testid="section-portfolio">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <div className="text-blue-600 font-bold text-sm tracking-widest uppercase mb-2">PORTFOLIO</div>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            Event Yang Telah Kami Tangani
+          </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto">
             Dari pertemuan tingkat menteri hingga festival internasional, kami telah dipercaya menangani berbagai event prestisius.
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {CATEGORIES.map((cat, idx) => (
+        <div className="flex flex-wrap justify-center gap-2 mb-16">
+          {categories.map((cat, idx) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
-                activeCategory === cat 
-                  ? 'bg-skyled-navy text-white shadow-lg' 
-                  : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+              onClick={() => setActiveFilter(cat)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                activeFilter === cat 
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' 
+                  : 'bg-white text-gray-500 border border-gray-200 hover:border-blue-300'
               }`}
               data-testid={`button-portfolio-filter-${idx}`}
             >
@@ -114,40 +97,33 @@ export default function Portfolio() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredEvents.map((event) => (
-            <div 
-              key={event.id}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-              data-testid={`card-portfolio-${event.id}`}
-            >
-              <div className="h-48 bg-gradient-to-br from-skyled-navy to-skyled-accent relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }}></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-6xl font-bold text-white/20">{String(event.id).padStart(2, '0')}</span>
-                </div>
-                <div className="absolute top-4 left-4">
-                  <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full">
-                    {event.category}
-                  </span>
-                </div>
-              </div>
+          {filteredItems.map((item) => (
+            <div key={item.id} className="group bg-white rounded-3xl border border-gray-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden" data-testid={`card-portfolio-${item.id}`}>
+              <div className="absolute top-0 left-0 w-full h-32 bg-blue-500 -z-10 group-hover:h-full transition-all duration-500 ease-in-out"></div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-skyled-navy mb-1 group-hover:text-skyled-accent transition-colors">
-                  {event.title}
-                </h3>
-                <p className="text-sm text-skyled-accent font-medium mb-3">{event.subtitle}</p>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">{event.description}</p>
+              <div className="flex justify-between items-start mb-12">
+                <span className="bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold px-3 py-1 rounded-full border border-white/20">
+                  {item.category}
+                </span>
+                <span className="text-5xl font-bold text-white/20">{item.id}</span>
+              </div>
+
+              <div className="group-hover:text-white transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-1 leading-tight text-white group-hover:text-white md:text-gray-900">{item.title}</h3>
+                <p className="text-xs text-blue-200 group-hover:text-blue-100 md:text-blue-600 mb-4">{item.subtitle}</p>
                 
-                <div className="flex items-center text-gray-500 text-xs mb-4">
-                  <MapPin size={14} className="mr-1" />
-                  {event.location}
+                <p className="text-sm text-white/80 group-hover:text-white/90 md:text-gray-500 mb-6 leading-relaxed">
+                  {item.desc}
+                </p>
+
+                <div className="flex items-center gap-2 text-xs opacity-80 mb-6">
+                  <span className="font-bold">📍 {item.location}</span>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {event.highlights.slice(0, 3).map((h, i) => (
-                    <span key={i} className="bg-slate-100 text-slate-600 text-xs px-2.5 py-1 rounded-full">
-                      {h}
+                  {item.tags.map((tag, i) => (
+                    <span key={i} className="px-2 py-1 bg-gray-100 group-hover:bg-white/20 group-hover:text-white text-gray-600 text-[10px] rounded">
+                      {tag}
                     </span>
                   ))}
                 </div>

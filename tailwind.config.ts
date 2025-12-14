@@ -5,10 +5,7 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Plus Jakarta Sans", "sans-serif"],
-      },
-      borderRadius: {
+            borderRadius: {
         lg: ".5625rem", /* 9px */
         md: ".375rem", /* 6px */
         sm: ".1875rem", /* 3px */
@@ -17,12 +14,12 @@ export default {
       },
       colors: {
         skyled: {
-          navy: "#0B2447",
-          blue: "#19376D",
-          accent: "#576CBC",
-          light: "#A5D7E8",
+          navy: "#1F68F5",
+          blue: "#1F68F5",
+          accent: "#4A8AF7",
+          light: "#F5F8FF",
           gold: "#EAB308",
-          teal: "#14b8a6",
+          teal: "#1F68F5",
           orange: "#f97316",
         },
         // Flat / base colors (regular buttons)

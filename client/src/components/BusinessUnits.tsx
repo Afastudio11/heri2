@@ -1,16 +1,41 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Globe2, Briefcase, Shirt } from 'lucide-react';
 import { Link } from 'wouter';
-import { BUSINESS_UNITS } from '@/lib/constants';
+
+const BUSINESS_UNITS = [
+  {
+    id: 'events',
+    title: "Event Organizer",
+    subtitle: "Skyled Pro Indonesia",
+    description: "Perencanaan, desain, dan eksekusi event berkualitas tinggi dengan fokus pada detail dan kreativitas.",
+    icon: <Globe2 className="w-8 h-8" />,
+    link: "/event-organizer"
+  },
+  {
+    id: 'consulting',
+    title: "Consulting",
+    subtitle: "Skyled Pro Consulting",
+    description: "Mitra strategis untuk membangun kepercayaan dan keberlanjutan bisnis melalui SLO, CSR, dan ESG.",
+    icon: <Briefcase className="w-8 h-8" />,
+    link: "/consulting"
+  },
+  {
+    id: 'production',
+    title: "Production",
+    subtitle: "Skyled Production",
+    description: "Solusi tekstil dan merchandise custom berkualitas tinggi untuk mengangkat identitas brand Anda.",
+    icon: <Shirt className="w-8 h-8" />,
+    link: "/production"
+  }
+];
 
 export default function BusinessUnits() {
   return (
-    <section id="business" className="py-24 bg-slate-50" data-testid="section-business">
+    <section id="business" className="py-24 bg-white" data-testid="section-business">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-skyled-blue font-bold tracking-widest uppercase text-sm">Ekosistem Kami</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-skyled-navy mt-2 mb-6">Tiga Pilar Keunggulan</h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
-            Kami beroperasi melalui tiga divisi spesialis, masing-masing berdedikasi untuk menyediakan solusi terbaik di bidangnya.
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Temukan Yang Anda Butuhkan</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            Kami beroperasi melalui tiga divisi spesialis untuk menyediakan solusi terbaik di bidangnya.
           </p>
         </div>
 
@@ -18,44 +43,26 @@ export default function BusinessUnits() {
           {BUSINESS_UNITS.map((unit) => (
             <div 
               key={unit.id} 
-              className="group bg-white rounded-[32px] overflow-hidden shadow-lg border border-gray-100 flex flex-col hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              className="group bg-white rounded-2xl p-8 border border-gray-200 hover:border-[#1F68F5] hover:shadow-xl transition-all duration-300"
               data-testid={`card-business-${unit.id}`}
             >
-              <div className={`h-2 ${unit.color}`}></div>
+              <div className="w-16 h-16 rounded-2xl bg-[#F5F8FF] text-[#1F68F5] flex items-center justify-center mb-6">
+                {unit.icon}
+              </div>
               
-              <div className="p-8 flex-1 flex flex-col">
-                <div className={`w-16 h-16 rounded-2xl ${unit.bgLight} ${unit.textColor} flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform`}>
-                  {unit.icon}
-                </div>
-                
-                <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">{unit.subtitle}</h4>
-                <h3 className="text-2xl font-bold text-skyled-navy mb-4">{unit.title}</h3>
-                <p className="text-gray-600 mb-8 leading-relaxed text-sm">
-                  {unit.description}
-                </p>
+              <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">{unit.subtitle}</h4>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{unit.title}</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {unit.description}
+              </p>
 
-                <div className="mt-auto">
-                  <h5 className="font-semibold text-gray-900 mb-4 text-sm border-b border-gray-100 pb-2">Layanan Utama</h5>
-                  <ul className="space-y-3">
-                    {unit.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                        <div className={`mt-1.5 w-1.5 h-1.5 rounded-full ${unit.color} flex-shrink-0`}></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="p-6 bg-gray-50 border-t border-gray-100">
-                <Link 
-                  href={unit.link} 
-                  className={`flex items-center justify-between gap-2 w-full font-bold ${unit.textColor} group-hover:opacity-80 transition-opacity`}
-                  data-testid={`link-consult-${unit.id}`}
-                >
-                  Lihat Detail <ArrowRight size={18} />
-                </Link>
-              </div>
+              <Link 
+                href={unit.link} 
+                className="inline-flex items-center gap-2 text-[#1F68F5] font-semibold group-hover:gap-3 transition-all"
+                data-testid={`link-consult-${unit.id}`}
+              >
+                Lihat Detail <ArrowRight size={18} />
+              </Link>
             </div>
           ))}
         </div>

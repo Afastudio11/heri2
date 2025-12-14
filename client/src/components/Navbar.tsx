@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link } from 'wouter';
-import { NAV_LINKS, BUSINESS_UNITS } from '@/lib/constants';
+import { NAV_LINKS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
+
+const BUSINESS_UNITS = [
+  { id: 'events', title: 'Event Organizer', subtitle: 'Skyled Pro Indonesia', link: '/event-organizer' },
+  { id: 'consulting', title: 'Consulting', subtitle: 'Skyled Pro Consulting', link: '/consulting' },
+  { id: 'production', title: 'Production', subtitle: 'Skyled Production', link: '/production' }
+];
 
 export const LogoIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -30,7 +36,7 @@ export default function Navbar() {
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-md py-4' 
+          ? 'bg-white/95 backdrop-blur-md shadow-sm py-4' 
           : 'bg-transparent py-6'
       }`}
       data-testid="navbar"
@@ -43,13 +49,13 @@ export default function Navbar() {
             data-testid="link-home-logo"
           >
             <div className={`p-2 rounded-lg transition-colors ${
-              isScrolled ? 'bg-skyled-navy text-white' : 'bg-white text-skyled-navy'
+              isScrolled ? 'bg-[#1F68F5] text-white' : 'bg-white text-[#1F68F5]'
             }`}>
-              <LogoIcon className="w-8 h-8" />
+              <LogoIcon className="w-7 h-7" />
             </div>
             <div className="flex flex-col">
               <span className={`text-xl font-bold tracking-tight leading-none transition-colors ${
-                isScrolled ? 'text-skyled-navy' : 'text-white'
+                isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
                 Skyled Pro
               </span>
@@ -97,10 +103,10 @@ export default function Navbar() {
                         key={unit.id}
                         href={unit.link}
                         onClick={() => setIsBusinessOpen(false)}
-                        className="block px-4 py-3 hover:bg-gray-50 transition-colors cursor-pointer"
+                        className="block px-4 py-3 hover:bg-[#F5F8FF] transition-colors cursor-pointer"
                         data-testid={`link-business-unit-${unit.id}`}
                       >
-                        <span className={`font-semibold ${unit.textColor}`}>{unit.title}</span>
+                        <span className="font-semibold text-[#1F68F5]">{unit.title}</span>
                         <p className="text-xs text-gray-500 mt-0.5">{unit.subtitle}</p>
                       </a>
                     ))}
@@ -116,10 +122,10 @@ export default function Navbar() {
               data-testid="link-partner-cta"
             >
               <Button 
-                className={`rounded-full font-bold text-sm shadow-lg transition-all ${
+                className={`rounded-full font-semibold text-sm shadow-lg transition-all ${
                   isScrolled 
-                    ? 'bg-skyled-navy text-white hover:bg-blue-900' 
-                    : 'bg-white text-skyled-navy hover:bg-gray-100'
+                    ? 'bg-[#1F68F5] text-white hover:bg-[#1a5ad4]' 
+                    : 'bg-white text-[#1F68F5] hover:bg-[#F5F8FF]'
                 }`}
               >
                 Bermitra Dengan Kami
@@ -148,7 +154,7 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-4 text-base font-bold text-gray-800 hover:text-skyled-blue border-b border-gray-50"
+                className="block px-3 py-4 text-base font-semibold text-gray-800 hover:text-[#1F68F5] border-b border-gray-50"
                 onClick={() => setIsOpen(false)}
                 data-testid={`link-mobile-nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
@@ -158,7 +164,7 @@ export default function Navbar() {
             
             <div className="border-b border-gray-50">
               <button
-                className="w-full flex items-center justify-between px-3 py-4 text-base font-bold text-gray-800"
+                className="w-full flex items-center justify-between px-3 py-4 text-base font-semibold text-gray-800"
                 onClick={() => setIsMobileBusinessOpen(!isMobileBusinessOpen)}
               >
                 Unit Bisnis
@@ -171,11 +177,11 @@ export default function Navbar() {
                     <a
                       key={unit.id}
                       href={unit.link}
-                      className="block px-3 py-3 text-sm text-gray-600 hover:text-skyled-blue"
+                      className="block px-3 py-3 text-sm text-gray-600 hover:text-[#1F68F5]"
                       onClick={() => setIsOpen(false)}
                       data-testid={`link-mobile-business-unit-${unit.id}`}
                     >
-                      <span className={`font-semibold ${unit.textColor}`}>{unit.title}</span>
+                      <span className="font-semibold text-[#1F68F5]">{unit.title}</span>
                     </a>
                   ))}
                 </div>
@@ -184,7 +190,7 @@ export default function Navbar() {
             
             <a 
               href="#contact" 
-              className="block w-full mt-4 text-center bg-skyled-navy text-white font-bold px-6 py-4 rounded-xl"
+              className="block w-full mt-4 text-center bg-[#1F68F5] text-white font-semibold px-6 py-4 rounded-xl"
               onClick={() => setIsOpen(false)}
               data-testid="link-mobile-partner-cta"
             >

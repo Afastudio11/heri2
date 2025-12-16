@@ -5,19 +5,28 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 import productionHero from '@assets/Production_1765871611867.png';
+import imgTshirt from '@assets/Screenshot_2025-12-16_160655_1765876079884.png';
+import imgHoodie from '@assets/Screenshot_2025-12-16_160704_1765876079883.png';
+import imgAlmamater from '@assets/Screenshot_2025-12-16_160708_1765876079883.png';
+import imgJersey from '@assets/Screenshot_2025-12-16_160713_1765876079883.png';
+import imgTumbler from '@assets/Screenshot_2025-12-16_160719_1765876079883.png';
+import imgLanyard from '@assets/Screenshot_2025-12-16_160725_1765876079884.png';
+import imgMedal from '@assets/Screenshot_2025-12-16_160729_1765876079884.png';
+import imgHanduk from '@assets/Screenshot_2025-12-16_160643_1765876079884.png';
+import imgSouvenir from '@assets/Screenshot_2025-12-16_160742_1765876079884.png';
 
 const textileProducts = [
-  { name: "T-Shirt Custom", description: "Ribuan T-Shirt untuk klien di seluruh Indonesia.", materials: ["Cotton Combed 20S, 24S, 30S"], printing: ["Plastisol", "DTF"] },
-  { name: "Hoodie Custom", description: "Bahan fleece berkualitas tinggi yang lembut dan hangat.", materials: ["Cotton Fleece"], printing: ["Plastisol", "DTF"] },
-  { name: "Almamater", description: "Bahan American Drill dengan desain elegan.", materials: ["American Drill"], printing: ["Bordir"] },
-  { name: "Jersey", description: "Desain modern dengan teknologi pengeringan cepat.", materials: ["Dry Fit"], printing: ["Sublimation"] }
+  { name: "T-Shirt Custom", description: "Ribuan T-Shirt untuk klien di seluruh Indonesia.", materials: ["Cotton Combed 20S, 24S, 30S"], printing: ["Plastisol", "DTF"], image: imgTshirt },
+  { name: "Hoodie Custom", description: "Bahan fleece berkualitas tinggi yang lembut dan hangat.", materials: ["Cotton Fleece"], printing: ["Plastisol", "DTF"], image: imgHoodie },
+  { name: "Almamater", description: "Bahan American Drill dengan desain elegan.", materials: ["American Drill"], printing: ["Bordir"], image: imgAlmamater },
+  { name: "Jersey", description: "Desain modern dengan teknologi pengeringan cepat.", materials: ["Dry Fit"], printing: ["Sublimation"], image: imgJersey }
 ];
 
 const merchandiseProducts = [
-  { name: "Tumbler Custom", features: ["Tahan Suhu", "Sablon Awet"], icon: <Coffee className="w-8 h-8" /> },
-  { name: "Handuk Custom", features: ["100% Cotton", "Menyerap Baik"], icon: <Bath className="w-8 h-8" /> },
-  { name: "Lanyard", features: ["Polyester", "Kuat & Nyaman"], icon: <Tag className="w-8 h-8" /> },
-  { name: "Medali & Plakat", features: ["Akrilik", "Perunggu"], icon: <Medal className="w-8 h-8" /> }
+  { name: "Tumbler Custom", features: ["Tahan Suhu", "Sablon Awet"], image: imgTumbler },
+  { name: "Handuk Custom", features: ["100% Cotton", "Menyerap Baik"], image: imgHanduk },
+  { name: "Lanyard", features: ["Polyester", "Kuat & Nyaman"], image: imgLanyard },
+  { name: "Medali & Plakat", features: ["Akrilik", "Perunggu"], image: imgMedal }
 ];
 
 const whyChooseUs = [
@@ -26,8 +35,6 @@ const whyChooseUs = [
   { title: "Kustomisasi", description: "Produk disesuaikan keinginan klien", stat: "100%" },
   { title: "Profesional", description: "Proses produksi efisien dan tepat waktu", stat: "98%" }
 ];
-
-const souvenirItems = ["Note Book", "Flash Disk", "Pulpen", "Gantungan Kunci", "Pouch", "Custom Request"];
 
 const testimonials = [
   { quote: "Kualitas kaos dari Skyled sangat bagus. Sablon awet dan bahan nyaman dipakai. Sudah repeat order berkali-kali.", author: "Fitri Handayani", role: "Event Coordinator" },
@@ -38,7 +45,6 @@ export default function Production() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
       <section className="pt-24 pb-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center py-12 md:py-16">
@@ -91,7 +97,6 @@ export default function Production() {
           </div>
         </div>
       </section>
-
       <section className="py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#1F68F5] rounded-3xl p-8 md:p-12">
@@ -107,7 +112,6 @@ export default function Production() {
           </div>
         </div>
       </section>
-
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -122,10 +126,11 @@ export default function Production() {
             {textileProducts.map((product, index) => (
               <Card key={index} className="border-0 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow group">
                 <CardContent className="p-0">
-                  <div className="bg-[#1F68F5] group-hover:bg-[#1a5ad4] transition-colors p-6 text-white">
-                    <h3 className="text-xl font-bold">{product.name}</h3>
+                  <div className="p-6 flex items-center justify-center h-64 bg-[#ffffff]">
+                    <img src={product.image} alt={product.name} className="max-h-full max-w-full object-contain" />
                   </div>
                   <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
                     <p className="text-gray-600 mb-4">{product.description}</p>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="bg-[#F0F5FF] rounded-xl p-4">
@@ -154,7 +159,6 @@ export default function Production() {
           </div>
         </div>
       </section>
-
       <section className="py-16 md:py-20 bg-[#FAFBFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -168,9 +172,11 @@ export default function Production() {
           <div className="grid md:grid-cols-4 gap-6">
             {merchandiseProducts.map((product, index) => (
               <Card key={index} className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-xl transition-all group cursor-pointer bg-white">
-                <CardContent className="p-6 text-center">
-                  <div className="w-14 h-14 bg-[#F0F5FF] group-hover:bg-[#1F68F5] rounded-xl flex items-center justify-center text-[#1F68F5] group-hover:text-white mb-4 transition-colors">{product.icon}</div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{product.name}</h3>
+                <CardContent className="p-4">
+                  <div className="bg-gray-50 rounded-xl p-4 mb-4 h-40 flex items-center justify-center">
+                    <img src={product.image} alt={product.name} className="max-h-full max-w-full object-contain" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">{product.name}</h3>
                   <div className="flex flex-wrap justify-center gap-2">
                     {product.features.map((f, i) => (
                       <span key={i} className="bg-[#F0F5FF] text-[#1F68F5] text-xs px-3 py-1 rounded-full">
@@ -184,53 +190,40 @@ export default function Production() {
           </div>
         </div>
       </section>
-
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-[#F0F5FF] text-[#1F68F5] rounded-full px-4 py-2 mb-4">
-                <Award className="w-5 h-5" />
-                <span className="font-semibold">Souvenir</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Souvenir Custom</h2>
-              <p className="text-gray-600 mb-8">Berbagai pilihan souvenir custom untuk acara spesial Anda. Kualitas terbaik dengan harga kompetitif.</p>
-              <div className="grid grid-cols-2 gap-4">
-                {souvenirItems.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3 bg-[#F0F5FF] rounded-xl px-4 py-3">
-                    <CheckCircle className="w-5 h-5 text-[#1F68F5]" />
-                    <span className="font-medium text-gray-800">{item}</span>
-                  </div>
-                ))}
-              </div>
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-[#F0F5FF] text-[#1F68F5] rounded-full px-4 py-2 mb-4">
+              <Award className="w-5 h-5" />
+              <span className="font-semibold">Souvenir</span>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-[#1F68F5] rounded-2xl p-6 text-white flex flex-col justify-center">
-                <p className="text-4xl font-bold mb-2">Zero</p>
-                <p className="font-medium">Minimal Order</p>
-                <p className="text-white/70 text-sm mt-2">Bisa pesan satuan sesuai kebutuhan</p>
-              </div>
-              <div className="bg-gray-100 rounded-2xl p-6 flex flex-col justify-center">
-                <p className="text-4xl font-bold text-gray-900 mb-2">Zero</p>
-                <p className="font-medium text-gray-900">Hidden Fees</p>
-                <p className="text-gray-600 text-sm mt-2">Harga transparan, tanpa biaya tersembunyi</p>
-              </div>
-              <div className="col-span-2 bg-gray-900 rounded-2xl p-6 text-white">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-2xl font-bold mb-1">Best Quality</p>
-                    <p className="text-white/70 text-sm">Garansi kualitas terbaik untuk setiap produk</p>
-                  </div>
-                  <div className="bg-[#1F68F5] rounded-xl px-4 py-2">
-                    <p className="font-bold">Get Started</p>
-                  </div>
-                </div>
-              </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Souvenir Custom</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-8">Berbagai pilihan souvenir custom untuk acara spesial Anda. Kualitas terbaik dengan harga kompetitif.</p>
+          </div>
+          
+          <div className="bg-gray-50 rounded-3xl p-8 mb-12">
+            <img src={imgSouvenir} alt="Souvenir Products" className="w-full max-w-4xl mx-auto object-contain" />
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-6">
+            <div className="bg-[#1F68F5] rounded-2xl p-6 text-white flex flex-col justify-center">
+              <p className="text-4xl font-bold mb-2">Zero</p>
+              <p className="font-medium">Minimal Order</p>
+              <p className="text-white/70 text-sm mt-2">Bisa pesan satuan sesuai kebutuhan</p>
+            </div>
+            <div className="bg-gray-100 rounded-2xl p-6 flex flex-col justify-center">
+              <p className="text-4xl font-bold text-gray-900 mb-2">Zero</p>
+              <p className="font-medium text-gray-900">Hidden Fees</p>
+              <p className="text-gray-600 text-sm mt-2">Harga transparan, tanpa biaya tersembunyi</p>
+            </div>
+            <div className="bg-gray-900 rounded-2xl p-6 text-white flex flex-col justify-center">
+              <p className="text-4xl font-bold mb-2">100%</p>
+              <p className="font-medium">Best Quality</p>
+              <p className="text-white/70 text-sm mt-2">Garansi kualitas terbaik</p>
             </div>
           </div>
         </div>
       </section>
-
       <section className="py-16 md:py-20 bg-[#FAFBFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -262,7 +255,6 @@ export default function Production() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

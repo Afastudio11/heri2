@@ -33,11 +33,6 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto z-10 grid lg:grid-cols-2 gap-12 items-center">
         
         <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 border border-white/30 text-white text-xs font-medium mb-6 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-            Professional Event Organizer
-            </div>
-            
             <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-8">
             Perjalanan Bisnis Anda Layak Mendapat<br />
             <span className="text-sky-200">Dukungan Ahli</span>

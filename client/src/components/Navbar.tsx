@@ -1,18 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import { NAV_LINKS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
+import logoWhite from '@assets/WHITE_1765868438623.png';
+import logoBlack from '@assets/BLACK_1765868438624.png';
 
 const BUSINESS_UNITS = [
   { id: 'events', title: 'Event Organizer', subtitle: 'Skyled Pro Indonesia', link: '/event-organizer' },
   { id: 'consulting', title: 'Consulting', subtitle: 'Skyled Pro Consulting', link: '/consulting' },
   { id: 'production', title: 'Production', subtitle: 'Skyled Production', link: '/production' }
 ];
-
-export const LogoIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
-  <Globe className={className} />
-);
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,21 +43,14 @@ export default function Navbar() {
         <div className="flex justify-between items-center gap-4">
           <Link 
             href="/" 
-            className="flex-shrink-0 flex items-center gap-2 cursor-pointer"
+            className="flex-shrink-0 flex items-center cursor-pointer"
             data-testid="link-home-logo"
           >
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center border transition-colors ${
-              useDarkText 
-                ? 'bg-blue-600 text-white border-blue-600' 
-                : 'bg-white/20 backdrop-blur-md text-white border-white/30'
-            }`}>
-              <Globe size={16} />
-            </div>
-            <span className={`font-bold text-xl tracking-tight transition-colors ${
-              useDarkText ? 'text-gray-900' : 'text-white'
-            }`}>
-              Skyled Pro <span className="font-light opacity-80 text-sm">INDONESIA</span>
-            </span>
+            <img 
+              src={useDarkText ? logoBlack : logoWhite} 
+              alt="Skyled Pro" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">

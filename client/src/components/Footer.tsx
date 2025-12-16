@@ -1,5 +1,6 @@
-import { ArrowRight, Globe, Instagram, Facebook, Youtube, Smartphone } from 'lucide-react';
+import { ArrowRight, Instagram, Facebook, Youtube, Smartphone } from 'lucide-react';
 import { CONTACT_INFO } from '@/lib/constants';
+import logoBlack from '@assets/BLACK_1765868438624.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -39,12 +40,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
             <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center gap-2 text-blue-600 font-bold text-xl mb-3">
-                <div className="w-7 h-7 bg-blue-600 rounded-full flex items-center justify-center text-white">
-                  <Globe size={14} />
-                </div>
-                Skyled Pro
-              </div>
+              <img src={logoBlack} alt="Skyled Pro" className="h-8 w-auto mb-3" />
               <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
                 Skyled Pro Indonesia adalah perusahaan event organizer dan production terkemuka. Mitra terpercaya Anda dalam menciptakan pengalaman luar biasa.
               </p>

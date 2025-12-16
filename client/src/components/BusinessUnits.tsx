@@ -80,7 +80,7 @@ export default function BusinessUnits() {
                     {service.sub}
                   </div>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center overflow-hidden">
+                    <div className="w-14 h-14 rounded-xl flex items-center justify-center overflow-hidden bg-[#ffffff]">
                       <img src={service.icon} alt={service.title} className="w-10 h-10 object-contain" />
                     </div>
                     <h3 className="text-xl font-bold">{service.title}</h3>

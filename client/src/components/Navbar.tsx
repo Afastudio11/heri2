@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { NAV_LINKS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 
@@ -19,6 +19,10 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isBusinessOpen, setIsBusinessOpen] = useState(false);
   const [isMobileBusinessOpen, setIsMobileBusinessOpen] = useState(false);
+  const [location] = useLocation();
+  
+  const isHomePage = location === '/';
+  const useDarkText = !isHomePage || isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +35,7 @@ export default function Navbar() {
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 px-6 ${
-        isScrolled 
+        useDarkText 
           ? 'bg-white/95 backdrop-blur-md shadow-sm py-4' 
           : 'bg-transparent py-6'
       }`}
@@ -45,14 +49,14 @@ export default function Navbar() {
             data-testid="link-home-logo"
           >
             <div className={`w-8 h-8 rounded-full flex items-center justify-center border transition-colors ${
-              isScrolled 
+              useDarkText 
                 ? 'bg-blue-600 text-white border-blue-600' 
                 : 'bg-white/20 backdrop-blur-md text-white border-white/30'
             }`}>
               <Globe size={16} />
             </div>
             <span className={`font-bold text-xl tracking-tight transition-colors ${
-              isScrolled ? 'text-gray-900' : 'text-white'
+              useDarkText ? 'text-gray-900' : 'text-white'
             }`}>
               Skyled Pro <span className="font-light opacity-80 text-sm">INDONESIA</span>
             </span>
@@ -64,7 +68,7 @@ export default function Navbar() {
                 key={item.name} 
                 href={item.href} 
                 className={`font-medium text-sm transition-colors hover:opacity-75 ${
-                  isScrolled ? 'text-gray-700' : 'text-white/90'
+                  useDarkText ? 'text-gray-700' : 'text-white/90'
                 }`}
                 data-testid={`link-nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
@@ -80,7 +84,7 @@ export default function Navbar() {
               <button 
                 onClick={() => setIsBusinessOpen(!isBusinessOpen)}
                 className={`font-medium text-sm transition-colors hover:opacity-75 flex items-center gap-1 py-2 ${
-                  isScrolled ? 'text-gray-700' : 'text-white/90'
+                  useDarkText ? 'text-gray-700' : 'text-white/90'
                 }`}
               >
                 Unit Bisnis <ChevronDown size={16} className={`transition-transform ${isBusinessOpen ? 'rotate-180' : ''}`} />
@@ -114,7 +118,7 @@ export default function Navbar() {
             >
               <Button 
                 className={`rounded-full font-bold text-sm shadow-lg transition-all ${
-                  isScrolled 
+                  useDarkText 
                     ? 'bg-blue-600 text-white hover:bg-blue-700' 
                     : 'bg-white text-blue-600 hover:bg-blue-50'
                 }`}
@@ -128,7 +132,7 @@ export default function Navbar() {
             <button 
               onClick={() => setIsOpen(!isOpen)} 
               className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all text-sm font-medium border ${
-                isScrolled 
+                useDarkText 
                   ? 'text-gray-800 bg-gray-100 border-gray-200' 
                   : 'bg-black/20 hover:bg-black/30 backdrop-blur-md text-white border-white/10'
               }`}

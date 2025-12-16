@@ -16,6 +16,12 @@ import ikaUnitirta2 from '../assets/portfolio/ika_unitirta_2.jpg';
 import kotaLayakAnak1 from '../assets/portfolio/kota_layak_anak_1.jpg';
 import kotaLayakAnak2 from '../assets/portfolio/kota_layak_anak_2.jpg';
 import kotaLayakAnak3 from '../assets/portfolio/kota_layak_anak_3.jpg';
+import womenClimate1 from '../assets/portfolio/women_climate_1.jpg';
+import womenClimate2 from '../assets/portfolio/women_climate_2.jpg';
+import womenClimate3 from '../assets/portfolio/women_climate_3.jpg';
+import womenClimate4 from '../assets/portfolio/women_climate_4.jpg';
+import transformasiDigital1 from '../assets/portfolio/transformasi_digital_1.jpg';
+import transformasiDigital2 from '../assets/portfolio/transformasi_digital_2.jpg';
 
 const portfolioItems = [
   {
@@ -67,6 +73,26 @@ const portfolioItems = [
     location: "Jakarta",
     tags: ["Award Ceremony", "Kemen PPPA", "Government Event"],
     images: [kotaLayakAnak1, kotaLayakAnak2, kotaLayakAnak3]
+  },
+  {
+    id: "06",
+    category: "International Event",
+    title: "Women and Girls at the Frontline of Climate Change",
+    subtitle: "Gender Mainstreaming & Climate Change Adaptation in Indonesia",
+    desc: "Forum internasional tentang peran perempuan dalam adaptasi perubahan iklim, dengan fokus pada gender mainstreaming dan pemberdayaan perempuan di Indonesia. Diselenggarakan secara hybrid pada 24 November 2022 di Jakarta.",
+    location: "Jakarta, Indonesia",
+    tags: ["Climate Change", "Gender Mainstreaming", "International Forum"],
+    images: [womenClimate1, womenClimate2, womenClimate3, womenClimate4]
+  },
+  {
+    id: "07",
+    category: "Government Event",
+    title: "Transformasi Digital di 6 Sektor Strategis",
+    subtitle: "Kementerian Komunikasi dan Informatika",
+    desc: "Insight Sharing Session tentang Transformasi Digital di 6 Sektor Strategis yang diselenggarakan oleh Direktorat Ekonomi Digital, Direktorat Jenderal Aplikasi Informatika, Kementerian Komunikasi dan Informatika pada 24 Oktober 2022 di Jakarta.",
+    location: "Jakarta",
+    tags: ["Digital Transformation", "Kemenkominfo", "Insight Sharing"],
+    images: [transformasiDigital1, transformasiDigital2]
   }
 ];
 
@@ -76,6 +102,7 @@ export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState("Semua");
   const [selectedItem, setSelectedItem] = useState<typeof portfolioItems[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [expandedDescs, setExpandedDescs] = useState<string[]>([]);
 
   const filteredItems = activeFilter === "Semua" 
     ? portfolioItems 
@@ -102,6 +129,15 @@ export default function Portfolio() {
       setCurrentImageIndex((prev) => (prev - 1 + selectedItem.images.length) % selectedItem.images.length);
     }
   };
+
+  const toggleDesc = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setExpandedDescs(prev => 
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    );
+  };
+
+  const isDescExpanded = (id: string) => expandedDescs.includes(id);
 
   return (
     <section id="portfolio" className="py-24 bg-white relative" data-testid="section-portfolio">
@@ -151,18 +187,24 @@ export default function Portfolio() {
                 <span className="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full">
                   {item.category}
                 </span>
-                <span className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">
-                  {item.images.length} Foto
-                </span>
               </div>
               
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-1 leading-tight text-gray-900">{item.title}</h3>
                 <p className="text-xs text-blue-600 mb-3">{item.subtitle}</p>
                 
-                <p className="text-sm text-gray-500 mb-4 leading-relaxed line-clamp-2">
+                <p className={`text-sm text-gray-500 mb-2 leading-relaxed ${!isDescExpanded(item.id) ? 'line-clamp-2' : ''}`}>
                   {item.desc}
                 </p>
+                
+                {item.desc.length > 100 && (
+                  <button 
+                    onClick={(e) => toggleDesc(item.id, e)}
+                    className="text-blue-600 text-xs font-medium mb-4 hover:underline"
+                  >
+                    {isDescExpanded(item.id) ? 'Tampilkan lebih sedikit' : 'Baca selengkapnya'}
+                  </button>
+                )}
 
                 <div className="flex items-center gap-2 text-xs text-gray-400 mb-4">
                   <span className="font-medium">📍 {item.location}</span>

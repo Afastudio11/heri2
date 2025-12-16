@@ -1,4 +1,9 @@
-import { ArrowRight, Users, Globe, Briefcase } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+
+import galaDinner from '../assets/portfolio/gala_dinner_1.jpg';
+import ministerMeeting from '../assets/portfolio/minister_meeting_1.jpg';
+import womenClimate from '../assets/portfolio/women_climate_1.jpg';
+import marineCamp from '../assets/portfolio/marine_camp_1.jpg';
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -58,51 +63,49 @@ export default function Hero() {
             </div>
         </div>
 
-        {/* Dashboard Cards Simulation */}
+        {/* Photo Grid */}
         <div className="relative w-full flex justify-center lg:justify-end">
-          
-          <div className="relative w-full max-w-md bg-white/95 backdrop-blur-md p-8 rounded-[2rem] shadow-2xl">
-             <div className="flex justify-between items-center mb-8">
-                <h3 className="text-xl font-bold text-gray-900">Pencapaian Kami</h3>
-                <span className="text-xs font-mono text-gray-500 bg-gray-100 px-2 py-1 rounded">2024</span>
-             </div>
-
-             <div className="space-y-4">
-                {/* Stat 1 */}
-                <div className="bg-blue-50/50 p-4 rounded-xl flex items-center gap-4 border border-blue-100 hover:bg-blue-50 transition-colors">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                        <Globe size={20} />
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-gray-900 text-lg">100+</h4>
-                        <p className="text-xs text-gray-600">Event Terselenggara (Nasional & Internasional)</p>
-                    </div>
+          <div className="grid grid-cols-2 gap-3 max-w-lg w-full">
+            {/* Top Left - Large */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl h-48">
+              <img src={galaDinner} alt="Gala Dinner Event" className="w-full h-full object-cover" />
+              <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-md">
+                <p className="text-[10px] text-gray-500 font-medium">Event Nasional</p>
+                <p className="text-sm font-bold text-gray-900">100+ Events</p>
+              </div>
+            </div>
+            
+            {/* Top Right - Tall */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl row-span-2 bg-gradient-to-br from-blue-800 to-blue-900">
+              <img src={ministerMeeting} alt="Minister Meeting" className="w-full h-full object-cover opacity-90" />
+              <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm p-2 rounded-full shadow-md">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span className="text-blue-600 text-xs font-bold">SK</span>
                 </div>
-
-                {/* Stat 2 */}
-                <div className="bg-blue-50/50 p-4 rounded-xl flex items-center gap-4 border border-blue-100 hover:bg-blue-50 transition-colors">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                        <Users size={20} />
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-gray-900 text-lg">50+</h4>
-                        <p className="text-xs text-gray-600">Klien Terpercaya (Kementerian & Swasta)</p>
-                    </div>
-                </div>
-
-                {/* Stat 3 */}
-                <div className="bg-blue-50/50 p-4 rounded-xl flex items-center gap-4 border border-blue-100 hover:bg-blue-50 transition-colors">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                        <Briefcase size={20} />
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-gray-900 text-lg">3</h4>
-                        <p className="text-xs text-gray-600">Unit Bisnis Terintegrasi</p>
-                    </div>
-                </div>
-             </div>
+              </div>
+              <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-md">
+                <p className="text-[10px] text-gray-500 font-medium">Klien Kementerian</p>
+                <p className="text-sm font-bold text-gray-900">50+ Klien</p>
+              </div>
+            </div>
+            
+            {/* Bottom Left - Standard */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl h-48">
+              <img src={womenClimate} alt="Women Climate Event" className="w-full h-full object-cover" />
+            </div>
+            
+            {/* Bottom Banner */}
+            <div className="col-span-2 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl flex items-center gap-4">
+              <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                <img src={marineCamp} alt="Marine Camp" className="w-full h-full object-cover" />
+              </div>
+              <div className="flex-1">
+                <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Professional Services</p>
+                <p className="text-lg font-bold text-gray-900">We Provide Best Services</p>
+              </div>
+              <ArrowRight className="text-blue-600" size={20} />
+            </div>
           </div>
-
         </div>
       </div>
     </div>

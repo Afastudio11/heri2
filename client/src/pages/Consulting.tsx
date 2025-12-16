@@ -44,7 +44,6 @@ export default function Consulting() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
       <section className="pt-24 pb-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center py-12 md:py-16">
@@ -103,7 +102,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       <section className="py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#1F68F5] rounded-3xl p-8 md:p-12">
@@ -119,7 +117,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -171,7 +168,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       <section className="py-16 md:py-20 bg-[#FAFBFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -186,7 +182,7 @@ export default function Consulting() {
               <Card key={index} className="border-0 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow group">
                 <CardContent className="p-0">
                   <div className="bg-[#1F68F5] group-hover:bg-[#1a5ad4] transition-colors p-6 text-white">
-                    <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4 overflow-hidden">
+                    <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 overflow-hidden bg-[#ffffff]">
                       <img src={service.icon} alt={service.title} className="w-10 h-10 object-contain" />
                     </div>
                     <h3 className="text-xl font-bold">{service.title}</h3>
@@ -208,7 +204,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -232,7 +227,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       <section className="py-16 md:py-20 bg-[#FAFBFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -264,7 +258,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

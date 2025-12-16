@@ -1,6 +1,7 @@
 import { Quote } from 'lucide-react';
 import ministerMeeting from '../assets/portfolio/minister_meeting_1.jpg';
 import galaDinner from '../assets/portfolio/gala_dinner_1.jpg';
+import womenClimate from '../assets/portfolio/women_climate_1.jpg';
 
 const PROJECTS = [
   {
@@ -14,6 +15,8 @@ const PROJECTS = [
     image: galaDinner
   }
 ];
+
+const featuredImage = womenClimate;
 
 export default function FeaturedProjects() {
   return (
@@ -56,7 +59,7 @@ export default function FeaturedProjects() {
           <div className="relative h-[500px] rounded-[40px] overflow-hidden shadow-2xl border-4 border-white/20">
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
             <img 
-              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+              src={featuredImage} 
               alt="Event Conference" 
               className="w-full h-full object-cover"
               data-testid="img-featured-project"

@@ -1,5 +1,4 @@
-import { Link } from 'wouter';
-import { Users, Shield, Lightbulb, CheckCircle, Tv, Camera, Monitor, Mic, Radio, Star, ArrowRight } from 'lucide-react';
+import { Users, Shield, Lightbulb, CheckCircle, Tv, Camera, Monitor, Mic, Radio, Star, ArrowRight, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
@@ -38,10 +37,9 @@ const trustedClients = [
   "Bappenas", "Kemen PPPA", "UNESCO", "ASEAN", "Kominfo", "Kemenparekraf"
 ];
 
-const stats = [
-  { value: "100+", label: "Events Sukses" },
-  { value: "98%", label: "Kepuasan Klien" },
-  { value: "#1", label: "Event Organizer Profesional" }
+const testimonials = [
+  { quote: "The entire process went smoothly. The event was a tight timeline and it was handled professionally. Saved a lot of money.", author: "Jenny Wilson", role: "Event Director" },
+  { quote: "Skyled menghandle acara kami dengan sangat profesional. Semua berjalan lancar sesuai timeline.", author: "Ahmad Rizky", role: "Project Manager" }
 ];
 
 export default function EventOrganizer() {
@@ -53,6 +51,9 @@ export default function EventOrganizer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center py-12 md:py-16">
             <div>
+              <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-6">
+                Skyled Event Organizer
+              </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Event Organizer.<br />
                 <span className="text-[#1F68F5]">Professional Service.</span>
@@ -152,33 +153,39 @@ export default function EventOrganizer() {
 
       <section className="py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#6366F1] to-[#4F46E5] rounded-3xl p-8 md:p-12">
+          <div className="bg-[#1F68F5] rounded-3xl p-8 md:p-12">
             <div className="grid md:grid-cols-3 gap-8 text-center">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="text-white">
-                  <p className="text-5xl md:text-6xl font-bold mb-2">{stat.value}</p>
-                  <p className="text-white/80 text-sm md:text-base">{stat.label}</p>
-                </div>
-              ))}
+              <div className="text-white">
+                <p className="text-5xl md:text-6xl font-bold mb-2">+89%</p>
+                <p className="text-white/80">Tingkat Kepuasan Klien</p>
+              </div>
+              <div className="text-white">
+                <p className="text-5xl md:text-6xl font-bold mb-2">100+</p>
+                <p className="text-white/80">Events Sukses</p>
+              </div>
+              <div className="text-white">
+                <p className="text-5xl md:text-6xl font-bold mb-2">#1</p>
+                <p className="text-white/80">Event Organizer Profesional</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
               MAN POWER
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Penyedia Tenaga Kerja</h2>
             <p className="text-lg text-gray-600">Personel profesional dan berpengalaman untuk event Anda</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {manPowerServices.map((service, index) => (
               <Card key={index} className="border-0 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
                 <CardContent className="p-0">
-                  <div className="bg-gradient-to-r from-[#1F68F5] to-[#6366F1] p-6 text-white">
+                  <div className="bg-[#1F68F5] p-6 text-white">
                     <h3 className="text-xl font-bold">{service.category}</h3>
                   </div>
                   <div className="p-6">
@@ -198,9 +205,9 @@ export default function EventOrganizer() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-[#FAFBFC]">
+      <section className="py-16 md:py-20 bg-[#FAFBFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
               SERVICES
             </div>
@@ -230,7 +237,7 @@ export default function EventOrganizer() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
@@ -243,7 +250,7 @@ export default function EventOrganizer() {
             {["Mixed Reality", "Interactive Media", "180° Photobooth", "360 Spin Booth"].map((item, index) => (
               <Card key={index} className="border-0 shadow-lg text-center hover:shadow-xl transition-shadow group cursor-pointer">
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#1F68F5] to-[#6366F1] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 bg-[#1F68F5] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <Star className="w-8 h-8 text-white" />
                   </div>
                   <p className="font-bold text-gray-900">{item}</p>
@@ -254,21 +261,34 @@ export default function EventOrganizer() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-gradient-to-r from-[#1F68F5] to-[#6366F1]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Siap Membuat Event Anda Berkesan?
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Hubungi kami untuk konsultasi gratis dan dapatkan penawaran terbaik untuk event Anda.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button className="bg-white text-[#1F68F5] hover:bg-gray-100 px-8 py-6 rounded-full text-base font-semibold">
-              Hubungi Kami
-            </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6 rounded-full text-base font-semibold">
-              Lihat Portfolio
-            </Button>
+      <section className="py-16 md:py-20 bg-[#FAFBFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+              TESTIMONIAL
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Apa Kata Klien Kami</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="border-0 shadow-lg bg-white">
+                <CardContent className="p-8">
+                  <Quote className="w-10 h-10 text-[#1F68F5] mb-4" />
+                  <p className="text-gray-700 text-lg mb-6 leading-relaxed italic">
+                    "{testimonial.quote}"
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold">
+                      {testimonial.author.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="font-bold text-gray-900">{testimonial.author}</p>
+                      <p className="text-[#1F68F5] text-sm">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

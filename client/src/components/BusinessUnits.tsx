@@ -69,11 +69,11 @@ export default function BusinessUnits() {
               className="border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#1F68F5] transition-all duration-300 overflow-hidden group"
             >
               <CardContent className="p-0">
-                <div className="bg-[#1F68F5] group-hover:bg-[#1a5ad4] transition-colors p-6 text-white relative min-h-[120px]">
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2">
+                <div className="bg-[#1F68F5] group-hover:bg-[#1a5ad4] transition-colors p-6 text-white relative min-h-[120px] flex items-center">
+                  <div className="flex-shrink-0">
                     <img src={service.icon} alt={service.title} className="w-24 h-24 object-contain drop-shadow-lg" />
                   </div>
-                  <div className="ml-28">
+                  <div className="flex-1 text-center">
                     <div className="text-white/80 font-bold text-xs tracking-wider mb-1 uppercase">
                       {service.sub}
                     </div>

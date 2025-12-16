@@ -90,8 +90,8 @@ export default function Hero() {
                 <img src={marineCamp} alt="Marine Camp" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1">
-                <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Professional Services</p>
-                <p className="text-lg font-bold text-gray-900">We Provide Best Services</p>
+                <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Layanan Profesional</p>
+                <p className="text-lg font-bold text-gray-900">Kami Memberikan Layanan Terbaik</p>
               </div>
               <ArrowRight className="text-blue-600" size={20} />
             </div>

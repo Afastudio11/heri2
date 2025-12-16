@@ -1,4 +1,4 @@
-import { Shirt, Award, Package, CheckCircle, Star, ArrowRight, Quote, Coffee, Bath, Tag, Medal, Users, Shield } from 'lucide-react';
+import { Shirt, Award, Package, CheckCircle, Quote, Users, Shield } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -61,12 +61,16 @@ export default function Production() {
               </p>
               
               <div className="flex flex-wrap gap-4 mb-10">
-                <Button className="bg-[#1F68F5] hover:bg-[#1a5ad4] text-white px-6 py-6 rounded-full text-base font-semibold">
-                  Pesan Sekarang
-                </Button>
-                <Button variant="outline" className="border-gray-300 text-gray-700 px-6 py-6 rounded-full text-base font-semibold hover:bg-gray-50">
-                  Lihat Katalog <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <a href="https://wa.me/6287883184796" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-[#25D366] hover:bg-[#20b858] text-white px-6 py-6 rounded-full text-base font-semibold">
+                    Hubungi via WhatsApp
+                  </Button>
+                </a>
+                <a href="mailto:cv.skyledproindonesia@gmail.com">
+                  <Button variant="outline" className="border-gray-300 text-gray-700 px-6 py-6 rounded-full text-base font-semibold hover:bg-gray-50">
+                    Kirim Email
+                  </Button>
+                </a>
               </div>
               
               <div className="flex flex-wrap gap-6">
@@ -75,7 +79,7 @@ export default function Production() {
                     <Users className="w-5 h-5 text-[#1F68F5]" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">Expert Team</p>
+                    <p className="font-semibold text-gray-900 text-sm">Tim Ahli</p>
                     <p className="text-xs text-gray-500">Tim berpengalaman</p>
                   </div>
                 </div>
@@ -84,7 +88,7 @@ export default function Production() {
                     <Shield className="w-5 h-5 text-[#1F68F5]" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">Quality Assured</p>
+                    <p className="font-semibold text-gray-900 text-sm">Kualitas Terjamin</p>
                     <p className="text-xs text-gray-500">Bahan premium</p>
                   </div>
                 </div>

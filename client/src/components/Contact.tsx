@@ -1,5 +1,4 @@
-import { Phone, Mail, ExternalLink } from 'lucide-react';
-import { CONTACT_INFO } from '@/lib/constants';
+import { MessageCircle, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Contact() {
@@ -12,26 +11,17 @@ export default function Contact() {
         </p>
         
         <div className="grid md:grid-cols-2 gap-6 mb-12">
-          <div className="p-8 bg-skyled-navy text-white rounded-[32px] flex flex-col items-center justify-center">
-            <Phone size={40} className="mb-4 text-skyled-light" />
-            <h3 className="text-xl font-bold mb-2">Telepon Kami</h3>
-            <p className="text-lg opacity-80" data-testid="text-phone">{CONTACT_INFO.phone}</p>
-          </div>
-          <div className="p-8 bg-slate-100 text-skyled-navy rounded-[32px] flex flex-col items-center justify-center border border-gray-200">
-            <Mail size={40} className="mb-4 text-skyled-blue" />
-            <h3 className="text-xl font-bold mb-2">Email Kami</h3>
-            <p className="text-lg text-gray-600" data-testid="text-email">{CONTACT_INFO.email}</p>
-          </div>
+          <a href="https://wa.me/6287883184796" target="_blank" rel="noopener noreferrer" className="p-8 bg-[#25D366] text-white rounded-[32px] flex flex-col items-center justify-center hover:bg-[#20b858] transition-colors cursor-pointer">
+            <MessageCircle size={40} className="mb-4" />
+            <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
+            <p className="text-lg opacity-90">Klik untuk chat langsung</p>
+          </a>
+          <a href="mailto:cv.skyledproindonesia@gmail.com" className="p-8 bg-[#1F68F5] text-white rounded-[32px] flex flex-col items-center justify-center hover:bg-[#1a5ad4] transition-colors cursor-pointer">
+            <Mail size={40} className="mb-4" />
+            <h3 className="text-xl font-bold mb-2">Email</h3>
+            <p className="text-lg opacity-90">Klik untuk kirim email</p>
+          </a>
         </div>
-
-        <a href={`mailto:${CONTACT_INFO.email}`} data-testid="link-get-in-touch">
-          <Button 
-            size="lg"
-            className="inline-flex items-center gap-3 bg-skyled-accent text-white px-10 py-6 rounded-full font-bold text-lg shadow-xl transition-all"
-          >
-            Hubungi Kami <ExternalLink size={20} />
-          </Button>
-        </a>
       </div>
     </section>
   );

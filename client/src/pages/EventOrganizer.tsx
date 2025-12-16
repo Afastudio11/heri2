@@ -1,4 +1,4 @@
-import { Users, Shield, Lightbulb, CheckCircle, Tv, Camera, Monitor, Mic, Radio, ArrowRight, Quote } from 'lucide-react';
+import { Users, Shield, Lightbulb, CheckCircle, Tv, Camera, Monitor, Mic, Radio, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
@@ -65,19 +65,23 @@ export default function EventOrganizer() {
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Event Organizer.<br />
-                <span className="text-[#1F68F5]">Professional Service.</span>
+                <span className="text-[#1F68F5]">Layanan Profesional.</span>
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
-                Manage your events effortlessly with our professional event management solutions. Safe, reliable, and designed for your specific needs.
+                Kelola event Anda dengan mudah bersama solusi manajemen event profesional kami. Aman, terpercaya, dan dirancang untuk kebutuhan spesifik Anda.
               </p>
               
               <div className="flex flex-wrap gap-4 mb-10">
-                <Button className="bg-[#1F68F5] hover:bg-[#1a5ad4] text-white px-6 py-6 rounded-full text-base font-semibold">
-                  Get Started Today
-                </Button>
-                <Button variant="outline" className="border-gray-300 text-gray-700 px-6 py-6 rounded-full text-base font-semibold hover:bg-gray-50">
-                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <a href="https://wa.me/6287883184796" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-[#25D366] hover:bg-[#20b858] text-white px-6 py-6 rounded-full text-base font-semibold">
+                    Hubungi via WhatsApp
+                  </Button>
+                </a>
+                <a href="mailto:cv.skyledproindonesia@gmail.com">
+                  <Button variant="outline" className="border-gray-300 text-gray-700 px-6 py-6 rounded-full text-base font-semibold hover:bg-gray-50">
+                    Kirim Email
+                  </Button>
+                </a>
               </div>
               
               <div className="flex flex-wrap gap-6">
@@ -86,8 +90,8 @@ export default function EventOrganizer() {
                     <Users className="w-5 h-5 text-[#1F68F5]" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">Professional Team</p>
-                    <p className="text-xs text-gray-500">Experienced staff</p>
+                    <p className="font-semibold text-gray-900 text-sm">Tim Profesional</p>
+                    <p className="text-xs text-gray-500">Staff berpengalaman</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -95,8 +99,8 @@ export default function EventOrganizer() {
                     <Shield className="w-5 h-5 text-[#1F68F5]" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">Quality Assured</p>
-                    <p className="text-xs text-gray-500">Best practices guaranteed</p>
+                    <p className="font-semibold text-gray-900 text-sm">Kualitas Terjamin</p>
+                    <p className="text-xs text-gray-500">Praktik terbaik dijamin</p>
                   </div>
                 </div>
               </div>

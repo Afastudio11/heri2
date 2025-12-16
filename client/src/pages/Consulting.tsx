@@ -61,14 +61,14 @@ export default function Consulting() {
                 Pionir integrasi SLO–CSR–ESG dengan end-to-end services yang berbicara pada bisnis sekaligus komunitas.
               </p>
               
-              <div className="flex flex-wrap gap-4 mb-10">
+              <div className="flex flex-wrap gap-3 mb-10">
                 <a href="https://wa.me/6287883184796" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-[#25D366] hover:bg-[#20b858] text-white px-6 py-6 rounded-full text-base font-semibold">
+                  <Button className="bg-[#25D366] hover:bg-[#20b858] text-white px-5 py-2 h-auto rounded-full text-sm font-semibold">
                     Hubungi via WhatsApp
                   </Button>
                 </a>
                 <a href="mailto:cv.skyledproindonesia@gmail.com">
-                  <Button variant="outline" className="border-gray-300 text-gray-700 px-6 py-6 rounded-full text-base font-semibold hover:bg-gray-50">
+                  <Button variant="outline" className="border-gray-300 text-gray-700 px-5 py-2 h-auto rounded-full text-sm font-semibold hover:bg-gray-50">
                     Kirim Email
                   </Button>
                 </a>

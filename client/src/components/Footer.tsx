@@ -1,4 +1,4 @@
-import { ArrowRight, Instagram, Facebook, Youtube, Smartphone } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Smartphone, MessageCircle, Mail } from 'lucide-react';
 import { CONTACT_INFO } from '@/lib/constants';
 import logoBlack from '@assets/BLACK_1765868438624.png';
 
@@ -15,25 +15,27 @@ export default function Footer() {
           Baik Anda membutuhkan penyelenggaraan event besar, merancang roadmap keberlanjutan, atau memproduksi merchandise custom, Skyled Pro Indonesia adalah solusi lengkap Anda.
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-          <div className="bg-blue-600 text-white px-6 py-4 rounded-xl flex items-center justify-center gap-3">
-            <Smartphone size={18} />
-            <span className="font-medium text-sm">{CONTACT_INFO.phone}</span>
-          </div>
+        <div className="flex flex-col sm:flex-row justify-center gap-3">
+          <a 
+            href="https://wa.me/6287883184796" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20b858] text-white px-6 py-3 rounded-full font-medium text-sm transition-all"
+            data-testid="link-footer-whatsapp"
+          >
+            <MessageCircle size={18} />
+            Hubungi via WhatsApp
+          </a>
           
-          <div className="bg-gray-100 text-gray-700 px-6 py-4 rounded-xl flex items-center justify-center gap-3">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <span className="font-medium text-sm">{CONTACT_INFO.email}</span>
-          </div>
+          <a 
+            href={`mailto:${CONTACT_INFO.email}`}
+            className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium text-sm transition-all"
+            data-testid="link-footer-cta"
+          >
+            <Mail size={18} />
+            Kirim Email
+          </a>
         </div>
-
-        <a 
-          href={`mailto:${CONTACT_INFO.email}`}
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium text-sm transition-all"
-          data-testid="link-footer-cta"
-        >
-          Hubungi Kami <ArrowRight size={16} />
-        </a>
       </section>
 
       <div className="bg-gray-50 pt-12 pb-6 border-t border-gray-100">
@@ -56,6 +58,17 @@ export default function Footer() {
             </div>
 
             <div>
+              <h4 className="font-bold text-gray-900 mb-3 text-sm">Kontak</h4>
+              <ul className="space-y-2 text-sm text-gray-500 mb-4">
+                <li className="flex items-center gap-2">
+                  <Smartphone size={14} />
+                  {CONTACT_INFO.phone}
+                </li>
+                <li className="flex items-center gap-2">
+                  <Mail size={14} />
+                  {CONTACT_INFO.email}
+                </li>
+              </ul>
               <h4 className="font-bold text-gray-900 mb-3 text-sm">Sosial Media</h4>
               <div className="flex gap-3">
                 <SocialIcon icon={<Instagram size={16} />} />

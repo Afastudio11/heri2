@@ -141,20 +141,17 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex">
-            <button 
+            <Button 
               onClick={() => handleNavClick('/#contact')}
               data-testid="link-partner-cta"
+              className={`rounded-full font-bold text-sm shadow-lg transition-all ${
+                useDarkText 
+                  ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                  : 'bg-white text-blue-600 hover:bg-blue-50'
+              }`}
             >
-              <Button 
-                className={`rounded-full font-bold text-sm shadow-lg transition-all ${
-                  useDarkText 
-                    ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                    : 'bg-white text-blue-600 hover:bg-blue-50'
-                }`}
-              >
-                Bermitra Dengan Kami
-              </Button>
-            </button>
+              Bermitra Dengan Kami
+            </Button>
           </div>
 
           <div className="md:hidden flex items-center">

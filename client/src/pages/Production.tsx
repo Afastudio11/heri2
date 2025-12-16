@@ -1,8 +1,10 @@
-import { Shirt, Award, Package, CheckCircle, Star, ArrowRight, Quote, Coffee, Bath, Tag, Medal } from 'lucide-react';
+import { Shirt, Award, Package, CheckCircle, Star, ArrowRight, Quote, Coffee, Bath, Tag, Medal, Users, Shield } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+
+import productionHero from '@assets/Production_1765871611867.png';
 
 const textileProducts = [
   { name: "T-Shirt Custom", description: "Ribuan T-Shirt untuk klien di seluruh Indonesia.", materials: ["Cotton Combed 20S, 24S, 30S"], printing: ["Plastisol", "DTF"] },
@@ -37,7 +39,7 @@ export default function Production() {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      <section className="pt-24 pb-12 bg-white">
+      <section className="pt-24 pb-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center py-12 md:py-16">
             <div>
@@ -45,22 +47,14 @@ export default function Production() {
                 Skyled Production
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Textile and<br />
-                <span className="text-[#1F68F5]">Merchandise Custom.</span>
+                Textile & Merchandise.<br />
+                <span className="text-[#1F68F5]">Premium Quality.</span>
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
                 Solusi lengkap untuk kebutuhan textile dan merchandise custom. Profesional, cepat, berkualitas tinggi.
               </p>
               
-              <div className="flex flex-wrap gap-3 mb-8">
-                {["T-Shirt", "Hoodie", "Jersey", "Tumbler", "Merchandise"].map((tag, i) => (
-                  <span key={i} className="bg-[#F0F5FF] text-[#1F68F5] rounded-full px-4 py-2 text-sm font-medium">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 mb-10">
                 <Button className="bg-[#1F68F5] hover:bg-[#1a5ad4] text-white px-6 py-6 rounded-full text-base font-semibold">
                   Pesan Sekarang
                 </Button>
@@ -68,41 +62,31 @@ export default function Production() {
                   Lihat Katalog <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
+              
+              <div className="flex flex-wrap gap-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#F0F5FF] rounded-lg flex items-center justify-center">
+                    <Users className="w-5 h-5 text-[#1F68F5]" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 text-sm">Expert Team</p>
+                    <p className="text-xs text-gray-500">Tim berpengalaman</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#F0F5FF] rounded-lg flex items-center justify-center">
+                    <Shield className="w-5 h-5 text-[#1F68F5]" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 text-sm">Quality Assured</p>
+                    <p className="text-xs text-gray-500">Bahan premium</p>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="bg-[#1F68F5] rounded-2xl p-6 text-white">
-                  <Shirt className="w-10 h-10 mb-4" />
-                  <p className="text-4xl font-bold mb-2">10K+</p>
-                  <p className="text-white/80 text-sm">Produk sudah terjual</p>
-                </div>
-                <div className="bg-gray-100 rounded-2xl p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-[#1F68F5] rounded-full flex items-center justify-center">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="font-semibold text-gray-900">Premium Quality</span>
-                  </div>
-                  <p className="text-gray-600 text-sm">Bahan berkualitas tinggi</p>
-                </div>
-              </div>
-              <div className="space-y-4 pt-8">
-                <div className="bg-[#F0F5FF] rounded-2xl p-6">
-                  <Package className="w-10 h-10 text-[#1F68F5] mb-4" />
-                  <p className="font-semibold text-gray-900 mb-1">Fast Delivery</p>
-                  <p className="text-gray-600 text-sm">Pengiriman cepat & aman</p>
-                </div>
-                <div className="bg-gray-900 rounded-2xl p-6 text-white">
-                  <p className="text-3xl font-bold mb-2">98%</p>
-                  <p className="text-white/70 text-sm">Customer Satisfaction</p>
-                  <div className="mt-4 flex gap-1">
-                    {[1,2,3,4,5].map(i => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                    ))}
-                  </div>
-                </div>
-              </div>
+            <div className="relative flex items-center justify-center">
+              <img src={productionHero} alt="Production Services" className="w-full max-w-md object-contain" />
             </div>
           </div>
         </div>

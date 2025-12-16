@@ -1,9 +1,10 @@
-import { CheckCircle, Shield, Quote, ArrowRight } from 'lucide-react';
+import { CheckCircle, Shield, Quote, ArrowRight, Users } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
+import consultingHero from '@assets/Consulting_1765871611867.png';
 import iconSLO from '@assets/Social_License_to_Operate_(SLO)_1765872853363.png';
 import iconCSR from '@assets/Corporate_Social_Responsibility_(CSR)_1765872853364.png';
 import iconESG from '@assets/Environment,_Social,_Government_(ESG)_1765872853364.png';
@@ -44,7 +45,8 @@ export default function Consulting() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <section className="pt-24 pb-12 bg-white">
+      
+      <section className="pt-24 pb-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center py-12 md:py-16">
             <div>
@@ -52,13 +54,14 @@ export default function Consulting() {
                 Skyled Pro Consulting
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Membangun Kepercayaan,<br />
-                <span className="text-[#1F68F5]">Mengawal Keberlanjutan.</span>
+                Strategic Consulting.<br />
+                <span className="text-[#1F68F5]">Sustainable Growth.</span>
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
                 Pionir integrasi SLO–CSR–ESG dengan end-to-end services yang berbicara pada bisnis sekaligus komunitas.
               </p>
-              <div className="flex flex-wrap gap-4">
+              
+              <div className="flex flex-wrap gap-4 mb-10">
                 <Button className="bg-[#1F68F5] hover:bg-[#1a5ad4] text-white px-6 py-6 rounded-full text-base font-semibold">
                   Konsultasi Gratis
                 </Button>
@@ -66,38 +69,31 @@ export default function Consulting() {
                   Pelajari Lebih Lanjut <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
+              
+              <div className="flex flex-wrap gap-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#F0F5FF] rounded-lg flex items-center justify-center">
+                    <Users className="w-5 h-5 text-[#1F68F5]" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 text-sm">Expert Consultants</p>
+                    <p className="text-xs text-gray-500">Berpengalaman di industri</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#F0F5FF] rounded-lg flex items-center justify-center">
+                    <Shield className="w-5 h-5 text-[#1F68F5]" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 text-sm">Compliance Assured</p>
+                    <p className="text-xs text-gray-500">SLO, CSR & ESG</p>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="bg-[#1F68F5] rounded-2xl p-6 text-white">
-                  <p className="text-5xl font-bold mb-2">+89%</p>
-                  <p className="text-white/80 text-sm">Tingkat keberhasilan SLO klien kami</p>
-                </div>
-                <div className="bg-gray-100 rounded-2xl p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-[#1F68F5] rounded-full flex items-center justify-center">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="font-semibold text-gray-900">Detailed Analytics</span>
-                  </div>
-                  <p className="text-gray-600 text-sm">Instant answers anytime, anywhere</p>
-                </div>
-              </div>
-              <div className="space-y-4 pt-8">
-                <div className="bg-[#F0F5FF] rounded-2xl p-6">
-                  <Shield className="w-10 h-10 text-[#1F68F5] mb-4" />
-                  <p className="font-semibold text-gray-900 mb-1">Due Diligence</p>
-                  <p className="text-gray-600 text-sm">Complete compliance</p>
-                </div>
-                <div className="bg-gray-900 rounded-2xl p-6 text-white">
-                  <p className="text-3xl font-bold mb-2">3.254%</p>
-                  <p className="text-white/70 text-sm">Finance ROI</p>
-                  <div className="mt-4 bg-[#1F68F5] text-white text-xs px-3 py-1 rounded-full inline-block">
-                    Analyzing...
-                  </div>
-                </div>
-              </div>
+            <div className="relative flex items-center justify-center">
+              <img src={consultingHero} alt="Consulting Services" className="w-full max-w-md object-contain" />
             </div>
           </div>
         </div>

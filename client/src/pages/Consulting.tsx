@@ -179,24 +179,30 @@ export default function Consulting() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="border-0 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow group">
+              <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#1F68F5] transition-all duration-300 overflow-hidden group">
                 <CardContent className="p-0">
-                  <div className="bg-[#1F68F5] group-hover:bg-[#1a5ad4] transition-colors p-6 text-white">
-                    <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 overflow-hidden bg-[#ffffff]">
-                      <img src={service.icon} alt={service.title} className="w-10 h-10 object-contain" />
+                  <div className="bg-[#1F68F5] group-hover:bg-[#1a5ad4] transition-colors p-6 text-white relative min-h-[120px] flex items-center">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden bg-white">
+                        <img src={service.icon} alt={service.title} className="w-12 h-12 object-contain" />
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold">{service.title}</h3>
+                    <div className="flex-1 ml-4">
+                      <h3 className="text-lg font-bold leading-tight">{service.title}</h3>
+                    </div>
                   </div>
                   <div className="p-6">
-                    <p className="text-gray-600 mb-6">{service.description}</p>
-                    <ul className="space-y-3">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6">{service.description}</p>
+                    <div className="space-y-2">
                       {service.features.map((f, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <CheckCircle className="w-5 h-5 text-[#1F68F5] flex-shrink-0 mt-0.5" />
+                        <div key={i} className="flex items-center gap-2">
+                          <div className="w-5 h-5 rounded-full bg-[#F0F5FF] text-[#1F68F5] flex items-center justify-center flex-shrink-0">
+                            <CheckCircle className="w-3 h-3" />
+                          </div>
                           <span className="text-gray-700 text-sm">{f}</span>
-                        </li>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

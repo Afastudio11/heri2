@@ -86,8 +86,8 @@ export default function About() {
 
 const ValueCard = ({ icon, title, desc }: { icon: string, title: string, desc: string }) => (
   <div className="flex items-start gap-4 p-6 bg-[#FAFAFA] rounded-2xl border border-gray-100 hover:border-[#1F68F5] transition-colors" data-testid={`card-value-${title.toLowerCase().replace(/\s+/g, '-')}`}>
-    <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
-      <img src={icon} alt={title} className="w-10 h-10 object-contain" />
+    <div className="flex-shrink-0">
+      <img src={icon} alt={title} className="w-16 h-16 object-contain" />
     </div>
     <div>
       <h4 className="font-bold text-gray-900 mb-2">{title}</h4>

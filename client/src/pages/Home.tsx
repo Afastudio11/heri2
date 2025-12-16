@@ -12,8 +12,8 @@ export default function Home() {
     <div className="min-h-screen bg-white text-slate-900 font-sans overflow-x-hidden">
       <Navbar />
       <Hero />
-      <About />
       <TrustedBy />
+      <About />
       <BusinessUnits />
       <Rewards />
       <Portfolio />

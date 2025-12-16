@@ -4,10 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-import galaDinner from '../assets/portfolio/gala_dinner_1.jpg';
-import ministerMeeting from '../assets/portfolio/minister_meeting_1.jpg';
-import marineCamp from '../assets/portfolio/marine_camp_1.jpg';
-import kotaLayakAnak from '../assets/portfolio/kota_layak_anak_2.jpg';
+import eventOrganizerHero from '@assets/Event_Organizer_1765872247503.png';
 
 import bappenas from '../assets/clients/bappenas.png';
 import kemenpppa from '../assets/clients/kemenpppa.png';
@@ -105,34 +102,8 @@ export default function EventOrganizer() {
               </div>
             </div>
             
-            <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="rounded-2xl overflow-hidden shadow-lg">
-                    <img src={galaDinner} alt="Gala Dinner Event" className="w-full h-48 object-cover" />
-                  </div>
-                </div>
-                
-                <div className="space-y-4 pt-8">
-                  <div className="rounded-2xl overflow-hidden shadow-lg relative">
-                    <img src={ministerMeeting} alt="Minister Meeting" className="w-full h-40 object-cover" />
-                    <div className="absolute top-3 left-3 bg-white rounded-lg px-3 py-2 shadow-md">
-                      <p className="text-xs text-gray-500">Completed</p>
-                      <p className="font-bold text-[#1F68F5]">100+ Events</p>
-                    </div>
-                  </div>
-                  <div className="rounded-2xl overflow-hidden shadow-lg">
-                    <img src={marineCamp} alt="Marine Camp" className="w-full h-32 object-cover" />
-                  </div>
-                  <div className="rounded-2xl overflow-hidden shadow-lg relative">
-                    <img src={kotaLayakAnak} alt="Government Event" className="w-full h-36 object-cover" />
-                    <div className="absolute bottom-3 right-3 bg-white rounded-lg px-3 py-2 shadow-md">
-                      <p className="text-xs text-gray-500">Client</p>
-                      <p className="font-semibold text-gray-900 text-sm">ASEAN 2023</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="relative flex items-center justify-center">
+              <img src={eventOrganizerHero} alt="Event Organizer" className="w-full max-w-md object-contain" />
             </div>
           </div>
         </div>

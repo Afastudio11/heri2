@@ -201,7 +201,7 @@ export default function Production() {
             <p className="text-gray-600 max-w-2xl mx-auto mb-8">Berbagai pilihan souvenir custom untuk acara spesial Anda. Kualitas terbaik dengan harga kompetitif.</p>
           </div>
           
-          <div className="bg-gray-50 rounded-3xl p-8 mb-12">
+          <div className="rounded-3xl p-8 mb-12 bg-[#ffffff]">
             <img src={imgSouvenir} alt="Souvenir Products" className="w-full max-w-4xl mx-auto object-contain" />
           </div>
           

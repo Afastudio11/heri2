@@ -173,7 +173,7 @@ export default function Production() {
             {merchandiseProducts.map((product, index) => (
               <Card key={index} className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-xl transition-all group cursor-pointer bg-white">
                 <CardContent className="p-4">
-                  <div className="bg-gray-50 rounded-xl p-4 mb-4 h-40 flex items-center justify-center">
+                  <div className="rounded-xl p-4 mb-4 h-40 flex items-center justify-center bg-[#ffffff]">
                     <img src={product.image} alt={product.name} className="max-h-full max-w-full object-contain" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">{product.name}</h3>

@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Phone, Mail, MessageCircle } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { Link } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -44,12 +44,6 @@ const services: ServiceData[] = [
     sub: "SKYLED PRODUCTION",
     link: "/production"
   }
-];
-
-const contactMethods = [
-  { icon: <Phone className="w-5 h-5" />, label: "Find phone numbers", sublabel: "in seconds" },
-  { icon: <Mail className="w-5 h-5" />, label: "Verified email", sublabel: "addresses" },
-  { icon: <MessageCircle className="w-5 h-5" />, label: "Message Privately", sublabel: "Stay Connected" }
 ];
 
 export default function BusinessUnits() {
@@ -113,25 +107,6 @@ export default function BusinessUnits() {
                 </div>
               </CardContent>
             </Card>
-          ))}
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {contactMethods.map((method, idx) => (
-            <div key={idx} className="bg-[#FAFAFA] rounded-2xl p-6 border border-gray-100 hover:border-[#1F68F5] transition-colors">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#1F68F5]">
-                  {method.icon}
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900">{method.label}</p>
-                  <p className="text-gray-500 text-sm">{method.sublabel}</p>
-                  <button className="text-[#1F68F5] text-sm font-medium mt-2 flex items-center gap-1 hover:gap-2 transition-all">
-                    Learn more <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
           ))}
         </div>
       </div>

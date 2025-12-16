@@ -4,6 +4,17 @@ import { serveStatic } from "./static";
 import { createServer } from "http";
 
 const app = express();
+
+app.use((req, res, next) => {
+  try {
+    decodeURIComponent(req.path);
+    next();
+  } catch {
+    console.log(`[uri-guard] Blocked malformed URI: ${req.url}`);
+    res.status(400).send('Bad Request');
+  }
+});
+
 const httpServer = createServer(app);
 
 declare module "http" {

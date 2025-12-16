@@ -1,21 +1,31 @@
-import { CheckCircle, Target, Users, FileText, TrendingUp, Shield, Globe, Building2, Landmark, Briefcase, Quote, ArrowRight } from 'lucide-react';
+import { CheckCircle, Shield, Quote, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
+import iconSLO from '@assets/Social_License_to_Operate_(SLO)_1765872853363.png';
+import iconCSR from '@assets/Corporate_Social_Responsibility_(CSR)_1765872853364.png';
+import iconESG from '@assets/Environment,_Social,_Government_(ESG)_1765872853364.png';
+import iconInvestorBaru from '@assets/Investor_Baru_1765872853364.png';
+import iconPerusahaanMenengah from '@assets/Perusahaan_Menengah_1765872853366.png';
+import iconMultinasional from '@assets/Multinasional_1765872853365.png';
+import iconPemerintahDaerah from '@assets/Pemerintah_Daerah_1765872853365.png';
+import iconLembagaKeuangan from '@assets/Lembaga_Keuangan_1765872853365.png';
+import iconKonflikIndustri from '@assets/59%_Konflik_industri_1765872853363.png';
+
 const services = [
-  { title: "Social License to Operate (SLO)", description: "Mendampingi perusahaan meraih legitimasi sosial.", icon: <Users className="w-8 h-8" />, features: ["Pemetaan sosial & stakeholder", "Negosiasi komunitas", "Mediasi konflik", "Monitoring penerimaan"] },
-  { title: "Corporate Social Responsibility (CSR)", description: "Mendesain program berbasis kebutuhan nyata.", icon: <Target className="w-8 h-8" />, features: ["Riset kebutuhan komunitas", "Program CSR strategis", "Monitoring dampak", "Pelaporan CSR"] },
-  { title: "Environment, Social, Government (ESG)", description: "Menyusun roadmap keberlanjutan.", icon: <FileText className="w-8 h-8" />, features: ["ESG assessment", "Sustainability reporting", "ESG compliance roadmap", "Due diligence"] }
+  { title: "Social License to Operate (SLO)", description: "Mendampingi perusahaan meraih legitimasi sosial.", icon: iconSLO, features: ["Pemetaan sosial & stakeholder", "Negosiasi komunitas", "Mediasi konflik", "Monitoring penerimaan"] },
+  { title: "Corporate Social Responsibility (CSR)", description: "Mendesain program berbasis kebutuhan nyata.", icon: iconCSR, features: ["Riset kebutuhan komunitas", "Program CSR strategis", "Monitoring dampak", "Pelaporan CSR"] },
+  { title: "Environment, Social, Government (ESG)", description: "Menyusun roadmap keberlanjutan.", icon: iconESG, features: ["ESG assessment", "Sustainability reporting", "ESG compliance roadmap", "Due diligence"] }
 ];
 
 const targetMarkets = [
-  { title: "Investor Baru", description: "Proyek industri yang membutuhkan SLO.", icon: <TrendingUp className="w-6 h-6" /> },
-  { title: "Perusahaan Menengah", description: "Pengelolaan CSR yang strategis.", icon: <Building2 className="w-6 h-6" /> },
-  { title: "Multinasional", description: "Upgrade ke ESG compliance.", icon: <Globe className="w-6 h-6" /> },
-  { title: "Pemerintah Daerah", description: "Mekanisme SLO/ESG investasi.", icon: <Landmark className="w-6 h-6" /> },
-  { title: "Lembaga Keuangan", description: "Due diligence sosial.", icon: <Briefcase className="w-6 h-6" /> }
+  { title: "Investor Baru", description: "Proyek industri yang membutuhkan SLO.", icon: iconInvestorBaru },
+  { title: "Perusahaan Menengah", description: "Pengelolaan CSR yang strategis.", icon: iconPerusahaanMenengah },
+  { title: "Multinasional", description: "Upgrade ke ESG compliance.", icon: iconMultinasional },
+  { title: "Pemerintah Daerah", description: "Mekanisme SLO/ESG investasi.", icon: iconPemerintahDaerah },
+  { title: "Lembaga Keuangan", description: "Due diligence sosial.", icon: iconLembagaKeuangan }
 ];
 
 const stats = [
@@ -143,7 +153,7 @@ export default function Consulting() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-gray-100 rounded-2xl p-6 flex flex-col justify-center items-center text-center">
-                <div className="w-24 h-24 bg-[#1F68F5] rounded-full mb-4"></div>
+                <img src={iconKonflikIndustri} alt="Konflik industri" className="w-24 h-24 object-contain mb-4" />
                 <p className="text-3xl font-bold text-gray-900">59%</p>
                 <p className="text-gray-600 text-sm">Konflik industri</p>
               </div>
@@ -176,8 +186,8 @@ export default function Consulting() {
               <Card key={index} className="border-0 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow group">
                 <CardContent className="p-0">
                   <div className="bg-[#1F68F5] group-hover:bg-[#1a5ad4] transition-colors p-6 text-white">
-                    <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                      {service.icon}
+                    <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4 overflow-hidden">
+                      <img src={service.icon} alt={service.title} className="w-10 h-10 object-contain" />
                     </div>
                     <h3 className="text-xl font-bold">{service.title}</h3>
                   </div>
@@ -211,8 +221,8 @@ export default function Consulting() {
             {targetMarkets.map((market, index) => (
               <Card key={index} className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all group cursor-pointer">
                 <CardContent className="p-6 text-center">
-                  <div className="w-14 h-14 bg-[#F0F5FF] group-hover:bg-[#1F68F5] rounded-xl flex items-center justify-center mx-auto mb-4 text-[#1F68F5] group-hover:text-white transition-colors">
-                    {market.icon}
+                  <div className="w-14 h-14 bg-[#F0F5FF] group-hover:bg-[#1F68F5] rounded-xl flex items-center justify-center mx-auto mb-4 transition-colors overflow-hidden">
+                    <img src={market.icon} alt={market.title} className="w-10 h-10 object-contain" />
                   </div>
                   <h3 className="font-bold text-gray-900 mb-2">{market.title}</h3>
                   <p className="text-gray-600 text-sm">{market.description}</p>

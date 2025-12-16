@@ -73,11 +73,6 @@ export default function Hero() {
             {/* Top Right - Tall */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl row-span-2 bg-gradient-to-br from-blue-800 to-blue-900">
               <img src={ministerMeeting} alt="Minister Meeting" className="w-full h-full object-cover opacity-90" />
-              <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm p-2 rounded-full shadow-md">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 text-xs font-bold">SK</span>
-                </div>
-              </div>
               <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-md">
                 <p className="text-[10px] text-gray-500 font-medium">Klien Kementerian</p>
                 <p className="text-sm font-bold text-gray-900">50+ Klien</p>

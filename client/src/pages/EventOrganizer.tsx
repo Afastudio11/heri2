@@ -111,16 +111,6 @@ export default function EventOrganizer() {
                   <div className="rounded-2xl overflow-hidden shadow-lg">
                     <img src={galaDinner} alt="Gala Dinner Event" className="w-full h-48 object-cover" />
                   </div>
-                  <div className="bg-[#1F68F5] rounded-2xl p-6 text-white">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                        <Star className="w-4 h-4" />
-                      </div>
-                      <span className="text-sm font-medium">Top Rated</span>
-                    </div>
-                    <p className="font-bold text-lg">WE PROVIDE</p>
-                    <p className="font-bold text-lg">BEST SERVICES</p>
-                  </div>
                 </div>
                 
                 <div className="space-y-4 pt-8">

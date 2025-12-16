@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import { NAV_LINKS } from '@/lib/constants';
@@ -17,7 +17,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isBusinessOpen, setIsBusinessOpen] = useState(false);
   const [isMobileBusinessOpen, setIsMobileBusinessOpen] = useState(false);
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
+  const [pendingHash, setPendingHash] = useState<string | null>(null);
   
   const isHomePage = location === '/';
   const useDarkText = !isHomePage || isScrolled;
@@ -29,6 +30,43 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (pendingHash && location === '/') {
+      const timer = setTimeout(() => {
+        const element = document.getElementById(pendingHash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+        setPendingHash(null);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location, pendingHash]);
+
+  const handleNavClick = useCallback((href: string) => {
+    setIsOpen(false);
+    setIsBusinessOpen(false);
+    
+    if (href === '/') {
+      setLocation('/');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (href.startsWith('/#')) {
+      const hash = href.substring(2);
+      if (location === '/') {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        setPendingHash(hash);
+        setLocation('/');
+      }
+    }
+  }, [location, setLocation]);
 
   return (
     <nav 
@@ -55,16 +93,16 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((item) => (
-              <a 
+              <button 
                 key={item.name} 
-                href={item.href} 
+                onClick={() => handleNavClick(item.href)}
                 className={`font-medium text-sm transition-colors hover:opacity-75 ${
                   useDarkText ? 'text-gray-700' : 'text-white/90'
                 }`}
                 data-testid={`link-nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 {item.name}
-              </a>
+              </button>
             ))}
             
             <div 
@@ -103,8 +141,8 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex">
-            <a 
-              href="/#contact"
+            <button 
+              onClick={() => handleNavClick('/#contact')}
               data-testid="link-partner-cta"
             >
               <Button 
@@ -116,7 +154,7 @@ export default function Navbar() {
               >
                 Bermitra Dengan Kami
               </Button>
-            </a>
+            </button>
           </div>
 
           <div className="md:hidden flex items-center">
@@ -139,15 +177,14 @@ export default function Navbar() {
         <div className="md:hidden bg-white absolute w-full left-0 border-b border-gray-100 shadow-xl mt-4 rounded-b-2xl">
           <div className="px-4 pt-2 pb-6 space-y-2">
             {NAV_LINKS.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="block px-3 py-4 text-base font-semibold text-gray-800 hover:text-blue-600 border-b border-gray-50"
-                onClick={() => setIsOpen(false)}
+                onClick={() => handleNavClick(item.href)}
+                className="block w-full text-left px-3 py-4 text-base font-semibold text-gray-800 hover:text-blue-600 border-b border-gray-50"
                 data-testid={`link-mobile-nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 {item.name}
-              </a>
+              </button>
             ))}
             
             <div className="border-b border-gray-50">
@@ -176,14 +213,13 @@ export default function Navbar() {
               )}
             </div>
             
-            <a 
-              href="/#contact" 
+            <button 
+              onClick={() => handleNavClick('/#contact')}
               className="block w-full mt-4 text-center bg-blue-600 text-white font-semibold px-6 py-4 rounded-xl"
-              onClick={() => setIsOpen(false)}
               data-testid="link-mobile-partner-cta"
             >
               Bermitra Dengan Kami
-            </a>
+            </button>
           </div>
         </div>
       )}

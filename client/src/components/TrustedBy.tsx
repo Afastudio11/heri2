@@ -4,21 +4,21 @@ const clients = [
 
 export default function TrustedBy() {
   return (
-    <section className="w-full py-12 bg-white border-b border-gray-100" data-testid="section-trusted">
-      <div className="text-center mb-8">
-        <h2 className="text-sm font-bold text-blue-600 uppercase tracking-wider">
-          Dipercaya oleh Organisasi Terkemuka
-        </h2>
-      </div>
-      
-      <div className="relative w-full max-w-7xl mx-auto px-6">
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
-           {clients.map((client, i) => (
-             <div key={i} className="flex items-center gap-2 font-bold text-lg md:text-xl text-gray-500 hover:text-blue-600 transition-colors cursor-default select-none" data-testid={`text-client-${i}`}>
-                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+    <section className="w-full py-8 bg-white border-b border-gray-100" data-testid="section-trusted">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-gray-400 text-sm font-medium">Dipercaya oleh instansi terkemuka</p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            {clients.map((client, i) => (
+              <span 
+                key={i} 
+                className="text-gray-400 font-bold text-base md:text-lg tracking-wide hover:text-[#1F68F5] transition-colors cursor-default"
+                data-testid={`text-client-${i}`}
+              >
                 {client}
-             </div>
-           ))}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

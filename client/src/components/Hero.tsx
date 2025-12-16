@@ -1,84 +1,127 @@
-import { ArrowRight, Users, Briefcase, Globe } from 'lucide-react';
+import { ArrowRight, Play, Users, Globe, Briefcase, Star, CheckCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative w-full min-h-[90vh] bg-gradient-to-br from-blue-600 via-blue-500 to-sky-500 rounded-b-[3rem] overflow-hidden pt-32 pb-20 px-4"
+      className="relative w-full min-h-screen bg-[#FAFAFA] pt-28 pb-16 px-4"
       data-testid="section-hero"
     >
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-blue-400/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[800px] h-[800px] bg-sky-300/20 rounded-full blur-3xl" />
-        <div className="absolute inset-0 opacity-20 mix-blend-overlay" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }}></div>
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto z-10 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 border border-white/30 text-white text-xs font-medium mb-6 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-            Professional Event Organizer
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 items-start mb-16">
+          <div className="flex gap-8">
+            <div className="text-left">
+              <p className="text-5xl md:text-6xl font-bold text-gray-900">100+</p>
+              <p className="text-gray-500 text-sm">events</p>
+            </div>
+            <div className="text-left">
+              <p className="text-5xl md:text-6xl font-bold text-gray-900">50+</p>
+              <p className="text-gray-500 text-sm">clients</p>
+            </div>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-8">
-            Perjalanan Bisnis Anda Layak Mendapat<br />
-            <span className="text-sky-200">Dukungan Ahli</span>
-          </h1>
-
-          <p className="text-lg text-blue-50 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-            Kami adalah mitra strategis Anda dalam menciptakan pengalaman luar biasa melalui manajemen event, konsultasi bisnis, dan produksi kreatif berkualitas tinggi.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="#business" data-testid="link-explore-divisions">
-              <button className="w-full sm:w-auto bg-white text-blue-600 h-12 px-8 rounded-full flex items-center justify-center gap-2 font-bold transition-all hover:bg-blue-50 shadow-lg shadow-blue-900/20">
-                Jelajahi Layanan <ArrowRight size={16} />
-              </button>
-            </a>
-            <a href="#contact" data-testid="link-contact-hero">
-              <button className="w-full sm:w-auto bg-blue-700/50 hover:bg-blue-700/70 backdrop-blur-md text-white border border-white/20 h-12 px-8 rounded-full flex items-center justify-center gap-2 font-medium transition-all">
-                Hubungi Kami
-              </button>
-            </a>
+          <div className="flex items-center justify-end gap-3">
+            <div className="flex -space-x-3">
+              {[1,2,3].map(i => (
+                <div key={i} className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center">
+                  <Users className="w-5 h-5 text-gray-400" />
+                </div>
+              ))}
+            </div>
+            <span className="text-sm text-gray-600 font-medium">50+ happy clients</span>
+            <div className="bg-[#FF6B6B] text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 cursor-pointer hover:bg-[#e55a5a] transition-colors">
+              <Play className="w-4 h-4" /> Watch
+            </div>
           </div>
         </div>
 
-        <div className="relative w-full flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-md bg-white/90 backdrop-blur-[20px] shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] border border-white/80 p-8 rounded-[2rem] animate-[float_6s_ease-in-out_infinite]">
-            <div className="flex justify-between items-center mb-8">
-              <h3 className="text-xl font-bold text-gray-900">Pencapaian Kami</h3>
-              <span className="text-xs font-mono text-gray-500 bg-gray-100 px-2 py-1 rounded">2024</span>
+        <div className="mb-16">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-tight tracking-tight">
+            <span className="inline-flex items-center gap-4">
+              good
+              <span className="inline-flex gap-2">
+                <span className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-[#1F68F5] flex items-center justify-center">
+                  <Globe className="w-8 h-8 md:w-12 md:h-12 text-white" />
+                </span>
+                <span className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-[#1F68F5] flex items-center justify-center">
+                  <Star className="w-8 h-8 md:w-12 md:h-12 text-white" />
+                </span>
+              </span>
+              tools
+            </span>
+            <br />
+            <span className="inline-flex items-center gap-4">
+              drive
+              <span className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gray-900 flex items-center justify-center">
+                <Briefcase className="w-8 h-8 md:w-12 md:h-12 text-white" />
+              </span>
+              growth
+            </span>
+          </h1>
+        </div>
+
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-16">
+          <p className="text-gray-600 max-w-xl leading-relaxed">
+            Layanan profesional untuk event 100+ event prestisius dan 50+ klien terpercaya. Profesional, cepat, dan berkualitas tinggi untuk kebutuhan bisnis Anda.
+          </p>
+          <div className="flex gap-4">
+            <Button className="bg-[#1F68F5] hover:bg-[#1a5ad4] text-white px-8 py-6 rounded-full text-base font-semibold">
+              Get Started
+            </Button>
+            <Button variant="outline" className="border-gray-300 text-gray-700 px-8 py-6 rounded-full text-base font-semibold hover:bg-gray-50">
+              Learn More <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+            <div className="flex items-center justify-between mb-6">
+              <span className="text-gray-500 text-sm font-medium">Discover us</span>
+              <ArrowRight className="w-5 h-5 text-gray-400" />
             </div>
-
-            <div className="space-y-4">
-              <div className="bg-blue-50/50 p-4 rounded-xl flex items-center gap-4 border border-blue-100 hover:bg-blue-50 transition-colors">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                  <Globe size={20} />
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+              All you need to reach the right people — powered by expertise
+            </h3>
+          </div>
+          
+          <div className="bg-[#1F68F5] rounded-3xl p-8 text-white">
+            <div className="text-sm font-medium text-white/70 mb-4">UNLOCK</div>
+            <p className="text-4xl font-bold mb-2">100+</p>
+            <p className="text-white/80 mb-4">events & experiences</p>
+            <p className="text-white/70 text-sm mb-6">
+              Identify verified companies across every industry. Gain real-time insights to expand your network.
+            </p>
+            <Button className="bg-white text-[#1F68F5] hover:bg-gray-100 rounded-full px-6 py-2 text-sm font-semibold">
+              Try Now
+            </Button>
+          </div>
+          
+          <div className="space-y-6">
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-[#F0F5FF] rounded-xl flex items-center justify-center">
+                  <CheckCircle className="w-6 h-6 text-[#1F68F5]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900 text-lg">100+</h4>
-                  <p className="text-xs text-gray-600">Event Terselenggara (Nasional & Internasional)</p>
+                  <p className="text-sm text-gray-500 mb-1">Find anyone's</p>
+                  <p className="font-bold text-gray-900">verified contact</p>
                 </div>
               </div>
-
-              <div className="bg-blue-50/50 p-4 rounded-xl flex items-center gap-4 border border-blue-100 hover:bg-blue-50 transition-colors">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                  <Users size={20} />
+            </div>
+            
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100">
+              <div className="flex items-center gap-4">
+                <div className="flex-1">
+                  <p className="text-sm text-gray-500 mb-1">Emails</p>
+                  <p className="text-3xl font-bold text-gray-900">5739</p>
                 </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 text-lg">50+</h4>
-                  <p className="text-xs text-gray-600">Klien Terpercaya (Kementerian & Swasta)</p>
-                </div>
-              </div>
-
-              <div className="bg-blue-50/50 p-4 rounded-xl flex items-center gap-4 border border-blue-100 hover:bg-blue-50 transition-colors">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                  <Briefcase size={20} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 text-lg">3</h4>
-                  <p className="text-xs text-gray-600">Unit Bisnis Terintegrasi</p>
+                <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
+                  <svg className="w-6 h-6 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
                 </div>
               </div>
             </div>

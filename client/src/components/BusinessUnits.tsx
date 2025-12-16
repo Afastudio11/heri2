@@ -1,4 +1,4 @@
-import { Globe, Users, Briefcase, ArrowRight, Check } from 'lucide-react';
+import { Globe, Users, Briefcase, ArrowRight, Check, Phone, Mail, MessageCircle } from 'lucide-react';
 import { Link } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -42,6 +42,12 @@ const services: ServiceData[] = [
   }
 ];
 
+const contactMethods = [
+  { icon: <Phone className="w-5 h-5" />, label: "Find phone numbers", sublabel: "in seconds" },
+  { icon: <Mail className="w-5 h-5" />, label: "Verified email", sublabel: "addresses" },
+  { icon: <MessageCircle className="w-5 h-5" />, label: "Message Privately", sublabel: "Stay Connected" }
+];
+
 function getIcon(iconType: string) {
   switch (iconType) {
     case 'globe':
@@ -57,62 +63,86 @@ function getIcon(iconType: string) {
 
 export default function BusinessUnits() {
   return (
-    <section id="business" className="py-20 px-4 max-w-7xl mx-auto bg-gray-50/50" data-testid="section-business">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">
-          Temukan Yang Anda Butuhkan
-        </h2>
-        <p className="text-gray-500 max-w-xl mx-auto">
-          Kami beroperasi melalui tiga divisi spesialis untuk menyediakan solusi terbaik di bidangnya.
-        </p>
-      </div>
+    <section id="business" className="py-20 px-4 bg-white" data-testid="section-business">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+            UNIT BISNIS
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Temukan Yang Anda Butuhkan
+          </h2>
+          <p className="text-gray-500 max-w-xl mx-auto">
+            Kami beroperasi melalui tiga divisi spesialis untuk menyediakan solusi terbaik di bidangnya.
+          </p>
+        </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {services.map((service) => (
-          <Card 
-            key={service.id} 
-            className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group"
-          >
-            <CardContent className="p-0">
-              <div className="bg-blue-600 p-6 text-white">
-                <div className="inline-block text-white/80 font-bold text-xs tracking-wider mb-2 uppercase">
-                  {service.sub}
-                </div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
-                    {getIcon(service.iconType)}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {services.map((service) => (
+            <Card 
+              key={service.id} 
+              className="border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#1F68F5] transition-all duration-300 overflow-hidden group"
+            >
+              <CardContent className="p-0">
+                <div className="bg-[#1F68F5] group-hover:bg-[#1a5ad4] transition-colors p-6 text-white">
+                  <div className="inline-block text-white/80 font-bold text-xs tracking-wider mb-2 uppercase">
+                    {service.sub}
                   </div>
-                  <h3 className="text-xl font-bold">{service.title}</h3>
-                </div>
-              </div>
-              
-              <div className="p-6">
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                  {service.desc}
-                </p>
-                
-                <div className="space-y-2 mb-6">
-                  {service.features.map((feature, i) => (
-                    <div key={i} className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0">
-                        <Check size={10} />
-                      </div>
-                      <span className="text-gray-700 text-sm">{feature}</span>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+                      {getIcon(service.iconType)}
                     </div>
-                  ))}
+                    <h3 className="text-xl font-bold">{service.title}</h3>
+                  </div>
                 </div>
+                
+                <div className="p-6">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                    {service.desc}
+                  </p>
+                  
+                  <div className="space-y-2 mb-6">
+                    {service.features.map((feature, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <div className="w-5 h-5 rounded-full bg-[#F0F5FF] text-[#1F68F5] flex items-center justify-center flex-shrink-0">
+                          <Check size={12} />
+                        </div>
+                        <span className="text-gray-700 text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
 
-                <Link 
-                  href={service.link}
-                  className="text-blue-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
-                  data-testid={`link-consult-${service.id}`}
-                >
-                  Lihat Detail Layanan <ArrowRight size={14} />
-                </Link>
+                  <Link 
+                    href={service.link}
+                    className="text-[#1F68F5] font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
+                    data-testid={`link-consult-${service.id}`}
+                  >
+                    Lihat Detail Layanan <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {contactMethods.map((method, idx) => (
+            <div key={idx} className="bg-[#FAFAFA] rounded-2xl p-6 border border-gray-100 hover:border-[#1F68F5] transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#1F68F5]">
+                  {method.icon}
+                </div>
+                <div>
+                  <p className="font-bold text-gray-900">{method.label}</p>
+                  <p className="text-gray-500 text-sm">{method.sublabel}</p>
+                  <button className="text-[#1F68F5] text-sm font-medium mt-2 flex items-center gap-1 hover:gap-2 transition-all">
+                    Learn more <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
-            </CardContent>
-          </Card>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

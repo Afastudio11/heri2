@@ -12,7 +12,7 @@ import iconPerusahaanMenengah from '@assets/Perusahaan_Menengah_1765872853366.pn
 import iconMultinasional from '@assets/Multinasional_1765872853365.png';
 import iconPemerintahDaerah from '@assets/Pemerintah_Daerah_1765872853365.png';
 import iconLembagaKeuangan from '@assets/Lembaga_Keuangan_1765872853365.png';
-import iconKonflikIndustri from '@assets/59%_Konflik_industri_1765872853363.png';
+import iconKonflikIndustri from '@assets/59%_Konflik_industri_1765872969642.png';
 
 const services = [
   { title: "Social License to Operate (SLO)", description: "Mendampingi perusahaan meraih legitimasi sosial.", icon: iconSLO, features: ["Pemetaan sosial & stakeholder", "Negosiasi komunitas", "Mediasi konflik", "Monitoring penerimaan"] },

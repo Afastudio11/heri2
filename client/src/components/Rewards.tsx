@@ -1,15 +1,18 @@
-import { Briefcase, ImageIcon } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
+
+import ministerMeeting from '../assets/portfolio/minister_meeting_1.jpg';
+import galaDinner from '../assets/portfolio/gala_dinner_1.jpg';
 
 const events = [
   {
     title: "ASEAN Blue Economy Forum",
     description: "Manajemen event lengkap untuk pertemuan Menteri Ekonomi ASEAN, termasuk gala dinner dan penanganan VVIP.",
-    image: null
+    image: ministerMeeting
   },
   {
     title: "MotoGP Mandalika Side Events",
     description: "Manajemen kerumunan dan dukungan multimedia untuk event olahraga internasional.",
-    image: null
+    image: galaDinner
   }
 ];
 
@@ -34,12 +37,8 @@ export default function Rewards() {
                   className="bg-white/10 border border-white/20 p-5 rounded-xl hover:bg-white/20 transition-colors cursor-pointer flex gap-4" 
                   data-testid={`card-reward-${index}`}
                 >
-                  <div className="w-20 h-20 bg-white/10 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden">
-                    {event.image ? (
-                      <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
-                    ) : (
-                      <ImageIcon className="w-8 h-8 text-white/50" />
-                    )}
+                  <div className="w-20 h-20 rounded-lg flex-shrink-0 overflow-hidden">
+                    <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">{event.title}</h4>

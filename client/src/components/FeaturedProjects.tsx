@@ -40,11 +40,12 @@ export default function FeaturedProjects() {
                   className="bg-white/10 p-4 rounded-2xl border border-white/10 backdrop-blur-md flex gap-4 items-center"
                   data-testid={`card-project-${idx}`}
                 >
-                  <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                  <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-blue-800">
                     <img 
                       src={project.image} 
                       alt={project.title}
                       className="w-full h-full object-cover"
+                      loading="eager"
                     />
                   </div>
                   <div>

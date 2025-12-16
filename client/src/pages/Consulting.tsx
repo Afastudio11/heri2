@@ -222,8 +222,8 @@ export default function Consulting() {
             {targetMarkets.map((market, index) => (
               <Card key={index} className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all group cursor-pointer">
                 <CardContent className="p-6 text-center">
-                  <div className="w-14 h-14 bg-[#F0F5FF] group-hover:bg-[#1F68F5] rounded-xl flex items-center justify-center mx-auto mb-4 transition-colors overflow-hidden">
-                    <img src={market.icon} alt={market.title} className="w-10 h-10 object-contain" />
+                  <div className="flex items-center justify-center mx-auto mb-4">
+                    <img src={market.icon} alt={market.title} className="w-20 h-20 object-contain" />
                   </div>
                   <h3 className="font-bold text-gray-900 mb-2">{market.title}</h3>
                   <p className="text-gray-600 text-sm">{market.description}</p>

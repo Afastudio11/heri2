@@ -1,13 +1,17 @@
 import { Quote } from 'lucide-react';
+import ministerMeeting from '../assets/portfolio/minister_meeting_1.jpg';
+import galaDinner from '../assets/portfolio/gala_dinner_1.jpg';
 
 const PROJECTS = [
   {
     title: "ASEAN Blue Economy Forum",
-    description: "Manajemen event lengkap untuk pertemuan Menteri Ekonomi ASEAN, termasuk gala dinner dan penanganan VVIP."
+    description: "Manajemen event lengkap untuk pertemuan Menteri Ekonomi ASEAN, termasuk gala dinner dan penanganan VVIP.",
+    image: ministerMeeting
   },
   {
     title: "MotoGP Mandalika Side Events",
-    description: "Manajemen kerumunan dan dukungan multimedia untuk event olahraga internasional."
+    description: "Manajemen kerumunan dan dukungan multimedia untuk event olahraga internasional.",
+    image: galaDinner
   }
 ];
 
@@ -30,11 +34,20 @@ export default function FeaturedProjects() {
               {PROJECTS.map((project, idx) => (
                 <div 
                   key={idx}
-                  className="bg-white/10 p-6 rounded-2xl border border-white/10 backdrop-blur-md"
+                  className="bg-white/10 p-4 rounded-2xl border border-white/10 backdrop-blur-md flex gap-4 items-center"
                   data-testid={`card-project-${idx}`}
                 >
-                  <h3 className="text-xl font-bold text-skyled-light mb-2">{project.title}</h3>
-                  <p className="text-gray-300 text-sm">{project.description}</p>
+                  <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-skyled-light mb-2">{project.title}</h3>
+                    <p className="text-gray-300 text-sm">{project.description}</p>
+                  </div>
                 </div>
               ))}
             </div>

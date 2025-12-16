@@ -1,13 +1,17 @@
-import { Globe, Users, Briefcase, ArrowRight, Check, Phone, Mail, MessageCircle } from 'lucide-react';
+import { ArrowRight, Check, Phone, Mail, MessageCircle } from 'lucide-react';
 import { Link } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
+
+import iconEventOrganizer from '../assets/icons/event_organizer.png';
+import iconConsulting from '../assets/icons/consulting.png';
+import iconProduction from '../assets/icons/production.png';
 
 type ServiceData = {
   id: string;
   title: string;
   desc: string;
   features: string[];
-  iconType: 'globe' | 'briefcase' | 'users';
+  icon: string;
   sub: string;
   link: string;
 };
@@ -18,7 +22,7 @@ const services: ServiceData[] = [
     title: "Event Organizer",
     desc: "Perencanaan, desain, dan eksekusi event berkualitas tinggi dengan fokus pada detail dan kreativitas.",
     features: ["Event Management & MICE", "Crowd & Flow Management", "Stage Production", "Multimedia Support"],
-    iconType: 'globe',
+    icon: iconEventOrganizer,
     sub: "SKYLED PRO INDONESIA",
     link: "/event-organizer"
   },
@@ -27,7 +31,7 @@ const services: ServiceData[] = [
     title: "Consulting",
     desc: "Mitra strategis untuk membangun kepercayaan dan keberlanjutan bisnis melalui SLO, CSR, dan ESG.",
     features: ["CSR & ESG Consulting", "Business Strategy", "Sustainability Roadmap", "Compliance Audit"],
-    iconType: 'briefcase',
+    icon: iconConsulting,
     sub: "SKYLED PRO CONSULTING",
     link: "/consulting"
   },
@@ -36,7 +40,7 @@ const services: ServiceData[] = [
     title: "Production",
     desc: "Solusi tekstil dan merchandise custom berkualitas tinggi untuk mengangkat identitas brand Anda.",
     features: ["Textile Production", "Custom Merchandise", "Brand Identity", "Quality Manufacturing"],
-    iconType: 'users',
+    icon: iconProduction,
     sub: "SKYLED PRODUCTION",
     link: "/production"
   }
@@ -47,19 +51,6 @@ const contactMethods = [
   { icon: <Mail className="w-5 h-5" />, label: "Verified email", sublabel: "addresses" },
   { icon: <MessageCircle className="w-5 h-5" />, label: "Message Privately", sublabel: "Stay Connected" }
 ];
-
-function getIcon(iconType: string) {
-  switch (iconType) {
-    case 'globe':
-      return <Globe size={28} />;
-    case 'briefcase':
-      return <Briefcase size={28} />;
-    case 'users':
-      return <Users size={28} />;
-    default:
-      return <Globe size={28} />;
-  }
-}
 
 export default function BusinessUnits() {
   return (
@@ -89,8 +80,8 @@ export default function BusinessUnits() {
                     {service.sub}
                   </div>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
-                      {getIcon(service.iconType)}
+                    <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center overflow-hidden">
+                      <img src={service.icon} alt={service.title} className="w-10 h-10 object-contain" />
                     </div>
                     <h3 className="text-xl font-bold">{service.title}</h3>
                   </div>

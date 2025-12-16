@@ -1,4 +1,8 @@
-import { Check, User, Activity, ShieldCheck } from 'lucide-react';
+import { Check, Activity } from 'lucide-react';
+
+import iconFokusKlien from '../assets/icons/fokus_klien.png';
+import iconKreativitas from '../assets/icons/kreativitas.png';
+import iconIntegritas from '../assets/icons/integritas.png';
 
 export default function About() {
   return (
@@ -60,17 +64,17 @@ export default function About() {
 
         <div className="mt-16 grid md:grid-cols-3 gap-6">
           <ValueCard 
-            icon={<User size={24} />} 
+            icon={iconFokusKlien} 
             title="Fokus Klien" 
             desc="Kami mengutamakan visi dan kepuasan Anda di atas segalanya." 
           />
           <ValueCard 
-            icon={<Activity size={24} />} 
+            icon={iconKreativitas} 
             title="Kreativitas" 
             desc="Solusi inovatif yang disesuaikan dengan kebutuhan unik." 
           />
           <ValueCard 
-            icon={<ShieldCheck size={24} />} 
+            icon={iconIntegritas} 
             title="Integritas" 
             desc="Menjaga standar etika dan profesionalisme tertinggi." 
           />
@@ -80,10 +84,10 @@ export default function About() {
   );
 }
 
-const ValueCard = ({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) => (
+const ValueCard = ({ icon, title, desc }: { icon: string, title: string, desc: string }) => (
   <div className="flex items-start gap-4 p-6 bg-[#FAFAFA] rounded-2xl border border-gray-100 hover:border-[#1F68F5] transition-colors" data-testid={`card-value-${title.toLowerCase().replace(/\s+/g, '-')}`}>
-    <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#1F68F5] flex-shrink-0">
-      {icon}
+    <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
+      <img src={icon} alt={title} className="w-10 h-10 object-contain" />
     </div>
     <div>
       <h4 className="font-bold text-gray-900 mb-2">{title}</h4>

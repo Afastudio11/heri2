@@ -7,6 +7,7 @@ import kemenparekraf from '../assets/clients/kemenparekraf.png';
 import kemenpppa from '../assets/clients/kemenpppa.png';
 import kominfo from '../assets/clients/kominfo.png';
 import unesco from '../assets/clients/unesco.png';
+import bri from '../assets/clients/bri.png';
 
 const clients = [
   { name: "ASEAN", logo: asean },
@@ -14,6 +15,7 @@ const clients = [
   { name: "ITDC Property", logo: itdc },
   { name: "Pertamina", logo: pertamina },
   { name: "BNI Life", logo: bniLife },
+  { name: "Bank BRI", logo: bri },
   { name: "Kemenparekraf", logo: kemenparekraf },
   { name: "Kemen PPPA", logo: kemenpppa },
   { name: "Kominfo", logo: kominfo },
@@ -30,7 +32,7 @@ export default function TrustedBy() {
             {clients.map((client, i) => (
               <div 
                 key={i} 
-                className="h-12 md:h-16 flex items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+                className="h-12 md:h-16 flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300"
                 data-testid={`logo-client-${i}`}
               >
                 <img 

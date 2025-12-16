@@ -9,6 +9,13 @@ import ministerMeeting from '../assets/portfolio/minister_meeting_1.jpg';
 import marineCamp from '../assets/portfolio/marine_camp_1.jpg';
 import kotaLayakAnak from '../assets/portfolio/kota_layak_anak_2.jpg';
 
+import bappenas from '../assets/clients/bappenas.png';
+import kemenpppa from '../assets/clients/kemenpppa.png';
+import unesco from '../assets/clients/unesco.png';
+import asean from '../assets/clients/asean.png';
+import kominfo from '../assets/clients/kominfo.png';
+import kemenparekraf from '../assets/clients/kemenparekraf.png';
+
 const manPowerServices = [
   {
     category: "Event Management",
@@ -34,7 +41,12 @@ const eventServices = [
 ];
 
 const trustedClients = [
-  "Bappenas", "Kemen PPPA", "UNESCO", "ASEAN", "Kominfo", "Kemenparekraf"
+  { name: "Bappenas", logo: bappenas },
+  { name: "Kemen PPPA", logo: kemenpppa },
+  { name: "UNESCO", logo: unesco },
+  { name: "ASEAN", logo: asean },
+  { name: "Kominfo", logo: kominfo },
+  { name: "Kemenparekraf", logo: kemenparekraf },
 ];
 
 const testimonials = [
@@ -142,9 +154,13 @@ export default function EventOrganizer() {
             <p className="text-gray-500 text-sm">Dipercaya oleh instansi terkemuka</p>
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               {trustedClients.map((client, idx) => (
-                <span key={idx} className="text-gray-400 font-bold text-lg tracking-wide hover:text-[#1F68F5] transition-colors cursor-default">
-                  {client}
-                </span>
+                <div key={idx} className="h-10 md:h-12 flex items-center justify-center">
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="h-full w-auto object-contain max-w-[100px] md:max-w-[120px]"
+                  />
+                </div>
               ))}
             </div>
           </div>

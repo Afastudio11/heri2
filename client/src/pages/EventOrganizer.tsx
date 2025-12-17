@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { ScrollAnimation } from '@/components/ScrollAnimation';
+import { motion } from 'framer-motion';
 
 import eventOrganizerHero from '@assets/Event_Organizer_1765872247503.png';
 
@@ -59,7 +61,11 @@ export default function EventOrganizer() {
       <section className="pt-24 pb-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center py-12 md:py-16">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-6">
                 Skyled Event Organizer
               </div>
@@ -104,11 +110,16 @@ export default function EventOrganizer() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
             
-            <div className="relative flex items-center justify-center">
-              <img src={eventOrganizerHero} alt="Event Organizer" className="w-full max-w-md object-contain" />
-            </div>
+            <motion.div 
+              className="relative flex items-center justify-center"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <img src={eventOrganizerHero} alt="Event Organizer" className="w-full max-w-md object-contain" loading="lazy" />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -124,6 +135,7 @@ export default function EventOrganizer() {
                     src={client.logo} 
                     alt={client.name}
                     className="h-full w-auto object-contain max-w-[100px] md:max-w-[120px]"
+                    loading="lazy"
                   />
                 </div>
               ))}
@@ -132,55 +144,97 @@ export default function EventOrganizer() {
         </div>
       </section>
 
-      <section className="py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#1F68F5] rounded-3xl p-8 md:p-12">
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="text-white">
-                <p className="text-5xl md:text-6xl font-bold mb-2">+89%</p>
-                <p className="text-white/80">Tingkat Kepuasan Klien</p>
-              </div>
-              <div className="text-white">
-                <p className="text-5xl md:text-6xl font-bold mb-2">100+</p>
-                <p className="text-white/80">Events Sukses</p>
-              </div>
-              <div className="text-white">
-                <p className="text-5xl md:text-6xl font-bold mb-2">#1</p>
-                <p className="text-white/80">Event Organizer Profesional</p>
+      <ScrollAnimation>
+        <section className="py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-[#1F68F5] rounded-3xl p-8 md:p-12">
+              <div className="grid md:grid-cols-3 gap-8 text-center">
+                <div className="text-white">
+                  <p className="text-5xl md:text-6xl font-bold mb-2">+89%</p>
+                  <p className="text-white/80">Tingkat Kepuasan Klien</p>
+                </div>
+                <div className="text-white">
+                  <p className="text-5xl md:text-6xl font-bold mb-2">100+</p>
+                  <p className="text-white/80">Events Sukses</p>
+                </div>
+                <div className="text-white">
+                  <p className="text-5xl md:text-6xl font-bold mb-2">#1</p>
+                  <p className="text-white/80">Event Organizer Profesional</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              MAN POWER
+          <ScrollAnimation>
+            <div className="text-center mb-12">
+              <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                MAN POWER
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Penyedia Tenaga Kerja</h2>
+              <p className="text-lg text-gray-600">Personel profesional dan berpengalaman untuk event Anda</p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Penyedia Tenaga Kerja</h2>
-            <p className="text-lg text-gray-600">Personel profesional dan berpengalaman untuk event Anda</p>
-          </div>
+          </ScrollAnimation>
           <div className="grid md:grid-cols-3 gap-6">
             {manPowerServices.map((service, index) => (
-              <Card key={index} className="border-0 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
-                <CardContent className="p-0">
-                  <div className="bg-[#1F68F5] p-6 text-white">
-                    <h3 className="text-xl font-bold">{service.category}</h3>
-                  </div>
-                  <div className="p-6">
-                    <ul className="space-y-3">
+              <ScrollAnimation key={index} delay={index * 0.1}>
+                <Card className="border-0 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow h-full">
+                  <CardContent className="p-0">
+                    <div className="bg-[#1F68F5] p-6 text-white">
+                      <h3 className="text-xl font-bold">{service.category}</h3>
+                    </div>
+                    <div className="p-6">
+                      <ul className="space-y-3">
+                        {service.items.map((item, idx) => (
+                          <li key={idx} className="flex items-center gap-3">
+                            <CheckCircle className="w-5 h-5 text-[#1F68F5] flex-shrink-0" />
+                            <span className="text-gray-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-20 bg-[#FAFBFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollAnimation>
+            <div className="text-center mb-12">
+              <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                SERVICES
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Layanan Event Production</h2>
+              <p className="text-lg text-gray-600">Solusi lengkap untuk kebutuhan produksi event Anda</p>
+            </div>
+          </ScrollAnimation>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {eventServices.map((service, index) => (
+              <ScrollAnimation key={index} delay={index * 0.05}>
+                <Card className="border border-gray-100 bg-white hover:border-[#1F68F5] hover:shadow-xl transition-all group h-full">
+                  <CardContent className="p-6">
+                    <div className="w-14 h-14 bg-[#F0F5FF] group-hover:bg-[#1F68F5] rounded-xl flex items-center justify-center text-[#1F68F5] group-hover:text-white mb-5 transition-colors">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                    <ul className="space-y-2">
                       {service.items.map((item, idx) => (
-                        <li key={idx} className="flex items-center gap-3">
-                          <CheckCircle className="w-5 h-5 text-[#1F68F5] flex-shrink-0" />
-                          <span className="text-gray-700">{item}</span>
+                        <li key={idx} className="text-gray-600 text-sm flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 bg-[#1F68F5] rounded-full"></div>
+                          {item}
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
@@ -188,63 +242,35 @@ export default function EventOrganizer() {
 
       <section className="py-16 md:py-20 bg-[#FAFBFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              SERVICES
+          <ScrollAnimation>
+            <div className="text-center mb-12">
+              <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                TESTIMONIAL
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Apa Kata Klien Kami</h2>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Layanan Event Production</h2>
-            <p className="text-lg text-gray-600">Solusi lengkap untuk kebutuhan produksi event Anda</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {eventServices.map((service, index) => (
-              <Card key={index} className="border border-gray-100 bg-white hover:border-[#1F68F5] hover:shadow-xl transition-all group">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 bg-[#F0F5FF] group-hover:bg-[#1F68F5] rounded-xl flex items-center justify-center text-[#1F68F5] group-hover:text-white mb-5 transition-colors">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <ul className="space-y-2">
-                    {service.items.map((item, idx) => (
-                      <li key={idx} className="text-gray-600 text-sm flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-[#1F68F5] rounded-full"></div>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-20 bg-[#FAFBFC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              TESTIMONIAL
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Apa Kata Klien Kami</h2>
-          </div>
+          </ScrollAnimation>
           <div className="grid md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-lg bg-white">
-                <CardContent className="p-8">
-                  <Quote className="w-10 h-10 text-[#1F68F5] mb-4" />
-                  <p className="text-gray-700 text-lg mb-6 leading-relaxed italic">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold">
-                      {testimonial.author.charAt(0)}
+              <ScrollAnimation key={index} delay={index * 0.1}>
+                <Card className="border-0 shadow-lg bg-white h-full">
+                  <CardContent className="p-8">
+                    <Quote className="w-10 h-10 text-[#1F68F5] mb-4" />
+                    <p className="text-gray-700 text-lg mb-6 leading-relaxed italic">
+                      "{testimonial.quote}"
+                    </p>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold">
+                        {testimonial.author.charAt(0)}
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-900">{testimonial.author}</p>
+                        <p className="text-[#1F68F5] text-sm">{testimonial.role}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-bold text-gray-900">{testimonial.author}</p>
-                      <p className="text-[#1F68F5] text-sm">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </ScrollAnimation>
             ))}
           </div>
         </div>

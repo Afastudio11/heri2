@@ -3,6 +3,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { ScrollAnimation } from '@/components/ScrollAnimation';
+import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 
 import consultingHero from '@assets/Consulting_1765871611867.png';
@@ -311,7 +313,11 @@ export default function Consulting() {
       <section className="pt-24 pb-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center py-12 md:py-16">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-6">
                 Skyled Pro Consulting
               </div>
@@ -356,59 +362,102 @@ export default function Consulting() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
             
-            <div className="relative flex items-center justify-center">
-              <img src={consultingHero} alt="Consulting Services" className="w-full max-w-md object-contain" />
-            </div>
+            <motion.div 
+              className="relative flex items-center justify-center"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <img src={consultingHero} alt="Consulting Services" className="w-full max-w-md object-contain" loading="lazy" />
+            </motion.div>
           </div>
         </div>
       </section>
       {/* Client Section */}
       <section className="py-16 md:py-20 overflow-hidden bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              SEKTOR PUBLIK
+          <ScrollAnimation>
+            <div className="text-center mb-12">
+              <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                SEKTOR PUBLIK
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dipercaya oleh Institusi Terkemuka</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Kemenko PMK, Kementerian Investasi/BKPM, KLHK, dan berbagai Pemerintah Daerah</p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dipercaya oleh Institusi Terkemuka</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Kemenko PMK, Kementerian Investasi/BKPM, KLHK, dan berbagai Pemerintah Daerah</p>
-          </div>
+          </ScrollAnimation>
         </div>
         
         <div className="relative">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FAFBFC] to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FAFBFC] to-transparent z-10" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
           
           <div className="flex flex-col gap-6">
-            <div className="flex items-center animate-marquee-left">
-              {[...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1].map((client, i) => (
-                <div 
-                  key={i} 
-                  className={`flex items-center justify-center mx-8 flex-shrink-0 ${client.large ? 'h-20 md:h-28' : 'h-12 md:h-14'}`}
-                >
-                  <img 
-                    src={client.logo} 
-                    alt={client.name}
-                    className={`h-full w-auto object-contain ${client.large ? 'max-w-[240px] md:max-w-[300px]' : 'max-w-[120px] md:max-w-[140px]'}`}
-                  />
-                </div>
-              ))}
+            <div className="marquee-container">
+              <div className="animate-marquee-left">
+                {[...consultingClientsRow1, ...consultingClientsRow1].map((client, i) => (
+                  <div 
+                    key={i} 
+                    className={`flex items-center justify-center mx-8 flex-shrink-0 ${client.large ? 'h-20 md:h-28' : 'h-12 md:h-14'}`}
+                  >
+                    <img 
+                      src={client.logo} 
+                      alt={client.name}
+                      className={`h-full w-auto object-contain ${client.large ? 'max-w-[240px] md:max-w-[300px]' : 'max-w-[120px] md:max-w-[140px]'}`}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="animate-marquee-left">
+                {[...consultingClientsRow1, ...consultingClientsRow1].map((client, i) => (
+                  <div 
+                    key={`dup-${i}`} 
+                    className={`flex items-center justify-center mx-8 flex-shrink-0 ${client.large ? 'h-20 md:h-28' : 'h-12 md:h-14'}`}
+                  >
+                    <img 
+                      src={client.logo} 
+                      alt={client.name}
+                      className={`h-full w-auto object-contain ${client.large ? 'max-w-[240px] md:max-w-[300px]' : 'max-w-[120px] md:max-w-[140px]'}`}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
             
-            <div className="flex animate-marquee-right">
-              {[...consultingClientsRow2, ...consultingClientsRow2, ...consultingClientsRow2, ...consultingClientsRow2].map((client, i) => (
-                <div 
-                  key={i} 
-                  className="h-12 md:h-14 flex items-center justify-center mx-8 flex-shrink-0"
-                >
-                  <img 
-                    src={client.logo} 
-                    alt={client.name}
-                    className="h-full w-auto object-contain max-w-[120px] md:max-w-[140px]"
-                  />
-                </div>
-              ))}
+            <div className="marquee-container">
+              <div className="animate-marquee-right">
+                {[...consultingClientsRow2, ...consultingClientsRow2].map((client, i) => (
+                  <div 
+                    key={i} 
+                    className="h-12 md:h-14 flex items-center justify-center mx-8 flex-shrink-0"
+                  >
+                    <img 
+                      src={client.logo} 
+                      alt={client.name}
+                      className="h-full w-auto object-contain max-w-[120px] md:max-w-[140px]"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="animate-marquee-right">
+                {[...consultingClientsRow2, ...consultingClientsRow2].map((client, i) => (
+                  <div 
+                    key={`dup-${i}`} 
+                    className="h-12 md:h-14 flex items-center justify-center mx-8 flex-shrink-0"
+                  >
+                    <img 
+                      src={client.logo} 
+                      alt={client.name}
+                      className="h-full w-auto object-contain max-w-[120px] md:max-w-[140px]"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -417,8 +466,9 @@ export default function Consulting() {
       <section className="py-16 md:py-20 bg-[#1E40AF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <ScrollAnimation direction="left">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Izin Formal Saja<br />
                 <span className="text-[#ffffff]">Tidak Cukup.</span>
               </h2>
@@ -445,49 +495,52 @@ export default function Consulting() {
                     <p className="text-sm text-[#ffffff]">Biaya legal dan reputasi yang mahal untuk dipulihkan.</p>
                   </div>
                 </div>
+                </div>
               </div>
-            </div>
+            </ScrollAnimation>
             
-            <div className="space-y-6">
-              <div className="bg-white rounded-2xl p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <p className="text-xs text-gray-500 font-medium tracking-wider mb-1">STATISTIK 2023</p>
-                    <h4 className="text-lg font-bold text-gray-900">Sumber Konflik Agraria</h4>
-                  </div>
-                  <span className="bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full">CRITICAL</span>
-                </div>
-                <div className="flex items-center gap-6">
-                  <div className="relative w-28 h-28">
-                    <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r="40" fill="none" stroke="#f3f4f6" strokeWidth="12" />
-                      <circle cx="50" cy="50" r="40" fill="none" stroke="#ef4444" strokeWidth="12" strokeDasharray="251.2" strokeDashoffset="123" strokeLinecap="round" />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-gray-900">51%</span>
+            <ScrollAnimation direction="right" delay={0.2}>
+              <div className="space-y-6">
+                <div className="bg-white rounded-2xl p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <p className="text-xs text-gray-500 font-medium tracking-wider mb-1">STATISTIK 2023</p>
+                      <h4 className="text-lg font-bold text-gray-900">Sumber Konflik Agraria</h4>
                     </div>
+                    <span className="bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full">CRITICAL</span>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Dipicu oleh <span className="text-red-500 font-semibold">investasi tanpa persetujuan</span> masyarakat.
-                  </p>
+                  <div className="flex items-center gap-6">
+                    <div className="relative w-28 h-28">
+                      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="#f3f4f6" strokeWidth="12" />
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="#ef4444" strokeWidth="12" strokeDasharray="251.2" strokeDashoffset="123" strokeLinecap="round" />
+                      </svg>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-2xl font-bold text-gray-900">51%</span>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Dipicu oleh <span className="text-red-500 font-semibold">investasi tanpa persetujuan</span> masyarakat.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-2xl p-6">
+                  <p className="text-xs text-gray-500 font-medium tracking-wider mb-2">TOTAL NILAI INVESTASI (2023)</p>
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className="text-4xl font-bold text-[#1F68F5]">Rp1.418</span>
+                    <span className="text-xl text-gray-600">Triliun</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
+                    <div className="bg-gradient-to-r from-[#1F68F5] to-green-500 h-2 rounded-full" style={{width: '51%'}}></div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    <p className="text-gray-500 text-sm">Potensi risiko tinggi jika tanpa SLO</p>
+                  </div>
                 </div>
               </div>
-              
-              <div className="bg-white rounded-2xl p-6">
-                <p className="text-xs text-gray-500 font-medium tracking-wider mb-2">TOTAL NILAI INVESTASI (2023)</p>
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-4xl font-bold text-[#1F68F5]">Rp1.418</span>
-                  <span className="text-xl text-gray-600">Triliun</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
-                  <div className="bg-gradient-to-r from-[#1F68F5] to-green-500 h-2 rounded-full" style={{width: '51%'}}></div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  <p className="text-gray-500 text-sm">Potensi risiko tinggi jika tanpa SLO</p>
-                </div>
-              </div>
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -498,17 +551,19 @@ export default function Consulting() {
         <div className="absolute -right-64 bottom-1/3 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-24">
-            <span className="inline-block py-1 px-3 rounded-full bg-[#F0F5FF] text-[#1F68F5] font-bold text-xs tracking-wider uppercase mb-4">
-              Our Solutions
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
-              Layanan Strategis Terintegrasi
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Menjawab tantangan bisnis dan sosial melalui tiga pilar utama yang saling mendukung.
-            </p>
-          </div>
+          <ScrollAnimation>
+            <div className="text-center mb-24">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#F0F5FF] text-[#1F68F5] font-bold text-xs tracking-wider uppercase mb-4">
+                Our Solutions
+              </span>
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+                Layanan Strategis Terintegrasi
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Menjawab tantangan bisnis dan sosial melalui tiga pilar utama yang saling mendukung.
+              </p>
+            </div>
+          </ScrollAnimation>
 
           <div className="relative">
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#1F68F5]/50 via-indigo-200 to-slate-200 -translate-x-1/2 rounded-full"></div>
@@ -516,7 +571,8 @@ export default function Consulting() {
             <div className="space-y-32">
               
               {/* Service 1: Consulting */}
-              <div className="relative flex flex-col md:flex-row items-center group">
+              <ScrollAnimation>
+                <div className="relative flex flex-col md:flex-row items-center group">
                 <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
                   <img src={consultingIcon} alt="Consulting" className="w-16 h-16 object-contain" />
                 </div>
@@ -551,83 +607,88 @@ export default function Consulting() {
                     </ul>
                   </div>
                 </div>
-              </div>
+                </div>
+              </ScrollAnimation>
 
               {/* Service 2: Training */}
-              <div className="relative flex flex-col md:flex-row-reverse items-center group">
-                <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
-                  <img src={trainingIcon} alt="Training" className="w-16 h-16 object-contain" />
-                </div>
+              <ScrollAnimation delay={0.1}>
+                <div className="relative flex flex-col md:flex-row-reverse items-center group">
+                  <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
+                    <img src={trainingIcon} alt="Training" className="w-16 h-16 object-contain" />
+                  </div>
 
-                <div className="md:hidden mb-6">
-                  <img src={trainingIcon} alt="Training" className="w-16 h-16 object-contain" />
-                </div>
+                  <div className="md:hidden mb-6">
+                    <img src={trainingIcon} alt="Training" className="w-16 h-16 object-contain" />
+                  </div>
 
-                <div className="w-full md:w-1/2 md:pl-24 text-center md:text-left">
-                  <h3 className="text-3xl font-bold text-slate-900 mb-3">Training</h3>
-                  <p className="font-bold tracking-wide uppercase text-sm mb-4 text-[#1f68f5]">Penguatan Kapasitas</p>
-                  <p className="text-slate-600 leading-relaxed text-lg">
-                    Membangun kapasitas organisasi agar mampu beradaptasi dan berinovasi. SDM yang kuat adalah kunci keberlanjutan.
-                  </p>
-                </div>
-                
-                <div className="w-full md:w-1/2 md:pr-24 mt-8 md:mt-0">
-                  <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-indigo-200 transition-all duration-300 relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-20 h-20 bg-indigo-50 rounded-br-full -ml-10 -mt-10"></div>
-                    <ul className="space-y-6 relative z-10">
-                      {trainingServices.map((service, index) => (
-                        <li key={index} className="flex items-start gap-4 md:flex-row-reverse md:text-right">
-                          <div className="mt-1 bg-indigo-100 p-1 rounded-full text-[#1f68f5]">
-                            <CheckCircle2 size={16} />
-                          </div>
-                          <div>
-                            <span className="font-bold text-slate-900 block text-lg">{service.title}</span>
-                            <span className="text-slate-500">{service.description}</span>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="w-full md:w-1/2 md:pl-24 text-center md:text-left">
+                    <h3 className="text-3xl font-bold text-slate-900 mb-3">Training</h3>
+                    <p className="font-bold tracking-wide uppercase text-sm mb-4 text-[#1f68f5]">Penguatan Kapasitas</p>
+                    <p className="text-slate-600 leading-relaxed text-lg">
+                      Membangun kapasitas organisasi agar mampu beradaptasi dan berinovasi. SDM yang kuat adalah kunci keberlanjutan.
+                    </p>
+                  </div>
+                  
+                  <div className="w-full md:w-1/2 md:pr-24 mt-8 md:mt-0">
+                    <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-indigo-200 transition-all duration-300 relative overflow-hidden">
+                      <div className="absolute top-0 left-0 w-20 h-20 bg-indigo-50 rounded-br-full -ml-10 -mt-10"></div>
+                      <ul className="space-y-6 relative z-10">
+                        {trainingServices.map((service, index) => (
+                          <li key={index} className="flex items-start gap-4 md:flex-row-reverse md:text-right">
+                            <div className="mt-1 bg-indigo-100 p-1 rounded-full text-[#1f68f5]">
+                              <CheckCircle2 size={16} />
+                            </div>
+                            <div>
+                              <span className="font-bold text-slate-900 block text-lg">{service.title}</span>
+                              <span className="text-slate-500">{service.description}</span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollAnimation>
 
               {/* Service 3: Advising */}
-              <div className="relative flex flex-col md:flex-row items-center group">
-                <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
-                  <img src={advisingIcon} alt="Advising" className="w-16 h-16 object-contain" />
-                </div>
+              <ScrollAnimation delay={0.2}>
+                <div className="relative flex flex-col md:flex-row items-center group">
+                  <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
+                    <img src={advisingIcon} alt="Advising" className="w-16 h-16 object-contain" />
+                  </div>
 
-                <div className="md:hidden mb-6">
-                  <img src={advisingIcon} alt="Advising" className="w-16 h-16 object-contain" />
-                </div>
+                  <div className="md:hidden mb-6">
+                    <img src={advisingIcon} alt="Advising" className="w-16 h-16 object-contain" />
+                  </div>
 
-                <div className="w-full md:w-1/2 md:pr-24 text-center md:text-right">
-                  <h3 className="text-3xl font-bold text-slate-900 mb-3">Advising</h3>
-                  <p className="font-bold tracking-wide uppercase text-sm mb-4 text-[#1f68f5]">Pendampingan Strategis</p>
-                  <p className="text-slate-600 leading-relaxed text-lg">
-                    Mendampingi pimpinan dalam pengambilan keputusan krusial dan transformasi organisasi jangka panjang.
-                  </p>
-                </div>
-                
-                <div className="w-full md:w-1/2 md:pl-24 mt-8 md:mt-0">
-                  <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-green-200 transition-all duration-300 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-green-50 rounded-bl-full -mr-10 -mt-10"></div>
-                    <ul className="space-y-6 relative z-10">
-                      {advisingServices.map((service, index) => (
-                        <li key={index} className="flex items-start gap-4">
-                          <div className="mt-1 p-1 rounded-full text-[#1f68f5] bg-[#1f68f540]">
-                            <CheckCircle2 size={16} />
-                          </div>
-                          <div>
-                            <span className="font-bold text-slate-900 block text-lg">{service.title}</span>
-                            <span className="text-slate-500">{service.description}</span>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="w-full md:w-1/2 md:pr-24 text-center md:text-right">
+                    <h3 className="text-3xl font-bold text-slate-900 mb-3">Advising</h3>
+                    <p className="font-bold tracking-wide uppercase text-sm mb-4 text-[#1f68f5]">Pendampingan Strategis</p>
+                    <p className="text-slate-600 leading-relaxed text-lg">
+                      Mendampingi pimpinan dalam pengambilan keputusan krusial dan transformasi organisasi jangka panjang.
+                    </p>
+                  </div>
+                  
+                  <div className="w-full md:w-1/2 md:pl-24 mt-8 md:mt-0">
+                    <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-green-200 transition-all duration-300 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-20 h-20 bg-green-50 rounded-bl-full -mr-10 -mt-10"></div>
+                      <ul className="space-y-6 relative z-10">
+                        {advisingServices.map((service, index) => (
+                          <li key={index} className="flex items-start gap-4">
+                            <div className="mt-1 p-1 rounded-full text-[#1f68f5] bg-[#1f68f540]">
+                              <CheckCircle2 size={16} />
+                            </div>
+                            <div>
+                              <span className="font-bold text-slate-900 block text-lg">{service.title}</span>
+                              <span className="text-slate-500">{service.description}</span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollAnimation>
 
             </div>
           </div>
@@ -636,15 +697,18 @@ export default function Consulting() {
       {/* Kami Juga Dapat Memberikan Pelayanan Section */}
       <section className="py-20 bg-gradient-to-b from-[#1F68F5] to-[#1E40AF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Kami juga dapat memberikan pelayanan:
-            </h2>
-          </div>
+          <ScrollAnimation>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Kami juga dapat memberikan pelayanan:
+              </h2>
+            </div>
+          </ScrollAnimation>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* SLO Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
+            <ScrollAnimation delay={0.1}>
+              <div className="bg-white rounded-2xl p-6 shadow-lg h-full">
               <div className="flex items-center gap-4 mb-4">
                 <img src={sloIcon} alt="SLO" className="w-16 h-16 object-contain" />
                 <h3 className="text-lg font-bold text-[#1F68F5]">Social License to Operate (SLO)</h3>
@@ -667,13 +731,15 @@ export default function Consulting() {
                   <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
                   Monitoring penerimaan
                 </li>
-              </ul>
-            </div>
+                </ul>
+              </div>
+            </ScrollAnimation>
 
             {/* CSR Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="flex items-center gap-4 mb-4">
-                <img src={csrIcon} alt="CSR" className="w-16 h-16 object-contain" />
+            <ScrollAnimation delay={0.15}>
+              <div className="bg-white rounded-2xl p-6 shadow-lg h-full">
+                <div className="flex items-center gap-4 mb-4">
+                  <img src={csrIcon} alt="CSR" className="w-16 h-16 object-contain" />
                 <h3 className="text-lg font-bold text-[#1F68F5]">Corporate Social Responsibility (CSR)</h3>
               </div>
               <p className="text-gray-600 mb-4">Mendesain program berbasis kebutuhan nyata.</p>
@@ -694,52 +760,57 @@ export default function Consulting() {
                   <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
                   Pelaporan CSR
                 </li>
-              </ul>
-            </div>
+                </ul>
+              </div>
+            </ScrollAnimation>
 
             {/* ESG Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="flex items-center gap-4 mb-4">
-                <img src={esgIcon} alt="ESG" className="w-16 h-16 object-contain" />
-                <h3 className="text-lg font-bold text-[#1F68F5]">Environment, Social, Government (ESG)</h3>
+            <ScrollAnimation delay={0.2}>
+              <div className="bg-white rounded-2xl p-6 shadow-lg h-full">
+                <div className="flex items-center gap-4 mb-4">
+                  <img src={esgIcon} alt="ESG" className="w-16 h-16 object-contain" />
+                  <h3 className="text-lg font-bold text-[#1F68F5]">Environment, Social, Government (ESG)</h3>
+                </div>
+                <p className="text-gray-600 mb-4">Menyusun roadmap keberlanjutan.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-gray-700 text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                    ESG assessment
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700 text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                    Sustainability reporting
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700 text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                    ESG compliance roadmap
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700 text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                    Due diligence
+                  </li>
+                </ul>
               </div>
-              <p className="text-gray-600 mb-4">Menyusun roadmap keberlanjutan.</p>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-gray-700 text-sm">
-                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
-                  ESG assessment
-                </li>
-                <li className="flex items-center gap-2 text-gray-700 text-sm">
-                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
-                  Sustainability reporting
-                </li>
-                <li className="flex items-center gap-2 text-gray-700 text-sm">
-                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
-                  ESG compliance roadmap
-                </li>
-                <li className="flex items-center gap-2 text-gray-700 text-sm">
-                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
-                  Due diligence
-                </li>
-              </ul>
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
       {/* Metodologi Section */}
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
-            <div className="max-w-2xl">
-              <span className="text-slate-400 font-bold uppercase tracking-wider text-sm mb-2 block">How We Work</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-                Pendekatan <span className="text-[#1F68F5]">Terukur & Berdampak</span>
-              </h2>
+          <ScrollAnimation>
+            <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+              <div className="max-w-2xl">
+                <span className="text-slate-400 font-bold uppercase tracking-wider text-sm mb-2 block">How We Work</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+                  Pendekatan <span className="text-[#1F68F5]">Terukur & Berdampak</span>
+                </h2>
+              </div>
+              <div className="flex items-center gap-2 text-slate-500 font-medium">
+                <span>End-to-end Process</span> <ArrowRight size={18}/>
+              </div>
             </div>
-            <div className="flex items-center gap-2 text-slate-500 font-medium">
-              <span>End-to-end Process</span> <ArrowRight size={18}/>
-            </div>
-          </div>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             {[

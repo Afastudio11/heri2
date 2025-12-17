@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ScrollAnimation } from './ScrollAnimation';
 
 import galaDinner1 from '../assets/portfolio/gala_dinner_1.jpg';
 import galaDinner2 from '../assets/portfolio/gala_dinner_2.jpg';
@@ -142,83 +143,89 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="py-24 bg-white relative" data-testid="section-portfolio">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <div className="text-blue-600 font-bold text-sm tracking-widest uppercase mb-2">PORTFOLIO</div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Event Yang Telah Kami Tangani
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
-            Dari pertemuan tingkat menteri hingga festival internasional, kami telah dipercaya menangani berbagai event prestisius.
-          </p>
-        </div>
+        <ScrollAnimation>
+          <div className="text-center mb-12">
+            <div className="text-blue-600 font-bold text-sm tracking-widest uppercase mb-2">PORTFOLIO</div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Event Yang Telah Kami Tangani
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              Dari pertemuan tingkat menteri hingga festival internasional, kami telah dipercaya menangani berbagai event prestisius.
+            </p>
+          </div>
+        </ScrollAnimation>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-16">
-          {categories.map((cat, idx) => (
-            <button
-              key={cat}
-              onClick={() => setActiveFilter(cat)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                activeFilter === cat 
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' 
-                  : 'bg-white text-gray-500 border border-gray-200 hover:border-blue-300'
-              }`}
-              data-testid={`button-portfolio-filter-${idx}`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+        <ScrollAnimation delay={0.1}>
+          <div className="flex flex-wrap justify-center gap-2 mb-16">
+            {categories.map((cat, idx) => (
+              <button
+                key={cat}
+                onClick={() => setActiveFilter(cat)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  activeFilter === cat 
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' 
+                    : 'bg-white text-gray-500 border border-gray-200 hover:border-blue-300'
+                }`}
+                data-testid={`button-portfolio-filter-${idx}`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </ScrollAnimation>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item) => (
-            <div 
-              key={item.id} 
-              className="group bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden cursor-pointer" 
-              data-testid={`card-portfolio-${item.id}`}
-              onClick={() => openGallery(item)}
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={item.images[0]} 
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <span className="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full">
-                  {item.category}
-                </span>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-1 leading-tight text-gray-900">{item.title}</h3>
-                <p className="text-xs text-blue-600 mb-3">{item.subtitle}</p>
-                
-                <p className={`text-sm text-gray-500 mb-2 leading-relaxed ${!isDescExpanded(item.id) ? 'line-clamp-2' : ''}`}>
-                  {item.desc}
-                </p>
-                
-                {item.desc.length > 100 && (
-                  <button 
-                    onClick={(e) => toggleDesc(item.id, e)}
-                    className="text-blue-600 text-xs font-medium mb-4 hover:underline"
-                  >
-                    {isDescExpanded(item.id) ? 'Tampilkan lebih sedikit' : 'Baca selengkapnya'}
-                  </button>
-                )}
-
-                <div className="flex items-center gap-2 text-xs text-gray-400 mb-4">
-                  <span className="font-medium">📍 {item.location}</span>
+          {filteredItems.map((item, index) => (
+            <ScrollAnimation key={item.id} delay={index * 0.05}>
+              <div 
+                className="group bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden cursor-pointer h-full" 
+                data-testid={`card-portfolio-${item.id}`}
+                onClick={() => openGallery(item)}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={item.images[0]} 
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <span className="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                    {item.category}
+                  </span>
                 </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-1 leading-tight text-gray-900">{item.title}</h3>
+                  <p className="text-xs text-blue-600 mb-3">{item.subtitle}</p>
+                  
+                  <p className={`text-sm text-gray-500 mb-2 leading-relaxed ${!isDescExpanded(item.id) ? 'line-clamp-2' : ''}`}>
+                    {item.desc}
+                  </p>
+                  
+                  {item.desc.length > 100 && (
+                    <button 
+                      onClick={(e) => toggleDesc(item.id, e)}
+                      className="text-blue-600 text-xs font-medium mb-4 hover:underline"
+                    >
+                      {isDescExpanded(item.id) ? 'Tampilkan lebih sedikit' : 'Baca selengkapnya'}
+                    </button>
+                  )}
 
-                <div className="flex flex-wrap gap-2">
-                  {item.tags.map((tag, i) => (
-                    <span key={i} className="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded">
-                      {tag}
-                    </span>
-                  ))}
+                  <div className="flex items-center gap-2 text-xs text-gray-400 mb-4">
+                    <span className="font-medium">{item.location}</span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {item.tags.map((tag, i) => (
+                      <span key={i} className="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>
@@ -236,7 +243,7 @@ export default function Portfolio() {
               onClick={closeGallery}
               className="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300 transition-colors z-10"
             >
-              ✕
+              X
             </button>
             
             <div className="relative flex-1 flex items-center justify-center">

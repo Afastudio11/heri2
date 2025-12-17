@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 import galaDinner from '../assets/portfolio/gala_dinner_1.jpg';
 import ministerMeeting from '../assets/portfolio/minister_meeting_1.jpg';
@@ -32,17 +33,37 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto z-10 grid lg:grid-cols-2 gap-12 items-center">
         
-        <div className="text-center lg:text-left">
-            <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-8">
+        <motion.div 
+          className="text-center lg:text-left"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+            <motion.h1 
+              className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
             Perjalanan Bisnis Anda Layak Mendapat<br />
             <span className="text-sky-200">Dukungan Ahli</span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-lg text-blue-50 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <motion.p 
+              className="text-lg text-blue-50 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
                 Kami adalah mitra strategis Anda dalam menciptakan pengalaman luar biasa melalui manajemen event, konsultasi bisnis, dan produksi kreatif berkualitas tinggi.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
                 <button 
                   onClick={() => scrollToSection('about')}
                   className="bg-white text-blue-600 h-12 px-8 rounded-full flex items-center justify-center gap-2 font-bold transition-all hover:bg-blue-50 shadow-lg shadow-blue-900/20"
@@ -55,15 +76,20 @@ export default function Hero() {
                 >
                     Hubungi Kami
                 </button>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
 
         {/* Photo Grid */}
-        <div className="relative w-full flex justify-center lg:justify-end">
+        <motion.div 
+          className="relative w-full flex justify-center lg:justify-end"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <div className="grid grid-cols-2 gap-3 max-w-lg w-full">
             {/* Top Left - Large */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-48">
-              <img src={galaDinner} alt="Gala Dinner Event" className="w-full h-full object-cover" />
+              <img src={galaDinner} alt="Gala Dinner Event" className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-md">
                 <p className="text-[10px] text-gray-500 font-medium">Event Nasional</p>
                 <p className="text-sm font-bold text-gray-900">100+ Events</p>
@@ -72,7 +98,7 @@ export default function Hero() {
             
             {/* Top Right - Tall */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl row-span-2 bg-gradient-to-br from-blue-800 to-blue-900">
-              <img src={ministerMeeting} alt="Minister Meeting" className="w-full h-full object-cover opacity-90" />
+              <img src={ministerMeeting} alt="Minister Meeting" className="w-full h-full object-cover opacity-90" loading="lazy" />
               <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-md">
                 <p className="text-[10px] text-gray-500 font-medium">Klien Kementerian</p>
                 <p className="text-sm font-bold text-gray-900">50+ Klien</p>
@@ -81,13 +107,13 @@ export default function Hero() {
             
             {/* Bottom Left - Standard */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-48">
-              <img src={womenClimate} alt="Women Climate Event" className="w-full h-full object-cover" />
+              <img src={womenClimate} alt="Women Climate Event" className="w-full h-full object-cover" loading="lazy" />
             </div>
             
             {/* Bottom Banner */}
             <div className="col-span-2 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl flex items-center gap-4">
               <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
-                <img src={marineCamp} alt="Marine Camp" className="w-full h-full object-cover" />
+                <img src={marineCamp} alt="Marine Camp" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div className="flex-1">
                 <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Layanan Profesional</p>
@@ -96,7 +122,7 @@ export default function Hero() {
               <ArrowRight className="text-blue-600" size={20} />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

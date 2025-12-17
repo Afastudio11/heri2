@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import consultingHero from '@assets/Consulting_1765871611867.png';
 
@@ -226,6 +226,80 @@ function ImageCarousel({ images, title }: { images: string[], title: string }) {
         ))}
       </div>
     </div>
+  );
+}
+
+function PortfolioSection() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -370, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 370, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section className="py-24 bg-white" id="portfolio">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div>
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">Proyek Strategis (2025)</h2>
+            <p className="text-gray-600 max-w-xl text-lg">
+              Kepercayaan yang kami jawab dengan hasil nyata di lapangan.
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <Button
+              size="icon"
+              variant="outline"
+              onClick={scrollLeft}
+              className="rounded-full border-gray-300"
+              data-testid="button-portfolio-prev"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+            <Button
+              size="icon"
+              variant="outline"
+              onClick={scrollRight}
+              className="rounded-full border-gray-300"
+              data-testid="button-portfolio-next"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+
+        <div className="relative">
+          <div ref={scrollContainerRef} className="overflow-x-auto pb-4 scrollbar-hide">
+            <div className="flex gap-6" style={{ minWidth: 'max-content' }}>
+              {portfolioProjects.map((project, index) => (
+                <div key={index} className="group relative rounded-2xl overflow-hidden cursor-pointer h-[400px] w-[350px] flex-shrink-0 shadow-lg" data-testid={`card-project-${index}`}>
+                  <ImageCarousel images={project.images} title={project.title} />
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                  
+                  <div className="absolute bottom-0 left-0 right-0 h-24 flex flex-col items-center justify-center p-4 text-center">
+                    <span className="text-[#60A5FA] font-bold text-xs uppercase tracking-wider mb-1 block">
+                      {project.location}
+                    </span>
+                    <h3 className="text-xl font-bold text-white leading-tight group-hover:text-blue-100 transition-colors">
+                      {project.title}
+                    </h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -711,45 +785,8 @@ export default function Consulting() {
         </div>
       </section>
       {/* Portofolio Section */}
-      <section className="py-24 bg-[#1E40AF] text-white" id="portfolio">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-              <h2 className="text-4xl font-bold mb-4">Proyek Strategis (2025)</h2>
-              <p className="text-slate-400 max-w-xl text-lg">
-                Kepercayaan yang kami jawab dengan hasil nyata di lapangan.
-              </p>
-            </div>
-            <button className="hidden md:flex items-center gap-2 text-white hover:text-[#60A5FA] transition-colors font-medium group">
-              Lihat Selengkapnya <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </button>
-          </div>
-
-          <div className="relative">
-            <div className="overflow-x-auto pb-4 scrollbar-hide">
-              <div className="flex gap-6" style={{ minWidth: 'max-content' }}>
-                {portfolioProjects.map((project, index) => (
-                  <div key={index} className="group relative rounded-2xl overflow-hidden cursor-pointer h-[400px] w-[350px] flex-shrink-0" data-testid={`card-project-${index}`}>
-                    <ImageCarousel images={project.images} title={project.title} />
-                    
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-                    
-                    <div className="absolute bottom-0 left-0 right-0 h-24 flex flex-col items-center justify-center p-4 text-center">
-                      <span className="text-[#60A5FA] font-bold text-xs uppercase tracking-wider mb-1 block">
-                        {project.location}
-                      </span>
-                      <h3 className="text-xl font-bold text-white leading-tight group-hover:text-blue-100 transition-colors">
-                        {project.title}
-                      </h3>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <p className="text-center text-slate-300 text-sm mt-4">Geser untuk melihat lebih banyak →</p>
-          </div>
-        </div>
-      </section>
+      <PortfolioSection />
+      
       <Footer />
     </div>
   );

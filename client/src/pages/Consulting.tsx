@@ -1,4 +1,4 @@
-import { CheckCircle, Shield, Users, Lightbulb, TrendingUp, Target, BookOpen, UserCheck, FileText, ChevronLeft, ChevronRight, AlertTriangle, Scale, MessageSquare, ArrowRight } from 'lucide-react';
+import { CheckCircle, Shield, Users, Lightbulb, TrendingUp, Target, BookOpen, UserCheck, FileText, ChevronLeft, ChevronRight, AlertTriangle, Scale, MessageSquare, ArrowRight, CheckCircle2, MapPin, ShieldAlert, ChevronRight as ChevronRightIcon } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -369,195 +369,260 @@ export default function Consulting() {
       </section>
 
       {/* Layanan Strategis Section */}
-      <section className="py-16 md:py-20 bg-[#FAFBFC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-[#1F68F5] font-semibold text-sm tracking-wider mb-3">SOLUSI TERINTEGRASI</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Layanan Strategis</h2>
+      <section className="py-24 bg-slate-50 relative overflow-hidden" id="services">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
+        <div className="absolute -left-64 top-1/3 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div className="absolute -right-64 bottom-1/3 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-24">
+            <span className="inline-block py-1 px-3 rounded-full bg-[#F0F5FF] text-[#1F68F5] font-bold text-xs tracking-wider uppercase mb-4">
+              Our Solutions
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+              Layanan Strategis Terintegrasi
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Menjawab tantangan bisnis dan sosial melalui tiga pilar utama yang saling mendukung.
+            </p>
           </div>
 
-          {/* Consulting Row */}
-          <div className="relative grid lg:grid-cols-2 gap-8 mb-12">
-            <div className="text-right pr-12 lg:pr-16">
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">Consulting</h3>
-              <p className="text-gray-500 text-sm mb-4">Konsultasi Strategis</p>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Solusi berbasis data untuk perencanaan dan evaluasi program pembangunan yang berkelanjutan.
-              </p>
-            </div>
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 z-10 hidden lg:block">
-              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center shadow-lg">
-                <FileText className="w-7 h-7 text-white" />
-              </div>
-            </div>
-            <div className="lg:hidden flex justify-center mb-4">
-              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center">
-                <FileText className="w-7 h-7 text-white" />
-              </div>
-            </div>
-            <Card className="border border-gray-200 bg-white pl-12 lg:pl-16">
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  {consultingServices.map((service, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[#1F68F5] mt-0.5 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-gray-900 text-sm">{service.title}</h4>
-                        <p className="text-gray-500 text-xs">{service.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <div className="relative">
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#1F68F5]/50 via-indigo-200 to-slate-200 -translate-x-1/2 rounded-full"></div>
 
-          {/* Training Row */}
-          <div className="relative grid lg:grid-cols-2 gap-8 mb-12">
-            <Card className="border-l-4 border-l-[#1F68F5] border-t-0 border-r-0 border-b-0 bg-[#F0F5FF] pr-12 lg:pr-16 lg:order-1">
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  {trainingServices.map((service, index) => (
-                    <div key={index} className="flex items-center justify-end gap-3">
-                      <div className="text-right">
-                        <h4 className="font-semibold text-gray-900 text-sm">{service.title}</h4>
-                        <p className="text-gray-500 text-xs">{service.description}</p>
-                      </div>
-                      <CheckCircle className="w-5 h-5 text-[#1F68F5] flex-shrink-0" />
-                    </div>
-                  ))}
+            <div className="space-y-32">
+              
+              {/* Service 1: Consulting */}
+              <div className="relative flex flex-col md:flex-row items-center group">
+                <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-[#1F68F5] rounded-full flex items-center justify-center text-white">
+                    <FileText size={28} />
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 z-10 hidden lg:block">
-              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center shadow-lg">
-                <MessageSquare className="w-7 h-7 text-white" />
-              </div>
-            </div>
-            <div className="lg:hidden flex justify-center mb-4">
-              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center">
-                <MessageSquare className="w-7 h-7 text-white" />
-              </div>
-            </div>
-            <div className="pl-12 lg:pl-16 lg:order-2">
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">Training</h3>
-              <p className="text-gray-500 text-sm mb-4">Penguatan Kapasitas</p>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Membangun kapasitas organisasi untuk beradaptasi dan berinovasi dalam tantangan dinamis.
-              </p>
-            </div>
-          </div>
 
-          {/* Advising Row */}
-          <div className="relative grid lg:grid-cols-2 gap-8">
-            <div className="text-center pr-12 lg:pr-16">
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">Advising</h3>
-              <p className="text-gray-500 text-sm mb-4">Pendampingan Strategis</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-md mx-auto">
-                Mendampingi pimpinan dalam pengambilan keputusan dan transformasi organisasi jangka panjang.
-              </p>
-            </div>
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 z-10 hidden lg:block">
-              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center shadow-lg">
-                <UserCheck className="w-7 h-7 text-white" />
-              </div>
-            </div>
-            <div className="lg:hidden flex justify-center mb-4">
-              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center">
-                <UserCheck className="w-7 h-7 text-white" />
-              </div>
-            </div>
-            <Card className="border border-gray-200 bg-white pl-12 lg:pl-16">
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  {advisingServices.map((service, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[#1F68F5] mt-0.5 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-gray-900 text-sm">{service.title}</h4>
-                        <p className="text-gray-500 text-xs">{service.description}</p>
-                      </div>
-                    </div>
-                  ))}
+                <div className="md:hidden w-16 h-16 bg-[#1F68F5] rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-blue-200">
+                  <FileText size={28} />
                 </div>
-              </CardContent>
-            </Card>
+
+                <div className="w-full md:w-1/2 md:pr-24 text-center md:text-right">
+                  <h3 className="text-3xl font-bold text-slate-900 mb-3">Consulting</h3>
+                  <p className="text-[#1F68F5] font-bold tracking-wide uppercase text-sm mb-4">Konsultasi Strategis</p>
+                  <p className="text-slate-600 leading-relaxed text-lg">
+                    Solusi berbasis data untuk perencanaan dan evaluasi program pembangunan yang berkelanjutan. Kami memastikan setiap langkah strategis Anda terukur.
+                  </p>
+                </div>
+                
+                <div className="w-full md:w-1/2 md:pl-24 mt-8 md:mt-0">
+                  <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-[#1F68F5]/30 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-[#F0F5FF] rounded-bl-full -mr-10 -mt-10"></div>
+                    <ul className="space-y-6 relative z-10">
+                      {consultingServices.map((service, index) => (
+                        <li key={index} className="flex items-start gap-4">
+                          <div className="mt-1 bg-[#F0F5FF] p-1 rounded-full text-[#1F68F5]">
+                            <CheckCircle2 size={16} />
+                          </div>
+                          <div>
+                            <span className="font-bold text-slate-900 block text-lg">{service.title}</span>
+                            <span className="text-slate-500">{service.description}</span>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Service 2: Training */}
+              <div className="relative flex flex-col md:flex-row-reverse items-center group">
+                <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white">
+                    <BookOpen size={28} />
+                  </div>
+                </div>
+
+                <div className="md:hidden w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-indigo-200">
+                  <BookOpen size={28} />
+                </div>
+
+                <div className="w-full md:w-1/2 md:pl-24 text-center md:text-left">
+                  <h3 className="text-3xl font-bold text-slate-900 mb-3">Training</h3>
+                  <p className="text-indigo-600 font-bold tracking-wide uppercase text-sm mb-4">Penguatan Kapasitas</p>
+                  <p className="text-slate-600 leading-relaxed text-lg">
+                    Membangun kapasitas organisasi agar mampu beradaptasi dan berinovasi. SDM yang kuat adalah kunci keberlanjutan.
+                  </p>
+                </div>
+                
+                <div className="w-full md:w-1/2 md:pr-24 mt-8 md:mt-0">
+                  <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-indigo-200 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-20 h-20 bg-indigo-50 rounded-br-full -ml-10 -mt-10"></div>
+                    <ul className="space-y-6 relative z-10">
+                      {trainingServices.map((service, index) => (
+                        <li key={index} className="flex items-start gap-4 md:flex-row-reverse md:text-right">
+                          <div className="mt-1 bg-indigo-100 p-1 rounded-full text-indigo-600">
+                            <CheckCircle2 size={16} />
+                          </div>
+                          <div>
+                            <span className="font-bold text-slate-900 block text-lg">{service.title}</span>
+                            <span className="text-slate-500">{service.description}</span>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Service 3: Advising */}
+              <div className="relative flex flex-col md:flex-row items-center group">
+                <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white">
+                    <Users size={28} />
+                  </div>
+                </div>
+
+                <div className="md:hidden w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-green-200">
+                  <Users size={28} />
+                </div>
+
+                <div className="w-full md:w-1/2 md:pr-24 text-center md:text-right">
+                  <h3 className="text-3xl font-bold text-slate-900 mb-3">Advising</h3>
+                  <p className="text-green-600 font-bold tracking-wide uppercase text-sm mb-4">Pendampingan Strategis</p>
+                  <p className="text-slate-600 leading-relaxed text-lg">
+                    Mendampingi pimpinan dalam pengambilan keputusan krusial dan transformasi organisasi jangka panjang.
+                  </p>
+                </div>
+                
+                <div className="w-full md:w-1/2 md:pl-24 mt-8 md:mt-0">
+                  <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-green-200 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-green-50 rounded-bl-full -mr-10 -mt-10"></div>
+                    <ul className="space-y-6 relative z-10">
+                      {advisingServices.map((service, index) => (
+                        <li key={index} className="flex items-start gap-4">
+                          <div className="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                            <CheckCircle2 size={16} />
+                          </div>
+                          <div>
+                            <span className="font-bold text-slate-900 block text-lg">{service.title}</span>
+                            <span className="text-slate-500">{service.description}</span>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
 
       {/* Metodologi Section */}
-      <section className="py-24 bg-slate-50 relative">
+      <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Metodologi Kami</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto">
-              Pendekatan tiga tahap yang terintegrasi untuk hasil maksimal.
-            </p>
+          <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+            <div className="max-w-2xl">
+              <span className="text-slate-400 font-bold uppercase tracking-wider text-sm mb-2 block">How We Work</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+                Pendekatan <span className="text-[#1F68F5]">Terukur & Berdampak</span>
+              </h2>
+            </div>
+            <div className="flex items-center gap-2 text-slate-500 font-medium">
+              <span>End-to-end Process</span> <ArrowRight size={18}/>
+            </div>
           </div>
 
-          <div className="relative">
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-200 -translate-y-1/2 z-0"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            {[
+              { icon: <Lightbulb size={32} />, title: "Insight", desc: "Kami memulai dengan riset mendalam untuk menemukan akar masalah, bukan sekadar gejala.", color: "bg-[#1F68F5]", accent: "border-blue-200" },
+              { icon: <TrendingUp size={32} />, title: "Capacity", desc: "Solusi hanya efektif jika dieksekusi oleh tim yang kapabel. Kami latih tim Anda.", color: "bg-indigo-600", accent: "border-indigo-200" },
+              { icon: <Target size={32} />, title: "Impact", desc: "Tujuan akhir kami selalu tindakan nyata yang memberikan dampak positif terukur.", color: "bg-green-600", accent: "border-green-200" }
+            ].map((step, index) => (
+              <div key={index} className="group relative flex flex-col h-full">
+                {index < 2 && (
+                  <div className="hidden md:block absolute top-12 -right-4 z-20 text-slate-200 transform translate-x-1/2">
+                    <ChevronRightIcon size={48} strokeWidth={1} />
+                  </div>
+                )}
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-              {[
-                { icon: <Lightbulb size={28} />, title: "Insight", desc: "Riset mendalam & data driven.", color: "bg-blue-600" },
-                { icon: <TrendingUp size={28} />, title: "Capacity", desc: "Peningkatan skill organisasi.", color: "bg-indigo-600" },
-                { icon: <Target size={28} />, title: "Impact", desc: "Tindakan nyata & terukur.", color: "bg-green-600" }
-              ].map((step, index) => (
-                <div key={index} className="group relative">
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-white border border-slate-200 text-slate-400 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-20">
-                    STEP 0{index + 1}
+                <div className={`flex-1 bg-white p-8 rounded-3xl border-2 ${step.accent} hover:border-transparent hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 relative overflow-hidden`}>
+                  <div className="absolute -right-4 -top-4 text-9xl font-black text-slate-50 opacity-50 select-none group-hover:text-slate-100 transition-colors">
+                    {index + 1}
                   </div>
 
-                  <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center h-full group-hover:-translate-y-2">
-                    <div className={`w-16 h-16 ${step.color} rounded-2xl text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/10 group-hover:scale-110 transition-transform`}>
-                      {step.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed">
+                  <div className={`relative z-10 w-16 h-16 ${step.color} rounded-2xl text-white flex items-center justify-center mb-6 shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                    {step.icon}
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                    <p className="text-slate-500 leading-relaxed">
                       {step.desc}
                     </p>
                   </div>
 
-                  {index < 2 && (
-                    <div className="md:hidden flex justify-center py-4 text-slate-300">
-                      <ArrowRight className="rotate-90 md:rotate-0" />
-                    </div>
-                  )}
+                  <div className={`absolute bottom-0 left-0 w-full h-1.5 ${step.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
                 </div>
-              ))}
-            </div>
+                
+                {index < 2 && (
+                  <div className="md:hidden flex justify-center py-4 text-slate-300">
+                    <ArrowRight className="rotate-90" />
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Portofolio Section */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-24 bg-slate-900 text-white" id="portfolio">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              PORTOFOLIO TERPILIH
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+              <div className="inline-block px-4 py-1.5 rounded-full bg-[#1F68F5]/20 text-[#60A5FA] font-bold text-xs tracking-wide mb-4 uppercase border border-[#1F68F5]/30">
+                Track Record
+              </div>
+              <h2 className="text-4xl font-bold mb-4">Proyek Strategis (2025)</h2>
+              <p className="text-slate-400 max-w-xl text-lg">
+                Kepercayaan yang kami jawab dengan hasil nyata di lapangan.
+              </p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Proyek Strategis (2025)</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Kami telah dipercaya oleh berbagai institusi</p>
+            <button className="hidden md:flex items-center gap-2 text-white hover:text-[#60A5FA] transition-colors font-medium group">
+              Lihat Selengkapnya <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </button>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {portfolioProjects.map((project, index) => (
-              <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group" data-testid={`card-project-${index}`}>
-                <CardContent className="p-0">
-                  <ImageCarousel images={project.images} title={project.title} />
-                  <div className="p-4">
-                    <p className="text-gray-600 text-sm leading-relaxed mb-3">{project.description}</p>
-                    <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
-                      <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
+              <div key={index} className="group relative rounded-2xl overflow-hidden cursor-pointer h-[400px]" data-testid={`card-project-${index}`}>
+                <ImageCarousel images={project.images} title={project.title} />
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <span className="text-[#60A5FA] font-bold text-xs uppercase tracking-wider mb-2 block">
                       {project.location}
+                    </span>
+                    <h3 className="text-2xl font-bold text-white mb-3 leading-tight group-hover:text-blue-100 transition-colors">
+                      {project.title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      <MapPin size={14} /> {project.description}
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
+             
+            <div className="rounded-2xl bg-[#1F68F5] p-8 flex flex-col justify-center items-center text-center h-[400px] hover:bg-[#1a5ad4] transition-colors cursor-pointer group">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform">
+                <ArrowRight size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">Ingin Melihat Lebih Banyak?</h3>
+              <p className="text-blue-100">Jelajahi portofolio lengkap kami.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -613,24 +678,22 @@ export default function Consulting() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-[#1F68F5]">
+      <section className="py-24 bg-white" id="contact">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Siap Meraih Social License to Operate?
+          <h2 className="text-4xl font-bold text-slate-900 mb-6">
+            Siap Berkolaborasi?
           </h2>
-          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-            Hubungi kami untuk konsultasi gratis dan temukan solusi terbaik untuk kebutuhan bisnis Anda
+          
+          <p className="text-slate-500 text-lg leading-relaxed mb-10">
+            Baik Anda membutuhkan penyelenggaraan event besar, merancang roadmap keberlanjutan, atau memproduksi merchandise custom, Skyled Pro Indonesia adalah solusi lengkap Anda.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a href="https://wa.me/6287883184796" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-[#25D366] hover:bg-[#20b858] text-white px-8 py-3 h-auto rounded-full text-base font-semibold">
-                Hubungi via WhatsApp
-              </Button>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="https://wa.me/6287883184796" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#22C55E] text-white px-8 py-4 rounded-full font-bold hover:bg-green-600 transition-all shadow-lg shadow-green-200">
+              <MessageSquare size={22} /> Hubungi via WhatsApp
             </a>
-            <a href="mailto:cv.skyledproindonesia@gmail.com">
-              <Button variant="outline" className="border-white text-white px-8 py-3 h-auto rounded-full text-base font-semibold hover:bg-white/10">
-                Kirim Email
-              </Button>
+            <a href="mailto:cv.skyledproindonesia@gmail.com" className="flex items-center justify-center gap-2 bg-[#1F68F5] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1a5ad4] transition-all shadow-lg shadow-blue-200">
+              <FileText size={22} /> Kirim Email
             </a>
           </div>
         </div>

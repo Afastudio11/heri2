@@ -555,6 +555,106 @@ export default function Consulting() {
           </div>
         </div>
       </section>
+      {/* Kami Juga Dapat Memberikan Pelayanan Section */}
+      <section className="py-20 bg-gradient-to-b from-[#1F68F5] to-[#1E40AF]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Kami juga dapat memberikan pelayanan:
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* SLO Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-[#F0F5FF] rounded-xl flex items-center justify-center text-2xl">
+                  🤝
+                </div>
+                <h3 className="text-lg font-bold text-[#1F68F5]">Social License to Operate (SLO)</h3>
+              </div>
+              <p className="text-gray-600 mb-4">Mendampingi perusahaan meraih legitimasi sosial.</p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  Pemetaan sosial & stakeholder
+                </li>
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  Negosiasi komunitas
+                </li>
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  Mediasi konflik
+                </li>
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  Monitoring penerimaan
+                </li>
+              </ul>
+            </div>
+
+            {/* CSR Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-[#F0F5FF] rounded-xl flex items-center justify-center text-2xl">
+                  🌍
+                </div>
+                <h3 className="text-lg font-bold text-[#1F68F5]">Corporate Social Responsibility (CSR)</h3>
+              </div>
+              <p className="text-gray-600 mb-4">Mendesain program berbasis kebutuhan nyata.</p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  Riset kebutuhan komunitas
+                </li>
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  Program CSR strategis
+                </li>
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  Monitoring dampak
+                </li>
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  Pelaporan CSR
+                </li>
+              </ul>
+            </div>
+
+            {/* ESG Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-[#F0F5FF] rounded-xl flex items-center justify-center text-2xl">
+                  🌱
+                </div>
+                <h3 className="text-lg font-bold text-[#1F68F5]">Environment, Social, Government (ESG)</h3>
+              </div>
+              <p className="text-gray-600 mb-4">Menyusun roadmap keberlanjutan.</p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  ESG assessment
+                </li>
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  Sustainability reporting
+                </li>
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  ESG compliance roadmap
+                </li>
+                <li className="flex items-center gap-2 text-gray-700 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#1F68F5]" />
+                  Due diligence
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Metodologi Section */}
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -627,23 +727,28 @@ export default function Consulting() {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {portfolioProjects.map((project, index) => (
-              <div key={index} className="group relative rounded-2xl overflow-hidden cursor-pointer h-[400px]" data-testid={`card-project-${index}`}>
-                <ImageCarousel images={project.images} title={project.title} />
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-                
-                <div className="absolute bottom-0 left-0 right-0 h-24 flex flex-col items-center justify-center p-4 text-center">
-                  <span className="text-[#60A5FA] font-bold text-xs uppercase tracking-wider mb-1 block">
-                    {project.location}
-                  </span>
-                  <h3 className="text-xl font-bold text-white leading-tight group-hover:text-blue-100 transition-colors">
-                    {project.title}
-                  </h3>
-                </div>
+          <div className="relative">
+            <div className="overflow-x-auto pb-4 scrollbar-hide">
+              <div className="flex gap-6" style={{ minWidth: 'max-content' }}>
+                {portfolioProjects.map((project, index) => (
+                  <div key={index} className="group relative rounded-2xl overflow-hidden cursor-pointer h-[400px] w-[350px] flex-shrink-0" data-testid={`card-project-${index}`}>
+                    <ImageCarousel images={project.images} title={project.title} />
+                    
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    
+                    <div className="absolute bottom-0 left-0 right-0 h-24 flex flex-col items-center justify-center p-4 text-center">
+                      <span className="text-[#60A5FA] font-bold text-xs uppercase tracking-wider mb-1 block">
+                        {project.location}
+                      </span>
+                      <h3 className="text-xl font-bold text-white leading-tight group-hover:text-blue-100 transition-colors">
+                        {project.title}
+                      </h3>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <p className="text-center text-slate-300 text-sm mt-4">Geser untuk melihat lebih banyak →</p>
           </div>
         </div>
       </section>

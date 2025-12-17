@@ -365,7 +365,7 @@ export default function Consulting() {
         </div>
       </section>
       {/* Client Section */}
-      <section className="py-16 md:py-20 bg-[#FAFBFC] overflow-hidden">
+      <section className="py-16 md:py-20 overflow-hidden bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
@@ -726,7 +726,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       {/* Metodologi Section */}
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -786,7 +785,6 @@ export default function Consulting() {
       </section>
       {/* Portofolio Section */}
       <PortfolioSection />
-      
       <Footer />
     </div>
   );

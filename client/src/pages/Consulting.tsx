@@ -588,7 +588,7 @@ export default function Consulting() {
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-4 pb-3">
+                <div className="absolute bottom-0 left-0 right-0 p-4 pb-3 text-center">
                   <span className="text-[#60A5FA] font-bold text-xs uppercase tracking-wider mb-1 block">
                     {project.location}
                   </span>

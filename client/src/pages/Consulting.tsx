@@ -36,6 +36,23 @@ import maybrat from '../assets/clients/maybrat.jpg';
 import sorong from '../assets/clients/sorong.png';
 import tanaToraja from '../assets/clients/tana_toraja.webp';
 
+// Project documentation images
+import sloDoc1 from '@assets/Penyusunan_Dokumen_SLO_tambang_nikel_di_Papua_Barat_Daya_1765958232662.png';
+import sloDoc2 from '@assets/Penyusunan_Dokumen_SLO_tambang_nikel_di_Papua_Barat_Daya1_1765958232666.png';
+import sloDoc3 from '@assets/Penyusunan_Dokumen_SLO_tambang_nikel_di_Papua_Barat_Daya2_1765958232666.png';
+import iproDoc1 from '@assets/Penyusunan_Dokumen_IPRO_4_sektor_di_Provinsi_Papua_Barat_Daya_1765958232665.png';
+import iproDoc2 from '@assets/Penyusunan_Dokumen_IPRO_4_sektor_di_Provinsi_Papua_Barat_Daya1_1765958232665.png';
+import iproDoc3 from '@assets/Penyusunan_Dokumen_IPRO_4_sektor_di_Provinsi_Papua_Barat_Daya2_1765958232665.png';
+import desaWisataDoc1 from '@assets/Konsultansi_Kelembagaan_Desa_Wisata_dan_Koperasi_Merah_Putih_1765958232665.png';
+import desaWisataDoc2 from '@assets/Konsultansi_Kelembagaan_Desa_Wisata_dan_Koperasi_Merah_Putih1_1765958232664.png';
+import desaWisataDoc3 from '@assets/Konsultansi_Kelembagaan_Desa_Wisata_dan_Koperasi_Merah_Putih2_1765958232664.png';
+import opopDoc1 from '@assets/Penyusunan_dan_Penerbitan_buku_OPOP_Jawa_Timur_1765958232664.png';
+import opopDoc2 from '@assets/Penyusunan_dan_Penerbitan_buku_OPOP_Jawa_Timur1_1765958232664.png';
+import opopDoc3 from '@assets/Penyusunan_dan_Penerbitan_buku_OPOP_Jawa_Timur2_1765958232663.png';
+import agiDoc1 from '@assets/Konsultansi_Program_Aksi_Generasi_Iklim_(AGI)_2025_1765958232663.png';
+import agiDoc2 from '@assets/Konsultansi_Program_Aksi_Generasi_Iklim_(AGI)_20251_1765958232663.png';
+import agiDoc3 from '@assets/Konsultansi_Program_Aksi_Generasi_Iklim_(AGI)_20252_1765958232662.png';
+
 const consultingClientsRow1 = [
   { name: "Kemenparekraf/Baparekraf", logo: kemenparekrafBarparekraf, large: false },
   { name: "Kemen PPPA", logo: kemenPppaLogo, large: false },
@@ -267,14 +284,21 @@ export default function Consulting() {
             <p className="text-gray-600 max-w-2xl mx-auto">Berbagai proyek strategis yang telah kami kerjakan bersama mitra</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group" data-testid="card-project-slo">
               <CardContent className="p-0">
-                <div className="bg-[#1F68F5] p-6 text-white">
-                  <FolderOpen className="w-10 h-10 mb-4" />
-                  <h3 className="font-bold text-lg">Dokumen SLO Tambang Nikel</h3>
+                <div className="relative h-48 overflow-hidden">
+                  <img src={sloDoc1} alt="SLO Documentation" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-bold text-lg text-white">Dokumen SLO Tambang Nikel</h3>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">Penyusunan Dokumen Social License to Operate untuk tambang nikel di Papua Barat Daya</p>
+                <div className="p-4">
+                  <div className="flex gap-2 mb-4">
+                    <img src={sloDoc2} alt="SLO Doc 2" className="w-16 h-12 object-cover rounded" />
+                    <img src={sloDoc3} alt="SLO Doc 3" className="w-16 h-12 object-cover rounded" />
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Penyusunan Dokumen Social License to Operate untuk tambang nikel di Papua Barat Daya</p>
                   <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
                     <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
                     Papua Barat Daya
@@ -282,14 +306,21 @@ export default function Consulting() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group" data-testid="card-project-ipro">
               <CardContent className="p-0">
-                <div className="bg-[#1F68F5] p-6 text-white">
-                  <FolderOpen className="w-10 h-10 mb-4" />
-                  <h3 className="font-bold text-lg">Dokumen IPRO 4 Sektor</h3>
+                <div className="relative h-48 overflow-hidden">
+                  <img src={iproDoc1} alt="IPRO Documentation" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-bold text-lg text-white">Dokumen IPRO 4 Sektor</h3>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">Penyusunan Dokumen IPRO untuk 4 sektor di Provinsi Papua Barat Daya</p>
+                <div className="p-4">
+                  <div className="flex gap-2 mb-4">
+                    <img src={iproDoc2} alt="IPRO Doc 2" className="w-16 h-12 object-cover rounded" />
+                    <img src={iproDoc3} alt="IPRO Doc 3" className="w-16 h-12 object-cover rounded" />
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Penyusunan Dokumen IPRO untuk 4 sektor di Provinsi Papua Barat Daya</p>
                   <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
                     <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
                     Papua Barat Daya
@@ -297,14 +328,21 @@ export default function Consulting() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group" data-testid="card-project-desa-wisata">
               <CardContent className="p-0">
-                <div className="bg-[#1F68F5] p-6 text-white">
-                  <FolderOpen className="w-10 h-10 mb-4" />
-                  <h3 className="font-bold text-lg">Kelembagaan Desa Wisata</h3>
+                <div className="relative h-48 overflow-hidden">
+                  <img src={desaWisataDoc1} alt="Desa Wisata Documentation" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-bold text-lg text-white">Kelembagaan Desa Wisata</h3>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">Konsultansi Kelembagaan Desa Wisata dan Koperasi Merah Putih</p>
+                <div className="p-4">
+                  <div className="flex gap-2 mb-4">
+                    <img src={desaWisataDoc2} alt="Desa Wisata Doc 2" className="w-16 h-12 object-cover rounded" />
+                    <img src={desaWisataDoc3} alt="Desa Wisata Doc 3" className="w-16 h-12 object-cover rounded" />
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Konsultansi Kelembagaan Desa Wisata dan Koperasi Merah Putih</p>
                   <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
                     <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
                     Nasional
@@ -312,14 +350,21 @@ export default function Consulting() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group" data-testid="card-project-opop">
               <CardContent className="p-0">
-                <div className="bg-[#1F68F5] p-6 text-white">
-                  <FolderOpen className="w-10 h-10 mb-4" />
-                  <h3 className="font-bold text-lg">Buku OPOP Jawa Timur</h3>
+                <div className="relative h-48 overflow-hidden">
+                  <img src={opopDoc1} alt="OPOP Documentation" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-bold text-lg text-white">Buku OPOP Jawa Timur</h3>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">Penyusunan dan Penerbitan buku OPOP (One Pesantren One Product) Jawa Timur</p>
+                <div className="p-4">
+                  <div className="flex gap-2 mb-4">
+                    <img src={opopDoc2} alt="OPOP Doc 2" className="w-16 h-12 object-cover rounded" />
+                    <img src={opopDoc3} alt="OPOP Doc 3" className="w-16 h-12 object-cover rounded" />
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Penyusunan dan Penerbitan buku OPOP (One Pesantren One Product) Jawa Timur</p>
                   <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
                     <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
                     Jawa Timur
@@ -327,14 +372,21 @@ export default function Consulting() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group" data-testid="card-project-agi">
               <CardContent className="p-0">
-                <div className="bg-[#1F68F5] p-6 text-white">
-                  <FolderOpen className="w-10 h-10 mb-4" />
-                  <h3 className="font-bold text-lg">Program Aksi Generasi Iklim</h3>
+                <div className="relative h-48 overflow-hidden">
+                  <img src={agiDoc1} alt="AGI Documentation" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-bold text-lg text-white">Program Aksi Generasi Iklim</h3>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">Konsultansi Program Aksi Generasi Iklim (AGI) 2025</p>
+                <div className="p-4">
+                  <div className="flex gap-2 mb-4">
+                    <img src={agiDoc2} alt="AGI Doc 2" className="w-16 h-12 object-cover rounded" />
+                    <img src={agiDoc3} alt="AGI Doc 3" className="w-16 h-12 object-cover rounded" />
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Konsultansi Program Aksi Generasi Iklim (AGI) 2025</p>
                   <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
                     <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
                     Nasional

@@ -221,7 +221,7 @@ export default function Consulting() {
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
           
           <div className="flex flex-col gap-6">
-            <div className="flex animate-marquee-left">
+            <div className="flex items-center animate-marquee-left">
               {[...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1].map((client, i) => (
                 <div 
                   key={i} 

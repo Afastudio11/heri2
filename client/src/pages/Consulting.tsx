@@ -1,4 +1,4 @@
-import { CheckCircle, Shield, Quote, Users, Briefcase, FolderOpen, FileText } from 'lucide-react';
+import { CheckCircle, Shield, Quote, Users, Briefcase, FolderOpen } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -46,6 +46,7 @@ export default function Consulting() {
     <div className="min-h-screen bg-white">
       <Navbar />
       
+      {/* Hero Section */}
       <section className="pt-24 pb-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center py-12 md:py-16">
@@ -98,6 +99,59 @@ export default function Consulting() {
             
             <div className="relative flex items-center justify-center">
               <img src={consultingHero} alt="Consulting Services" className="w-full max-w-md object-contain" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gap di Pasar Section */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                Gap di Pasar
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Mengapa Ini <span className="text-[#1F68F5]">Penting?</span>
+              </h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                CSR sering hanya charity tahunan. ESG semakin ketat, tapi banyak perusahaan bingung menerapkannya. 
+              </p>
+              <div className="bg-[#F0F5FF] rounded-2xl p-6 mb-6">
+                <div className="flex items-start gap-4">
+                  <Shield className="w-8 h-8 text-[#1F68F5] flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-2">Skyled Hadir Mengisi Gap</h3>
+                    <p className="text-gray-600 text-sm">Kami menyediakan solusi terintegrasi SLO-CSR-ESG yang komprehensif dan terukur untuk bisnis Anda.</p>
+                  </div>
+                </div>
+              </div>
+              <ul className="space-y-3">
+                {["Pendekatan berbasis data dan riset", "Tim ahli berpengalaman 10+ tahun", "Track record dengan perusahaan multinasional"].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#1F68F5]" />
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gray-100 rounded-2xl p-6 flex flex-col justify-center items-center text-center">
+                <img src={iconKonflikIndustri} alt="Konflik industri" className="w-24 h-24 object-contain mb-4" />
+                <p className="text-3xl font-bold text-gray-900">59%</p>
+                <p className="text-gray-600 text-sm">Konflik industri</p>
+              </div>
+              <div className="space-y-4">
+                <div className="bg-[#1F68F5] rounded-2xl p-6 text-white text-center">
+                  <p className="text-4xl font-bold">51%</p>
+                  <p className="text-white/80 text-sm">Konflik agraria</p>
+                </div>
+                <div className="bg-gray-900 rounded-2xl p-6 text-white text-center">
+                  <p className="text-2xl font-bold">20K+</p>
+                  <p className="text-white/70 text-sm">Izin baru/tahun</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -235,151 +289,7 @@ export default function Consulting() {
         </div>
       </section>
 
-      {/* Case Study Section */}
-      <section className="py-16 md:py-20 bg-[#1F68F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              CASE STUDY
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Rencana Proyek 2026</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">Proyek-proyek strategis yang akan kami kerjakan bersama mitra terpercaya</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="bg-white border-0 shadow-xl">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#F0F5FF] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-6 h-6 text-[#1F68F5]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">Pengelolaan Dana CSR Kawasan Industri Bontang</h3>
-                    <p className="text-gray-600 text-sm mb-3">Kerjasama bersama DPC Masata Kota Bontang</p>
-                    <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-bold px-3 py-1 rounded-full">
-                      Rp1,5 Miliar
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="bg-white border-0 shadow-xl">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#F0F5FF] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-6 h-6 text-[#1F68F5]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">Executive Training Direksi/Komisaris BUMD</h3>
-                    <p className="text-gray-600 text-sm mb-3">Penyelenggaraan 3 kelas bekerja sama dengan Lembaga Pranata UI</p>
-                    <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-bold px-3 py-1 rounded-full">
-                      Rp4,5 Miliar
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="bg-white border-0 shadow-xl">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#F0F5FF] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-6 h-6 text-[#1F68F5]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">Training Tenaga Ahli DPR/DPD/DPRD</h3>
-                    <p className="text-gray-600 text-sm mb-3">Penyelenggaraan 4 kelas bekerja sama dengan Biru Muda Project (BMP)</p>
-                    <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-bold px-3 py-1 rounded-full">
-                      Rp1,8 Miliar
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="bg-white border-0 shadow-xl">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#F0F5FF] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-6 h-6 text-[#1F68F5]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">Proyek IPRO dan SLO Multi-Daerah</h3>
-                    <p className="text-gray-600 text-sm mb-3">Bekerja sama dengan IKA UNDIP, ILUNI UI, KAGAMA UGM, dan APEKSI</p>
-                    <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-bold px-3 py-1 rounded-full">
-                      Rp1,8 Miliar
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#1F68F5] rounded-3xl p-8 md:p-12">
-            <div className="grid md:grid-cols-4 gap-8">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="text-center text-white">
-                  <p className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</p>
-                  <p className="font-medium mb-1">{stat.label}</p>
-                  <p className="text-white/60 text-sm">{stat.sublabel}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-                Gap di Pasar
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Mengapa Ini <span className="text-[#1F68F5]">Penting?</span>
-              </h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                CSR sering hanya charity tahunan. ESG semakin ketat, tapi banyak perusahaan bingung menerapkannya. 
-              </p>
-              <div className="bg-[#F0F5FF] rounded-2xl p-6 mb-6">
-                <div className="flex items-start gap-4">
-                  <Shield className="w-8 h-8 text-[#1F68F5] flex-shrink-0" />
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">Skyled Hadir Mengisi Gap</h3>
-                    <p className="text-gray-600 text-sm">Kami menyediakan solusi terintegrasi SLO-CSR-ESG yang komprehensif dan terukur untuk bisnis Anda.</p>
-                  </div>
-                </div>
-              </div>
-              <ul className="space-y-3">
-                {["Pendekatan berbasis data dan riset", "Tim ahli berpengalaman 10+ tahun", "Track record dengan perusahaan multinasional"].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#1F68F5]" />
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gray-100 rounded-2xl p-6 flex flex-col justify-center items-center text-center">
-                <img src={iconKonflikIndustri} alt="Konflik industri" className="w-24 h-24 object-contain mb-4" />
-                <p className="text-3xl font-bold text-gray-900">59%</p>
-                <p className="text-gray-600 text-sm">Konflik industri</p>
-              </div>
-              <div className="space-y-4">
-                <div className="bg-[#1F68F5] rounded-2xl p-6 text-white text-center">
-                  <p className="text-4xl font-bold">51%</p>
-                  <p className="text-white/80 text-sm">Konflik agraria</p>
-                </div>
-                <div className="bg-gray-900 rounded-2xl p-6 text-white text-center">
-                  <p className="text-2xl font-bold">20K+</p>
-                  <p className="text-white/70 text-sm">Izin baru/tahun</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Layanan Kami Section */}
       <section className="py-16 md:py-20 bg-[#FAFBFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -422,6 +332,25 @@ export default function Consulting() {
           </div>
         </div>
       </section>
+
+      {/* Stats Section */}
+      <section className="py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#1F68F5] rounded-3xl p-8 md:p-12">
+            <div className="grid md:grid-cols-4 gap-8">
+              {stats.map((stat, idx) => (
+                <div key={idx} className="text-center text-white">
+                  <p className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</p>
+                  <p className="font-medium mb-1">{stat.label}</p>
+                  <p className="text-white/60 text-sm">{stat.sublabel}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Target Pasar Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -445,6 +374,8 @@ export default function Consulting() {
           </div>
         </div>
       </section>
+
+      {/* Testimonial Section */}
       <section className="py-16 md:py-20 bg-[#FAFBFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -476,6 +407,7 @@ export default function Consulting() {
           </div>
         </div>
       </section>
+
       <Footer />
     </div>
   );

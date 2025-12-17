@@ -312,7 +312,7 @@ export default function Consulting() {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1 text-[#ffffff]">Gugatan Hukum</h4>
-                    <p className="text-gray-500 text-sm">Biaya legal dan reputasi yang mahal untuk dipulihkan.</p>
+                    <p className="text-sm text-[#ffffff]">Biaya legal dan reputasi yang mahal untuk dipulihkan.</p>
                   </div>
                 </div>
               </div>

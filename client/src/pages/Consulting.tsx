@@ -204,7 +204,7 @@ function ImageCarousel({ images, title }: { images: string[], title: string }) {
         <ChevronRight className="w-5 h-5 text-gray-800" />
       </button>
 
-      <div className="absolute bottom-16 left-0 right-0 flex justify-center gap-2">
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
         {images.map((_, idx) => (
           <button
             key={idx}
@@ -213,10 +213,6 @@ function ImageCarousel({ images, title }: { images: string[], title: string }) {
             data-testid={`button-carousel-dot-${idx}`}
           />
         ))}
-      </div>
-
-      <div className="absolute bottom-0 left-0 right-0 p-4">
-        <h3 className="font-bold text-lg text-white">{title}</h3>
       </div>
     </div>
   );
@@ -286,7 +282,7 @@ export default function Consulting() {
       </section>
 
       {/* Mengapa Izin Formal Tidak Cukup Section */}
-      <section className="py-16 md:py-20 bg-[#0F172A]">
+      <section className="py-16 md:py-20 bg-[#1E40AF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -576,7 +572,7 @@ export default function Consulting() {
       </section>
 
       {/* Portofolio Section */}
-      <section className="py-24 bg-slate-900 text-white" id="portfolio">
+      <section className="py-24 bg-[#1E40AF] text-white" id="portfolio">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>

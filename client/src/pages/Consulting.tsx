@@ -14,6 +14,10 @@ import consultingIcon from '@assets/Consulting_1765963884502.png';
 import impactIcon from '@assets/Impact_1765963884502.png';
 import insightIcon from '@assets/Insight_1765963884502.png';
 
+import sloIcon from '@assets/Social_License_to_Operate_(SLO)_1765964727091.png';
+import csrIcon from '@assets/Corporate_Social_Responsibility_(CSR)_1765964727091.png';
+import esgIcon from '@assets/Environment,_Social,_Government_(ESG)_1765964727092.png';
+
 import kemenparekrafBarparekraf from '../assets/clients/kemenparekraf_baparekraf.png';
 import kemenPppaLogo from '../assets/clients/kemen_pppa_logo.png';
 import papuaBaratDaya from '../assets/clients/papua_barat_daya.png';
@@ -567,10 +571,8 @@ export default function Consulting() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* SLO Card */}
             <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-[#F0F5FF] rounded-xl flex items-center justify-center text-2xl">
-                  🤝
-                </div>
+              <div className="flex items-center gap-4 mb-4">
+                <img src={sloIcon} alt="SLO" className="w-16 h-16 object-contain" />
                 <h3 className="text-lg font-bold text-[#1F68F5]">Social License to Operate (SLO)</h3>
               </div>
               <p className="text-gray-600 mb-4">Mendampingi perusahaan meraih legitimasi sosial.</p>
@@ -596,10 +598,8 @@ export default function Consulting() {
 
             {/* CSR Card */}
             <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-[#F0F5FF] rounded-xl flex items-center justify-center text-2xl">
-                  🌍
-                </div>
+              <div className="flex items-center gap-4 mb-4">
+                <img src={csrIcon} alt="CSR" className="w-16 h-16 object-contain" />
                 <h3 className="text-lg font-bold text-[#1F68F5]">Corporate Social Responsibility (CSR)</h3>
               </div>
               <p className="text-gray-600 mb-4">Mendesain program berbasis kebutuhan nyata.</p>
@@ -625,10 +625,8 @@ export default function Consulting() {
 
             {/* ESG Card */}
             <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-[#F0F5FF] rounded-xl flex items-center justify-center text-2xl">
-                  🌱
-                </div>
+              <div className="flex items-center gap-4 mb-4">
+                <img src={esgIcon} alt="ESG" className="w-16 h-16 object-contain" />
                 <h3 className="text-lg font-bold text-[#1F68F5]">Environment, Social, Government (ESG)</h3>
               </div>
               <p className="text-gray-600 mb-4">Menyusun roadmap keberlanjutan.</p>

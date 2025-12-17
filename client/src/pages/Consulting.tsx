@@ -36,7 +36,7 @@ import maybrat from '../assets/clients/maybrat.jpg';
 import sorong from '../assets/clients/sorong.png';
 import tanaToraja from '../assets/clients/tana_toraja.webp';
 
-const consultingClients = [
+const consultingClientsRow1 = [
   { name: "Kemenparekraf/Baparekraf", logo: kemenparekrafBarparekraf },
   { name: "Kemen PPPA", logo: kemenPppaLogo },
   { name: "Papua Barat Daya", logo: papuaBaratDaya },
@@ -47,6 +47,9 @@ const consultingClients = [
   { name: "KPAI", logo: kpai },
   { name: "Kemen Perhubungan", logo: kemenPerhubungan },
   { name: "Kemenko PMK", logo: kemenkoPmk },
+];
+
+const consultingClientsRow2 = [
   { name: "Papua", logo: papua },
   { name: "Bangka Belitung", logo: bangkaBelitung },
   { name: "British School Jakarta", logo: bsj },
@@ -202,7 +205,7 @@ export default function Consulting() {
       </section>
 
       {/* Client Section */}
-      <section className="py-16 md:py-20 bg-[#FAFBFC]">
+      <section className="py-16 md:py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
@@ -211,16 +214,44 @@ export default function Consulting() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dipercaya oleh Institusi Terkemuka</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Kami telah bekerja sama dengan berbagai kementerian dan lembaga pemerintah dalam proyek strategis</p>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-6">
-            {consultingClients.map((client, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-4 flex items-center justify-center hover:shadow-lg transition-all border border-gray-100">
-                <img 
-                  src={client.logo} 
-                  alt={client.name}
-                  className="h-12 md:h-14 w-auto object-contain max-w-[80px] md:max-w-[100px]"
-                />
-              </div>
-            ))}
+        </div>
+        
+        <div className="relative">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
+          
+          <div className="flex flex-col gap-6">
+            <div className="flex animate-marquee-left">
+              {[...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1].map((client, i) => (
+                <div 
+                  key={i} 
+                  className="h-12 md:h-14 flex items-center justify-center mx-8 flex-shrink-0"
+                  data-testid={`logo-consulting-row1-${i}`}
+                >
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="h-full w-auto object-contain max-w-[120px] md:max-w-[140px]"
+                  />
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex animate-marquee-right">
+              {[...consultingClientsRow2, ...consultingClientsRow2, ...consultingClientsRow2, ...consultingClientsRow2].map((client, i) => (
+                <div 
+                  key={i} 
+                  className="h-12 md:h-14 flex items-center justify-center mx-8 flex-shrink-0"
+                  data-testid={`logo-consulting-row2-${i}`}
+                >
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="h-full w-auto object-contain max-w-[120px] md:max-w-[140px]"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

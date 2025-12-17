@@ -553,7 +553,7 @@ export default function Consulting() {
                     </p>
                   </div>
 
-                  <div className={`absolute bottom-0 left-0 w-full h-1.5 ${step.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
+                  <div className="absolute bottom-0 left-0 w-full h-1.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left bg-[#1f68f5]"></div>
                 </div>
                 
                 {index < 2 && (

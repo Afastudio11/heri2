@@ -439,7 +439,7 @@ export default function Consulting() {
 
                 <div className="w-full md:w-1/2 md:pl-24 text-center md:text-left">
                   <h3 className="text-3xl font-bold text-slate-900 mb-3">Training</h3>
-                  <p className="text-indigo-600 font-bold tracking-wide uppercase text-sm mb-4">Penguatan Kapasitas</p>
+                  <p className="font-bold tracking-wide uppercase text-sm mb-4 text-[#1f68f5]">Penguatan Kapasitas</p>
                   <p className="text-slate-600 leading-relaxed text-lg">
                     Membangun kapasitas organisasi agar mampu beradaptasi dan berinovasi. SDM yang kuat adalah kunci keberlanjutan.
                   </p>

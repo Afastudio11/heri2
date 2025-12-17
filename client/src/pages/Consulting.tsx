@@ -7,6 +7,13 @@ import { useState, useEffect } from 'react';
 
 import consultingHero from '@assets/Consulting_1765871611867.png';
 
+import trainingIcon from '@assets/Training_1765963884501.png';
+import advisingIcon from '@assets/Advising_1765963884501.png';
+import capacityIcon from '@assets/Capacity_1765963884502.png';
+import consultingIcon from '@assets/Consulting_1765963884502.png';
+import impactIcon from '@assets/Impact_1765963884502.png';
+import insightIcon from '@assets/Insight_1765963884502.png';
+
 import kemenparekrafBarparekraf from '../assets/clients/kemenparekraf_baparekraf.png';
 import kemenPppaLogo from '../assets/clients/kemen_pppa_logo.png';
 import papuaBaratDaya from '../assets/clients/papua_barat_daya.png';
@@ -384,13 +391,11 @@ export default function Consulting() {
               {/* Service 1: Consulting */}
               <div className="relative flex flex-col md:flex-row items-center group">
                 <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-[#1F68F5] rounded-full flex items-center justify-center text-white">
-                    <FileText size={28} />
-                  </div>
+                  <img src={consultingIcon} alt="Consulting" className="w-16 h-16 object-contain" />
                 </div>
 
-                <div className="md:hidden w-16 h-16 bg-[#1F68F5] rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-blue-200">
-                  <FileText size={28} />
+                <div className="md:hidden mb-6">
+                  <img src={consultingIcon} alt="Consulting" className="w-16 h-16 object-contain" />
                 </div>
 
                 <div className="w-full md:w-1/2 md:pr-24 text-center md:text-right">
@@ -424,13 +429,11 @@ export default function Consulting() {
               {/* Service 2: Training */}
               <div className="relative flex flex-col md:flex-row-reverse items-center group">
                 <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center text-white bg-[#1f68f5]">
-                    <BookOpen size={28} />
-                  </div>
+                  <img src={trainingIcon} alt="Training" className="w-16 h-16 object-contain" />
                 </div>
 
-                <div className="md:hidden w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-indigo-200">
-                  <BookOpen size={28} />
+                <div className="md:hidden mb-6">
+                  <img src={trainingIcon} alt="Training" className="w-16 h-16 object-contain" />
                 </div>
 
                 <div className="w-full md:w-1/2 md:pl-24 text-center md:text-left">
@@ -464,13 +467,11 @@ export default function Consulting() {
               {/* Service 3: Advising */}
               <div className="relative flex flex-col md:flex-row items-center group">
                 <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center text-white bg-[#1f68f5]">
-                    <Users size={28} />
-                  </div>
+                  <img src={advisingIcon} alt="Advising" className="w-16 h-16 object-contain" />
                 </div>
 
-                <div className="md:hidden w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-green-200">
-                  <Users size={28} />
+                <div className="md:hidden mb-6">
+                  <img src={advisingIcon} alt="Advising" className="w-16 h-16 object-contain" />
                 </div>
 
                 <div className="w-full md:w-1/2 md:pr-24 text-center md:text-right">
@@ -522,9 +523,9 @@ export default function Consulting() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             {[
-              { icon: <Lightbulb size={32} />, title: "Insight", desc: "Kami memulai dengan riset mendalam untuk menemukan akar masalah, bukan sekadar gejala.", color: "bg-[#1F68F5]", accent: "border-blue-200" },
-              { icon: <TrendingUp size={32} />, title: "Capacity", desc: "Solusi hanya efektif jika dieksekusi oleh tim yang kapabel. Kami latih tim Anda.", color: "bg-indigo-600", accent: "border-indigo-200" },
-              { icon: <Target size={32} />, title: "Impact", desc: "Tujuan akhir kami selalu tindakan nyata yang memberikan dampak positif terukur.", color: "bg-green-600", accent: "border-green-200" }
+              { icon: insightIcon, title: "Insight", desc: "Kami memulai dengan riset mendalam untuk menemukan akar masalah, bukan sekadar gejala.", accent: "border-blue-200" },
+              { icon: capacityIcon, title: "Capacity", desc: "Solusi hanya efektif jika dieksekusi oleh tim yang kapabel. Kami latih tim Anda.", accent: "border-indigo-200" },
+              { icon: impactIcon, title: "Impact", desc: "Tujuan akhir kami selalu tindakan nyata yang memberikan dampak positif terukur.", accent: "border-green-200" }
             ].map((step, index) => (
               <div key={index} className="group relative flex flex-col h-full">
                 {index < 2 && (
@@ -538,8 +539,8 @@ export default function Consulting() {
                     {index + 1}
                   </div>
 
-                  <div className={`relative z-10 w-16 h-16 ${step.color} rounded-2xl text-white flex items-center justify-center mb-6 shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
-                    {step.icon}
+                  <div className="relative z-10 mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                    <img src={step.icon} alt={step.title} className="w-16 h-16 object-contain" />
                   </div>
                   
                   <div className="relative z-10">

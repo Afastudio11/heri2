@@ -303,7 +303,7 @@ export default function Consulting() {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1 bg-[#00000000] text-[#ffffff]">Risiko Penolakan Warga</h4>
-                    <p className="text-gray-500 text-sm">Proyek terhambat atau berhenti total akibat konflik sosial.</p>
+                    <p className="text-sm text-[#ffffff]">Proyek terhambat atau berhenti total akibat konflik sosial.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -311,7 +311,7 @@ export default function Consulting() {
                     <Scale className="w-5 h-5 text-red-400" />
                   </div>
                   <div>
-                    <h4 className="text-red-400 font-semibold mb-1">Gugatan Hukum</h4>
+                    <h4 className="font-semibold mb-1 text-[#ffffff]">Gugatan Hukum</h4>
                     <p className="text-gray-500 text-sm">Biaya legal dan reputasi yang mahal untuk dipulihkan.</p>
                   </div>
                 </div>

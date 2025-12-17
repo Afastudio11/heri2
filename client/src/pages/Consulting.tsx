@@ -225,13 +225,13 @@ export default function Consulting() {
               {[...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1].map((client, i) => (
                 <div 
                   key={i} 
-                  className={`flex items-center justify-center mx-8 flex-shrink-0 ${client.large ? 'h-16 md:h-20' : 'h-12 md:h-14'}`}
+                  className={`flex items-center justify-center mx-8 flex-shrink-0 ${client.large ? 'h-20 md:h-28' : 'h-12 md:h-14'}`}
                   data-testid={`logo-consulting-row1-${i}`}
                 >
                   <img 
                     src={client.logo} 
                     alt={client.name}
-                    className={`h-full w-auto object-contain ${client.large ? 'max-w-[180px] md:max-w-[220px]' : 'max-w-[120px] md:max-w-[140px]'}`}
+                    className={`h-full w-auto object-contain ${client.large ? 'max-w-[240px] md:max-w-[300px]' : 'max-w-[120px] md:max-w-[140px]'}`}
                   />
                 </div>
               ))}

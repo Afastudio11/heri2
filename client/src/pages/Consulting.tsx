@@ -571,7 +571,7 @@ export default function Consulting() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
-              <div className="inline-block px-4 py-1.5 rounded-full bg-[#1F68F5]/20 text-[#60A5FA] font-bold text-xs tracking-wide mb-4 uppercase border border-[#1F68F5]/30">
+              <div className="inline-block px-4 py-1.5 rounded-full text-[#60A5FA] font-bold text-xs tracking-wide mb-4 uppercase border border-[#1F68F5]/30 bg-[#ffffff]">
                 Track Record
               </div>
               <h2 className="text-4xl font-bold mb-4">Proyek Strategis (2025)</h2>

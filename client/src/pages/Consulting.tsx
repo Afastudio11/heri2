@@ -491,7 +491,7 @@ export default function Consulting() {
                     <ul className="space-y-6 relative z-10">
                       {advisingServices.map((service, index) => (
                         <li key={index} className="flex items-start gap-4">
-                          <div className="mt-1 p-1 rounded-full text-[#1f68f5] bg-[#e0e7ff]">
+                          <div className="mt-1 p-1 rounded-full text-[#1f68f5] bg-[#1f68f540]">
                             <CheckCircle2 size={16} />
                           </div>
                           <div>

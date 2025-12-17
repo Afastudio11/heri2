@@ -173,7 +173,7 @@ const portfolioProjects = [
   }
 ];
 
-function ImageCarousel({ images, title }: { images: string[], title: string }) {
+function ImageCarousel({ images, title, showControls = true }: { images: string[], title: string, showControls?: boolean }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -198,22 +198,25 @@ function ImageCarousel({ images, title }: { images: string[], title: string }) {
         alt={`${title} - ${currentIndex + 1}`} 
         className="w-full h-full object-cover transition-opacity duration-500" 
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       
-      <button 
-        onClick={goToPrevious}
-        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-        data-testid="button-carousel-prev"
-      >
-        <ChevronLeft className="w-5 h-5 text-gray-800" />
-      </button>
-      <button 
-        onClick={goToNext}
-        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-        data-testid="button-carousel-next"
-      >
-        <ChevronRight className="w-5 h-5 text-gray-800" />
-      </button>
+      {showControls && (
+        <>
+          <button 
+            onClick={goToPrevious}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            data-testid="button-carousel-prev"
+          >
+            <ChevronLeft className="w-5 h-5 text-gray-800" />
+          </button>
+          <button 
+            onClick={goToNext}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            data-testid="button-carousel-next"
+          >
+            <ChevronRight className="w-5 h-5 text-gray-800" />
+          </button>
+        </>
+      )}
 
       <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
         {images.map((_, idx) => (
@@ -281,15 +284,13 @@ function PortfolioSection() {
             <div className="flex gap-6" style={{ minWidth: 'max-content' }}>
               {portfolioProjects.map((project, index) => (
                 <div key={index} className="group relative rounded-2xl overflow-hidden cursor-pointer h-[400px] w-[350px] flex-shrink-0 shadow-lg" data-testid={`card-project-${index}`}>
-                  <ImageCarousel images={project.images} title={project.title} />
+                  <ImageCarousel images={project.images} title={project.title} showControls={false} />
                   
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-                  
-                  <div className="absolute bottom-0 left-0 right-0 h-24 flex flex-col items-center justify-center p-4 text-center">
-                    <span className="text-[#60A5FA] font-bold text-xs uppercase tracking-wider mb-1 block">
+                  <div className="absolute bottom-0 left-0 right-0 bg-white p-4 text-center">
+                    <span className="text-[#1F68F5] font-bold text-xs uppercase tracking-wider mb-1 block">
                       {project.location}
                     </span>
-                    <h3 className="text-xl font-bold text-white leading-tight group-hover:text-blue-100 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 leading-tight">
                       {project.title}
                     </h3>
                   </div>

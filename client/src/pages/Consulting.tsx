@@ -479,7 +479,7 @@ export default function Consulting() {
 
                 <div className="w-full md:w-1/2 md:pr-24 text-center md:text-right">
                   <h3 className="text-3xl font-bold text-slate-900 mb-3">Advising</h3>
-                  <p className="text-green-600 font-bold tracking-wide uppercase text-sm mb-4">Pendampingan Strategis</p>
+                  <p className="font-bold tracking-wide uppercase text-sm mb-4 text-[#1f68f5]">Pendampingan Strategis</p>
                   <p className="text-slate-600 leading-relaxed text-lg">
                     Mendampingi pimpinan dalam pengambilan keputusan krusial dan transformasi organisasi jangka panjang.
                   </p>
@@ -491,7 +491,7 @@ export default function Consulting() {
                     <ul className="space-y-6 relative z-10">
                       {advisingServices.map((service, index) => (
                         <li key={index} className="flex items-start gap-4">
-                          <div className="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                          <div className="mt-1 bg-green-100 p-1 rounded-full text-[#1f68f5]">
                             <CheckCircle2 size={16} />
                           </div>
                           <div>

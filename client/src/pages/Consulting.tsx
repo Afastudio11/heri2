@@ -1,19 +1,10 @@
-import { CheckCircle, Shield, Quote, Users, FolderOpen } from 'lucide-react';
+import { CheckCircle, Shield, Users, Lightbulb, TrendingUp, Target, BookOpen, UserCheck, FileText } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 import consultingHero from '@assets/Consulting_1765871611867.png';
-import iconSLO from '@assets/Social_License_to_Operate_(SLO)_1765872853363.png';
-import iconCSR from '@assets/Corporate_Social_Responsibility_(CSR)_1765872853364.png';
-import iconESG from '@assets/Environment,_Social,_Government_(ESG)_1765872853364.png';
-import iconInvestorBaru from '@assets/Investor_Baru_1765872853364.png';
-import iconPerusahaanMenengah from '@assets/Perusahaan_Menengah_1765872853366.png';
-import iconMultinasional from '@assets/Multinasional_1765872853365.png';
-import iconPemerintahDaerah from '@assets/Pemerintah_Daerah_1765872853365.png';
-import iconLembagaKeuangan from '@assets/Lembaga_Keuangan_1765872853365.png';
-import iconKonflikIndustri from '@assets/59pct_Konflik_industri_1765872969642.png';
 
 import kemenparekrafBarparekraf from '../assets/clients/kemenparekraf_baparekraf.png';
 import kemenPppaLogo from '../assets/clients/kemen_pppa_logo.png';
@@ -36,34 +27,24 @@ import maybrat from '../assets/clients/maybrat.jpg';
 import sorong from '../assets/clients/sorong.png';
 import tanaToraja from '../assets/clients/tana_toraja.webp';
 
-// Project documentation images
 import sloDoc1 from '@assets/Penyusunan_Dokumen_SLO_tambang_nikel_di_Papua_Barat_Daya_1765958232662.png';
 import sloDoc2 from '@assets/Penyusunan_Dokumen_SLO_tambang_nikel_di_Papua_Barat_Daya1_1765958232666.png';
 import sloDoc3 from '@assets/Penyusunan_Dokumen_SLO_tambang_nikel_di_Papua_Barat_Daya2_1765958232666.png';
-import iproDoc1 from '@assets/Penyusunan_Dokumen_IPRO_4_sektor_di_Provinsi_Papua_Barat_Daya_1765958232665.png';
-import iproDoc2 from '@assets/Penyusunan_Dokumen_IPRO_4_sektor_di_Provinsi_Papua_Barat_Daya1_1765958232665.png';
-import iproDoc3 from '@assets/Penyusunan_Dokumen_IPRO_4_sektor_di_Provinsi_Papua_Barat_Daya2_1765958232665.png';
-import desaWisataDoc1 from '@assets/Konsultansi_Kelembagaan_Desa_Wisata_dan_Koperasi_Merah_Putih_1765958232665.png';
-import desaWisataDoc2 from '@assets/Konsultansi_Kelembagaan_Desa_Wisata_dan_Koperasi_Merah_Putih1_1765958232664.png';
-import desaWisataDoc3 from '@assets/Konsultansi_Kelembagaan_Desa_Wisata_dan_Koperasi_Merah_Putih2_1765958232664.png';
-import opopDoc1 from '@assets/Penyusunan_dan_Penerbitan_buku_OPOP_Jawa_Timur_1765958232664.png';
-import opopDoc2 from '@assets/Penyusunan_dan_Penerbitan_buku_OPOP_Jawa_Timur1_1765958232664.png';
-import opopDoc3 from '@assets/Penyusunan_dan_Penerbitan_buku_OPOP_Jawa_Timur2_1765958232663.png';
 import agiDoc1 from '@assets/Konsultansi_Program_Aksi_Generasi_Iklim_(AGI)_2025_1765958232663.png';
 import agiDoc2 from '@assets/Konsultansi_Program_Aksi_Generasi_Iklim_(AGI)_20251_1765958232663.png';
 import agiDoc3 from '@assets/Konsultansi_Program_Aksi_Generasi_Iklim_(AGI)_20252_1765958232662.png';
 
 const consultingClientsRow1 = [
+  { name: "Kemenko PMK", logo: kemenkoPmk, large: false },
+  { name: "Kemen Investasi BKPM", logo: kemenInvestasiBkpm, large: false },
+  { name: "Kemen LHK", logo: kemenLhk, large: false },
+  { name: "Papua Barat Daya", logo: papuaBaratDaya, large: false },
+  { name: "Tangerang Selatan", logo: tangerangSelatan, large: false },
   { name: "Kemenparekraf/Baparekraf", logo: kemenparekrafBarparekraf, large: false },
   { name: "Kemen PPPA", logo: kemenPppaLogo, large: false },
-  { name: "Papua Barat Daya", logo: papuaBaratDaya, large: false },
   { name: "Kemenkoperasi", logo: kemenkoperasi, large: false },
-  { name: "Kemen Investasi BKPM", logo: kemenInvestasiBkpm, large: false },
   { name: "Kemen ESDM", logo: kemenEsdm, large: false },
-  { name: "Kemen LHK", logo: kemenLhk, large: false },
   { name: "KPAI", logo: kpai, large: true },
-  { name: "Kemen Perhubungan", logo: kemenPerhubungan, large: false },
-  { name: "Kemenko PMK", logo: kemenkoPmk, large: false },
 ];
 
 const consultingClientsRow2 = [
@@ -73,36 +54,69 @@ const consultingClientsRow2 = [
   { name: "CIFOR", logo: cifor },
   { name: "Save the Children", logo: saveTheChildren },
   { name: "LEGO", logo: lego },
-  { name: "Tangerang Selatan", logo: tangerangSelatan },
+  { name: "Kemen Perhubungan", logo: kemenPerhubungan },
   { name: "Maybrat", logo: maybrat },
   { name: "Sorong", logo: sorong },
   { name: "Tana Toraja", logo: tanaToraja },
 ];
 
-const services = [
-  { title: "Social License to Operate (SLO)", description: "Mendampingi perusahaan meraih legitimasi sosial.", icon: iconSLO, features: ["Pemetaan sosial & stakeholder", "Negosiasi komunitas", "Mediasi konflik", "Monitoring penerimaan"] },
-  { title: "Corporate Social Responsibility (CSR)", description: "Mendesain program berbasis kebutuhan nyata.", icon: iconCSR, features: ["Riset kebutuhan komunitas", "Program CSR strategis", "Monitoring dampak", "Pelaporan CSR"] },
-  { title: "Environment, Social, Government (ESG)", description: "Menyusun roadmap keberlanjutan.", icon: iconESG, features: ["ESG assessment", "Sustainability reporting", "ESG compliance roadmap", "Due diligence"] }
+const consultingServices = [
+  { 
+    title: "Sustainability Consulting", 
+    description: "Penyusunan strategi keberlanjutan, pencapaian Social License to Operate (SLO), integrasi ESG, manajemen CSR, dan pelaporan keberlanjutan."
+  },
+  { 
+    title: "Policy Research & Development", 
+    description: "Pembuatan kajian kebijakan publik, policy brief, dan naskah akademik untuk mendukung kebijakan berbasis bukti."
+  },
+  { 
+    title: "Program Design & Evaluation", 
+    description: "Perencanaan dan evaluasi proyek sosial, pendidikan, lingkungan, dan ekonomi inklusif."
+  }
 ];
 
-const targetMarkets = [
-  { title: "Investor Baru", description: "Proyek industri yang membutuhkan SLO.", icon: iconInvestorBaru },
-  { title: "Perusahaan Menengah", description: "Pengelolaan CSR yang strategis.", icon: iconPerusahaanMenengah },
-  { title: "Multinasional", description: "Upgrade ke ESG compliance.", icon: iconMultinasional },
-  { title: "Pemerintah Daerah", description: "Mekanisme SLO/ESG investasi.", icon: iconPemerintahDaerah },
-  { title: "Lembaga Keuangan", description: "Due diligence sosial.", icon: iconLembagaKeuangan }
+const trainingServices = [
+  { 
+    title: "Executive & Leadership Training", 
+    description: "Pengembangan kepemimpinan strategis dan manajemen perubahan, khususnya bagi direksi/komisaris BUMD."
+  },
+  { 
+    title: "Policy & Governance Training", 
+    description: "Pelatihan teknis perumusan kebijakan berbasis bukti bagi aparatur pemerintah dan NGO."
+  },
+  { 
+    title: "Sustainability & ESG Training", 
+    description: "Pembekalan bagi pelaku usaha dan divisi CSR terkait penerapan prinsip Environmental, Social, and Governance."
+  }
 ];
 
-const stats = [
-  { value: "Rp80T", label: "Anggaran CSR/tahun", sublabel: "Total dana CSR nasional" },
-  { value: "20K+", label: "Izin investasi baru", sublabel: "Per tahun di Indonesia" },
-  { value: "59%", label: "Konflik akibat gagal SLO", sublabel: "Dari total konflik industri" },
-  { value: "51%", label: "Konflik agraria", sublabel: "Terkait operasional perusahaan" }
+const advisingServices = [
+  { 
+    title: "Strategic Advisor for Leadership", 
+    description: "Pendampingan pimpinan organisasi dalam menentukan arah kebijakan, inovasi, dan tata kelola."
+  },
+  { 
+    title: "Public Policy Advisor", 
+    description: "Dukungan analisis dan strategi komunikasi kebijakan untuk lembaga pemerintah dan think tank."
+  }
 ];
 
-const testimonials = [
-  { quote: "Skyled membantu kami menavigasi kompleksitas SLO dengan sangat profesional. Investasi kami berjalan lancar berkat pendampingan mereka.", author: "Director of Operations", company: "Mining Company" },
-  { quote: "Program CSR yang dirancang Skyled benar-benar berdampak nyata bagi komunitas sekitar. Sangat strategis dan terukur.", author: "CSR Manager", company: "Manufacturing Industry" }
+const methodology = [
+  { 
+    title: "Insight", 
+    description: "Menggali data dan riset mendalam untuk memahami tantangan nyata.",
+    icon: Lightbulb
+  },
+  { 
+    title: "Capacity", 
+    description: "Meningkatkan kemampuan individu dan organisasi untuk merespons tantangan tersebut.",
+    icon: TrendingUp
+  },
+  { 
+    title: "Impact", 
+    description: "Mengubah wawasan dan kapasitas menjadi tindakan nyata yang bermanfaat bagi manusia dan lingkungan.",
+    icon: Target
+  }
 ];
 
 export default function Consulting() {
@@ -116,15 +130,20 @@ export default function Consulting() {
           <div className="grid lg:grid-cols-2 gap-12 items-center py-12 md:py-16">
             <div>
               <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-6">
-                Skyled Pro Consulting
+                Skyled Consulting
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Strategic Consulting.<br />
-                <span className="text-[#1F68F5]">Sustainable Growth.</span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Mengapa Izin Formal Saja<br />
+                <span className="text-[#1F68F5]">Tidak Pernah Cukup?</span>
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
-                Pionir integrasi SLO–CSR–ESG dengan end-to-end services yang berbicara pada bisnis sekaligus komunitas.
+                Banyak perusahaan merasa aman setelah memiliki NIB, OSS, AMDAL, dan IMB. Namun, saat proyek dimulai, penolakan warga dan gugatan hukum tetap muncul karena perusahaan gagal meraih <strong>Social License to Operate (SLO)</strong>.
               </p>
+              <div className="bg-[#FFF8E6] border-l-4 border-[#F5A623] p-4 rounded-r-lg mb-8">
+                <p className="text-gray-700">
+                  Di Indonesia, investasi sebesar <strong>Rp1.418 triliun</strong> pada 2023 diiringi dengan fakta bahwa <strong>51% konflik agraria</strong> dipicu oleh investasi tanpa persetujuan masyarakat.
+                </p>
+              </div>
               
               <div className="flex flex-wrap gap-3 mb-10">
                 <a href="https://wa.me/6287883184796" target="_blank" rel="noopener noreferrer">
@@ -154,7 +173,7 @@ export default function Consulting() {
                     <Shield className="w-5 h-5 text-[#1F68F5]" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">Kepatuhan Terjamin</p>
+                    <p className="font-semibold text-gray-900 text-sm">Solusi Terintegrasi</p>
                     <p className="text-xs text-gray-500">SLO, CSR & ESG</p>
                   </div>
                 </div>
@@ -168,55 +187,184 @@ export default function Consulting() {
         </div>
       </section>
 
-      {/* Gap di Pasar Section */}
+      {/* Layanan Strategis Section */}
+      <section className="py-16 md:py-20 bg-[#FAFBFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+              LAYANAN STRATEGIS
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Layanan Strategis Kami</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Skyled Consulting hadir sebagai bagian dari Segara Impact Lab untuk memberikan solusi terintegrasi melalui tiga pilar utama
+            </p>
+          </div>
+
+          {/* 1. Consulting */}
+          <div className="mb-12">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-[#1F68F5] rounded-xl flex items-center justify-center">
+                <FileText className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900">1. Consulting</h3>
+                <p className="text-gray-600">Konsultasi Strategis</p>
+              </div>
+            </div>
+            <p className="text-gray-600 mb-6 ml-16">
+              Kami memberikan solusi berbasis data untuk perencanaan dan evaluasi program pembangunan.
+            </p>
+            <div className="grid md:grid-cols-3 gap-4 ml-16">
+              {consultingServices.map((service, index) => (
+                <Card key={index} className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
+                  <CardContent className="p-5">
+                    <h4 className="font-bold text-gray-900 mb-2">{service.title}</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* 2. Training */}
+          <div className="mb-12">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-[#1F68F5] rounded-xl flex items-center justify-center">
+                <BookOpen className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900">2. Training</h3>
+                <p className="text-gray-600">Pelatihan Penguatan Kapasitas</p>
+              </div>
+            </div>
+            <p className="text-gray-600 mb-6 ml-16">
+              Membangun kapasitas organisasi agar mampu beradaptasi dan berinovasi dalam menghadapi tantangan yang dinamis.
+            </p>
+            <div className="grid md:grid-cols-3 gap-4 ml-16">
+              {trainingServices.map((service, index) => (
+                <Card key={index} className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
+                  <CardContent className="p-5">
+                    <h4 className="font-bold text-gray-900 mb-2">{service.title}</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* 3. Advising */}
+          <div>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-[#1F68F5] rounded-xl flex items-center justify-center">
+                <UserCheck className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900">3. Advising</h3>
+                <p className="text-gray-600">Pendampingan Strategis</p>
+              </div>
+            </div>
+            <p className="text-gray-600 mb-6 ml-16">
+              Mendampingi pimpinan dalam pengambilan keputusan dan transformasi organisasi jangka panjang.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4 ml-16 max-w-2xl">
+              {advisingServices.map((service, index) => (
+                <Card key={index} className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
+                  <CardContent className="p-5">
+                    <h4 className="font-bold text-gray-900 mb-2">{service.title}</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Metodologi Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-                Gap di Pasar
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Mengapa Ini <span className="text-[#1F68F5]">Penting?</span>
-              </h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                CSR sering hanya charity tahunan. ESG semakin ketat, tapi banyak perusahaan bingung menerapkannya. 
-              </p>
-              <div className="bg-[#F0F5FF] rounded-2xl p-6 mb-6">
-                <div className="flex items-start gap-4">
-                  <Shield className="w-8 h-8 text-[#1F68F5] flex-shrink-0" />
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">Skyled Hadir Mengisi Gap</h3>
-                    <p className="text-gray-600 text-sm">Kami menyediakan solusi terintegrasi SLO-CSR-ESG yang komprehensif dan terukur untuk bisnis Anda.</p>
+          <div className="text-center mb-12">
+            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+              METODOLOGI
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Insight, Capacity, Impact</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Kami bekerja dengan pendekatan tiga tahap untuk memastikan hasil yang terukur
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {methodology.map((item, index) => (
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all bg-white">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-[#1F68F5] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portofolio Section */}
+      <section className="py-16 md:py-20 bg-[#FAFBFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+              PORTOFOLIO TERPILIH
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Proyek Strategis (2025)</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Kami telah dipercaya oleh berbagai institusi</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+              <CardContent className="p-0">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={sloDoc1} alt="SLO Documentation" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-bold text-lg text-white">Dokumen SLO Tambang Nikel</h3>
                   </div>
                 </div>
-              </div>
-              <ul className="space-y-3">
-                {["Pendekatan berbasis data dan riset", "Tim ahli berpengalaman 10+ tahun", "Track record dengan perusahaan multinasional"].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#1F68F5]" />
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gray-100 rounded-2xl p-6 flex flex-col justify-center items-center text-center">
-                <img src={iconKonflikIndustri} alt="Konflik industri" className="w-24 h-24 object-contain mb-4" />
-                <p className="text-3xl font-bold text-gray-900">59%</p>
-                <p className="text-gray-600 text-sm">Konflik industri</p>
-              </div>
-              <div className="space-y-4">
-                <div className="bg-[#1F68F5] rounded-2xl p-6 text-white text-center">
-                  <p className="text-4xl font-bold">51%</p>
-                  <p className="text-white/80 text-sm">Konflik agraria</p>
+                <div className="p-4">
+                  <div className="flex gap-2 mb-4">
+                    <img src={sloDoc2} alt="SLO Doc 2" className="w-16 h-12 object-cover rounded" />
+                    <img src={sloDoc3} alt="SLO Doc 3" className="w-16 h-12 object-cover rounded" />
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Penyusunan dokumen SLO tambang nikel di Papua Barat Daya</p>
+                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
+                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
+                    Papua Barat Daya
+                  </div>
                 </div>
-                <div className="bg-gray-900 rounded-2xl p-6 text-white text-center">
-                  <p className="text-2xl font-bold">20K+</p>
-                  <p className="text-white/70 text-sm">Izin baru/tahun</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+              <CardContent className="p-0">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={agiDoc1} alt="AGI Documentation" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-bold text-lg text-white">Program Aksi Generasi Iklim</h3>
+                  </div>
                 </div>
-              </div>
-            </div>
+                <div className="p-4">
+                  <div className="flex gap-2 mb-4">
+                    <img src={agiDoc2} alt="AGI Doc 2" className="w-16 h-12 object-cover rounded" />
+                    <img src={agiDoc3} alt="AGI Doc 3" className="w-16 h-12 object-cover rounded" />
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Konsultansi Program Aksi Generasi Iklim (AGI)</p>
+                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
+                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
+                    Nasional
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -226,10 +374,10 @@ export default function Consulting() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              KLIEN KAMI
+              SEKTOR PUBLIK
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dipercaya oleh Institusi Terkemuka</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Kami telah bekerja sama dengan berbagai kementerian dan lembaga pemerintah dalam proyek strategis</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">Kemenko PMK, Kementerian Investasi/BKPM, KLHK, dan berbagai Pemerintah Daerah</p>
           </div>
         </div>
         
@@ -243,7 +391,6 @@ export default function Consulting() {
                 <div 
                   key={i} 
                   className={`flex items-center justify-center mx-8 flex-shrink-0 ${client.large ? 'h-20 md:h-28' : 'h-12 md:h-14'}`}
-                  data-testid={`logo-consulting-row1-${i}`}
                 >
                   <img 
                     src={client.logo} 
@@ -259,7 +406,6 @@ export default function Consulting() {
                 <div 
                   key={i} 
                   className="h-12 md:h-14 flex items-center justify-center mx-8 flex-shrink-0"
-                  data-testid={`logo-consulting-row2-${i}`}
                 >
                   <img 
                     src={client.logo} 
@@ -273,246 +419,26 @@ export default function Consulting() {
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              PORTOFOLIO
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Proyek Terkini (2025)</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Berbagai proyek strategis yang telah kami kerjakan bersama mitra</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group" data-testid="card-project-slo">
-              <CardContent className="p-0">
-                <div className="relative h-48 overflow-hidden">
-                  <img src={sloDoc1} alt="SLO Documentation" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="font-bold text-lg text-white">Dokumen SLO Tambang Nikel</h3>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <div className="flex gap-2 mb-4">
-                    <img src={sloDoc2} alt="SLO Doc 2" className="w-16 h-12 object-cover rounded" />
-                    <img src={sloDoc3} alt="SLO Doc 3" className="w-16 h-12 object-cover rounded" />
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Penyusunan Dokumen Social License to Operate untuk tambang nikel di Papua Barat Daya</p>
-                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
-                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
-                    Papua Barat Daya
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group" data-testid="card-project-ipro">
-              <CardContent className="p-0">
-                <div className="relative h-48 overflow-hidden">
-                  <img src={iproDoc1} alt="IPRO Documentation" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="font-bold text-lg text-white">Dokumen IPRO 4 Sektor</h3>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <div className="flex gap-2 mb-4">
-                    <img src={iproDoc2} alt="IPRO Doc 2" className="w-16 h-12 object-cover rounded" />
-                    <img src={iproDoc3} alt="IPRO Doc 3" className="w-16 h-12 object-cover rounded" />
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Penyusunan Dokumen IPRO untuk 4 sektor di Provinsi Papua Barat Daya</p>
-                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
-                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
-                    Papua Barat Daya
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group" data-testid="card-project-desa-wisata">
-              <CardContent className="p-0">
-                <div className="relative h-48 overflow-hidden">
-                  <img src={desaWisataDoc1} alt="Desa Wisata Documentation" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="font-bold text-lg text-white">Kelembagaan Desa Wisata</h3>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <div className="flex gap-2 mb-4">
-                    <img src={desaWisataDoc2} alt="Desa Wisata Doc 2" className="w-16 h-12 object-cover rounded" />
-                    <img src={desaWisataDoc3} alt="Desa Wisata Doc 3" className="w-16 h-12 object-cover rounded" />
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Konsultansi Kelembagaan Desa Wisata dan Koperasi Merah Putih</p>
-                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
-                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
-                    Nasional
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group" data-testid="card-project-opop">
-              <CardContent className="p-0">
-                <div className="relative h-48 overflow-hidden">
-                  <img src={opopDoc1} alt="OPOP Documentation" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="font-bold text-lg text-white">Buku OPOP Jawa Timur</h3>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <div className="flex gap-2 mb-4">
-                    <img src={opopDoc2} alt="OPOP Doc 2" className="w-16 h-12 object-cover rounded" />
-                    <img src={opopDoc3} alt="OPOP Doc 3" className="w-16 h-12 object-cover rounded" />
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Penyusunan dan Penerbitan buku OPOP (One Pesantren One Product) Jawa Timur</p>
-                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
-                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
-                    Jawa Timur
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group" data-testid="card-project-agi">
-              <CardContent className="p-0">
-                <div className="relative h-48 overflow-hidden">
-                  <img src={agiDoc1} alt="AGI Documentation" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="font-bold text-lg text-white">Program Aksi Generasi Iklim</h3>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <div className="flex gap-2 mb-4">
-                    <img src={agiDoc2} alt="AGI Doc 2" className="w-16 h-12 object-cover rounded" />
-                    <img src={agiDoc3} alt="AGI Doc 3" className="w-16 h-12 object-cover rounded" />
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-3">Konsultansi Program Aksi Generasi Iklim (AGI) 2025</p>
-                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
-                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
-                    Nasional
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Layanan Kami Section */}
-      <section className="py-16 md:py-20 bg-[#FAFBFC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              LAYANAN
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Layanan Kami</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Solusi lengkap untuk kebutuhan SLO, CSR, dan ESG perusahaan Anda</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#1F68F5] transition-all duration-300 overflow-hidden group">
-                <CardContent className="p-0">
-                  <div className="bg-[#1F68F5] group-hover:bg-[#1a5ad4] transition-colors p-6 text-white relative min-h-[120px] flex items-center">
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden bg-white">
-                        <img src={service.icon} alt={service.title} className="w-12 h-12 object-contain" />
-                      </div>
-                    </div>
-                    <div className="flex-1 ml-4">
-                      <h3 className="text-lg font-bold leading-tight">{service.title}</h3>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">{service.description}</p>
-                    <div className="space-y-2">
-                      {service.features.map((f, i) => (
-                        <div key={i} className="flex items-center gap-2">
-                          <div className="w-5 h-5 rounded-full bg-[#F0F5FF] text-[#1F68F5] flex items-center justify-center flex-shrink-0">
-                            <CheckCircle className="w-3 h-3" />
-                          </div>
-                          <span className="text-gray-700 text-sm">{f}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#1F68F5] rounded-3xl p-8 md:p-12">
-            <div className="grid md:grid-cols-4 gap-8">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="text-center text-white">
-                  <p className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</p>
-                  <p className="font-medium mb-1">{stat.label}</p>
-                  <p className="text-white/60 text-sm">{stat.sublabel}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Target Pasar Section */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              TARGET PASAR
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Siapa yang Kami Layani</h2>
-          </div>
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {targetMarkets.map((market, index) => (
-              <Card key={index} className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all group cursor-pointer">
-                <CardContent className="p-6 text-center">
-                  <div className="flex items-center justify-center mx-auto mb-4">
-                    <img src={market.icon} alt={market.title} className="w-20 h-20 object-contain" />
-                  </div>
-                  <h3 className="font-bold text-gray-900 mb-2">{market.title}</h3>
-                  <p className="text-gray-600 text-sm">{market.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Section */}
-      <section className="py-16 md:py-20 bg-[#FAFBFC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              TESTIMONIAL
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Apa Kata Klien Kami</h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-lg bg-white">
-                <CardContent className="p-8">
-                  <Quote className="w-10 h-10 text-[#1F68F5] mb-4" />
-                  <p className="text-gray-700 text-lg mb-6 leading-relaxed italic">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#1F68F5] rounded-full flex items-center justify-center text-white font-bold">
-                      {testimonial.author.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="font-bold text-gray-900">{testimonial.author}</p>
-                      <p className="text-gray-500 text-sm">{testimonial.company}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+      {/* CTA Section */}
+      <section className="py-16 md:py-20 bg-[#1F68F5]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Siap Meraih Social License to Operate?
+          </h2>
+          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+            Hubungi kami untuk konsultasi gratis dan temukan solusi terbaik untuk kebutuhan bisnis Anda
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a href="https://wa.me/6287883184796" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-[#25D366] hover:bg-[#20b858] text-white px-8 py-3 h-auto rounded-full text-base font-semibold">
+                Hubungi via WhatsApp
+              </Button>
+            </a>
+            <a href="mailto:cv.skyledproindonesia@gmail.com">
+              <Button variant="outline" className="border-white text-white px-8 py-3 h-auto rounded-full text-base font-semibold hover:bg-white/10">
+                Kirim Email
+              </Button>
+            </a>
           </div>
         </div>
       </section>

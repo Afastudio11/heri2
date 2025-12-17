@@ -377,20 +377,25 @@ export default function Consulting() {
           </div>
 
           {/* Consulting Row */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-8">
-            <div className="flex items-start gap-6">
-              <div className="text-right flex-1">
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">Consulting</h3>
-                <p className="text-gray-500 text-sm mb-4">Konsultasi Strategis</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Solusi berbasis data untuk perencanaan dan evaluasi program pembangunan yang berkelanjutan.
-                </p>
-              </div>
-              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center flex-shrink-0">
+          <div className="relative grid lg:grid-cols-2 gap-8 mb-12">
+            <div className="text-right pr-12 lg:pr-16">
+              <h3 className="text-2xl font-bold text-gray-900 mb-1">Consulting</h3>
+              <p className="text-gray-500 text-sm mb-4">Konsultasi Strategis</p>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Solusi berbasis data untuk perencanaan dan evaluasi program pembangunan yang berkelanjutan.
+              </p>
+            </div>
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 z-10 hidden lg:block">
+              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center shadow-lg">
                 <FileText className="w-7 h-7 text-white" />
               </div>
             </div>
-            <Card className="border border-gray-200 bg-white">
+            <div className="lg:hidden flex justify-center mb-4">
+              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center">
+                <FileText className="w-7 h-7 text-white" />
+              </div>
+            </div>
+            <Card className="border border-gray-200 bg-white pl-12 lg:pl-16">
               <CardContent className="p-6">
                 <div className="space-y-4">
                   {consultingServices.map((service, index) => (
@@ -408,8 +413,8 @@ export default function Consulting() {
           </div>
 
           {/* Training Row */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-8">
-            <Card className="border-l-4 border-l-[#1F68F5] border-t-0 border-r-0 border-b-0 bg-[#F0F5FF] lg:order-1">
+          <div className="relative grid lg:grid-cols-2 gap-8 mb-12">
+            <Card className="border-l-4 border-l-[#1F68F5] border-t-0 border-r-0 border-b-0 bg-[#F0F5FF] pr-12 lg:pr-16 lg:order-1">
               <CardContent className="p-6">
                 <div className="space-y-4">
                   {trainingServices.map((service, index) => (
@@ -424,49 +429,59 @@ export default function Consulting() {
                 </div>
               </CardContent>
             </Card>
-            <div className="flex items-start gap-6 lg:order-2">
-              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center flex-shrink-0">
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 z-10 hidden lg:block">
+              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center shadow-lg">
                 <MessageSquare className="w-7 h-7 text-white" />
               </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">Training</h3>
-                <p className="text-gray-500 text-sm mb-4">Penguatan Kapasitas</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Membangun kapasitas organisasi untuk beradaptasi dan berinovasi dalam tantangan dinamis.
-                </p>
+            </div>
+            <div className="lg:hidden flex justify-center mb-4">
+              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center">
+                <MessageSquare className="w-7 h-7 text-white" />
               </div>
+            </div>
+            <div className="pl-12 lg:pl-16 lg:order-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-1">Training</h3>
+              <p className="text-gray-500 text-sm mb-4">Penguatan Kapasitas</p>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Membangun kapasitas organisasi untuk beradaptasi dan berinovasi dalam tantangan dinamis.
+              </p>
             </div>
           </div>
 
           {/* Advising Row */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div className="text-center lg:text-left">
+          <div className="relative grid lg:grid-cols-2 gap-8">
+            <div className="text-center pr-12 lg:pr-16">
               <h3 className="text-2xl font-bold text-gray-900 mb-1">Advising</h3>
               <p className="text-gray-500 text-sm mb-4">Pendampingan Strategis</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-md mx-auto lg:mx-0">
+              <p className="text-gray-600 text-sm leading-relaxed max-w-md mx-auto">
                 Mendampingi pimpinan dalam pengambilan keputusan dan transformasi organisasi jangka panjang.
               </p>
             </div>
-            <div className="flex items-start gap-6">
-              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center flex-shrink-0">
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 z-10 hidden lg:block">
+              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center shadow-lg">
                 <UserCheck className="w-7 h-7 text-white" />
               </div>
-              <Card className="border border-gray-200 bg-white flex-1">
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    {advisingServices.map((service, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-[#1F68F5] mt-0.5 flex-shrink-0" />
-                        <div>
-                          <h4 className="font-semibold text-gray-900 text-sm">{service.title}</h4>
-                          <p className="text-gray-500 text-xs">{service.description}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
             </div>
+            <div className="lg:hidden flex justify-center mb-4">
+              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center">
+                <UserCheck className="w-7 h-7 text-white" />
+              </div>
+            </div>
+            <Card className="border border-gray-200 bg-white pl-12 lg:pl-16">
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  {advisingServices.map((service, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-[#1F68F5] mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900 text-sm">{service.title}</h4>
+                        <p className="text-gray-500 text-xs">{service.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

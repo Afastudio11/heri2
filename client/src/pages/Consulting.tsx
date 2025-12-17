@@ -1,4 +1,4 @@
-import { CheckCircle, Shield, Users, Lightbulb, TrendingUp, Target, BookOpen, UserCheck, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
+import { CheckCircle, Shield, Users, Lightbulb, TrendingUp, Target, BookOpen, UserCheck, FileText, ChevronLeft, ChevronRight, AlertTriangle, Scale, MessageSquare } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -286,115 +286,186 @@ export default function Consulting() {
       </section>
 
       {/* Mengapa Izin Formal Tidak Cukup Section */}
-      <section className="py-16 md:py-20 bg-[#FAFBFC]">
+      <section className="py-16 md:py-20 bg-[#0F172A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-6">
-              Mengapa Ini Penting?
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Mengapa Izin Formal Saja <span className="text-[#1F68F5]">Tidak Pernah Cukup?</span>
-            </h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Banyak perusahaan merasa aman setelah memiliki NIB, OSS, AMDAL, dan IMB. Namun, saat proyek dimulai, penolakan warga dan gugatan hukum tetap muncul karena perusahaan gagal meraih <strong>Social License to Operate (SLO)</strong>.
-            </p>
-            <div className="bg-[#FFF8E6] border-l-4 border-[#F5A623] p-6 rounded-r-lg text-left max-w-2xl mx-auto">
-              <p className="text-gray-700 text-lg">
-                Di Indonesia, investasi sebesar <strong>Rp1.418 triliun</strong> pada 2023 diiringi dengan fakta bahwa <strong>51% konflik agraria</strong> dipicu oleh investasi tanpa persetujuan masyarakat.
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="inline-flex items-center gap-2 border border-[#1F68F5]/50 text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-6">
+                <AlertTriangle className="w-4 h-4" />
+                URGENSI BISNIS
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Izin Formal Saja<br />
+                <span className="text-gray-400">Tidak Cukup.</span>
+              </h2>
+              <p className="text-gray-400 mb-8 leading-relaxed">
+                Banyak perusahaan merasa aman setelah memiliki NIB, OSS, AMDAL, dan IMB. Namun, proyek sering terhenti karena gagal meraih <strong className="text-white">Social License to Operate (SLO)</strong>.
               </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-red-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <AlertTriangle className="w-5 h-5 text-red-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-red-400 font-semibold mb-1">Risiko Penolakan Warga</h4>
+                    <p className="text-gray-500 text-sm">Proyek terhambat atau berhenti total akibat konflik sosial.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-red-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Scale className="w-5 h-5 text-red-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-red-400 font-semibold mb-1">Gugatan Hukum</h4>
+                    <p className="text-gray-500 text-sm">Biaya legal dan reputasi yang mahal untuk dipulihkan.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="bg-white rounded-2xl p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <p className="text-xs text-gray-500 font-medium tracking-wider mb-1">STATISTIK 2023</p>
+                    <h4 className="text-lg font-bold text-gray-900">Sumber Konflik Agraria</h4>
+                  </div>
+                  <span className="bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full">CRITICAL</span>
+                </div>
+                <div className="flex items-center gap-6">
+                  <div className="relative w-28 h-28">
+                    <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                      <circle cx="50" cy="50" r="40" fill="none" stroke="#f3f4f6" strokeWidth="12" />
+                      <circle cx="50" cy="50" r="40" fill="none" stroke="#ef4444" strokeWidth="12" strokeDasharray="251.2" strokeDashoffset="123" strokeLinecap="round" />
+                    </svg>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-gray-900">51%</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Dipicu oleh <span className="text-red-500 font-semibold">investasi tanpa persetujuan</span> masyarakat.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-2xl p-6">
+                <p className="text-xs text-gray-500 font-medium tracking-wider mb-2">TOTAL NILAI INVESTASI (2023)</p>
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-4xl font-bold text-[#1F68F5]">Rp1.418</span>
+                  <span className="text-xl text-gray-600">Triliun</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
+                  <div className="bg-gradient-to-r from-[#1F68F5] to-green-500 h-2 rounded-full" style={{width: '51%'}}></div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                  <p className="text-gray-500 text-sm">Potensi risiko tinggi jika tanpa SLO</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Layanan Strategis Section */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-[#FAFBFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              LAYANAN STRATEGIS
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Layanan Strategis Kami</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Skyled Consulting hadir sebagai bagian dari Segara Impact Lab untuk memberikan solusi terintegrasi melalui tiga pilar utama
-            </p>
+          <div className="text-center mb-16">
+            <p className="text-[#1F68F5] font-semibold text-sm tracking-wider mb-3">SOLUSI TERINTEGRASI</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Layanan Strategis</h2>
           </div>
 
-          {/* 1. Consulting */}
-          <div className="mb-12">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-[#1F68F5] rounded-xl flex items-center justify-center">
-                <FileText className="w-6 h-6 text-white" />
+          {/* Consulting Row */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-8">
+            <div className="flex items-start gap-6">
+              <div className="text-right flex-1">
+                <h3 className="text-2xl font-bold text-gray-900 mb-1">Consulting</h3>
+                <p className="text-gray-500 text-sm mb-4">Konsultasi Strategis</p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Solusi berbasis data untuk perencanaan dan evaluasi program pembangunan yang berkelanjutan.
+                </p>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900">1. Consulting</h3>
-                <p className="text-gray-600">Konsultasi Strategis</p>
+              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center flex-shrink-0">
+                <FileText className="w-7 h-7 text-white" />
               </div>
             </div>
-            <p className="text-gray-600 mb-6 ml-16">
-              Kami memberikan solusi berbasis data untuk perencanaan dan evaluasi program pembangunan.
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 ml-16">
-              {consultingServices.map((service, index) => (
-                <Card key={index} className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
-                  <CardContent className="p-5">
-                    <h4 className="font-bold text-gray-900 mb-2">{service.title}</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <Card className="border border-gray-200 bg-white">
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  {consultingServices.map((service, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-[#1F68F5] mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900 text-sm">{service.title}</h4>
+                        <p className="text-gray-500 text-xs">{service.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Training Row */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-8">
+            <Card className="border-l-4 border-l-[#1F68F5] border-t-0 border-r-0 border-b-0 bg-[#F0F5FF] lg:order-1">
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  {trainingServices.map((service, index) => (
+                    <div key={index} className="flex items-center justify-end gap-3">
+                      <div className="text-right">
+                        <h4 className="font-semibold text-gray-900 text-sm">{service.title}</h4>
+                        <p className="text-gray-500 text-xs">{service.description}</p>
+                      </div>
+                      <CheckCircle className="w-5 h-5 text-[#1F68F5] flex-shrink-0" />
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            <div className="flex items-start gap-6 lg:order-2">
+              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center flex-shrink-0">
+                <MessageSquare className="w-7 h-7 text-white" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-gray-900 mb-1">Training</h3>
+                <p className="text-gray-500 text-sm mb-4">Penguatan Kapasitas</p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Membangun kapasitas organisasi untuk beradaptasi dan berinovasi dalam tantangan dinamis.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* 2. Training */}
-          <div className="mb-12">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-[#1F68F5] rounded-xl flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900">2. Training</h3>
-                <p className="text-gray-600">Pelatihan Penguatan Kapasitas</p>
-              </div>
+          {/* Advising Row */}
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl font-bold text-gray-900 mb-1">Advising</h3>
+              <p className="text-gray-500 text-sm mb-4">Pendampingan Strategis</p>
+              <p className="text-gray-600 text-sm leading-relaxed max-w-md mx-auto lg:mx-0">
+                Mendampingi pimpinan dalam pengambilan keputusan dan transformasi organisasi jangka panjang.
+              </p>
             </div>
-            <p className="text-gray-600 mb-6 ml-16">
-              Membangun kapasitas organisasi agar mampu beradaptasi dan berinovasi dalam menghadapi tantangan yang dinamis.
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 ml-16">
-              {trainingServices.map((service, index) => (
-                <Card key={index} className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
-                  <CardContent className="p-5">
-                    <h4 className="font-bold text-gray-900 mb-2">{service.title}</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* 3. Advising */}
-          <div>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-[#1F68F5] rounded-xl flex items-center justify-center">
-                <UserCheck className="w-6 h-6 text-white" />
+            <div className="flex items-start gap-6">
+              <div className="w-14 h-14 bg-[#1F68F5] rounded-2xl flex items-center justify-center flex-shrink-0">
+                <UserCheck className="w-7 h-7 text-white" />
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900">3. Advising</h3>
-                <p className="text-gray-600">Pendampingan Strategis</p>
-              </div>
-            </div>
-            <p className="text-gray-600 mb-6 ml-16">
-              Mendampingi pimpinan dalam pengambilan keputusan dan transformasi organisasi jangka panjang.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 ml-16 max-w-2xl">
-              {advisingServices.map((service, index) => (
-                <Card key={index} className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
-                  <CardContent className="p-5">
-                    <h4 className="font-bold text-gray-900 mb-2">{service.title}</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+              <Card className="border border-gray-200 bg-white flex-1">
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    {advisingServices.map((service, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-[#1F68F5] mt-0.5 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-gray-900 text-sm">{service.title}</h4>
+                          <p className="text-gray-500 text-xs">{service.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

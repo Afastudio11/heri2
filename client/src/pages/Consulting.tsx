@@ -37,16 +37,16 @@ import sorong from '../assets/clients/sorong.png';
 import tanaToraja from '../assets/clients/tana_toraja.webp';
 
 const consultingClientsRow1 = [
-  { name: "Kemenparekraf/Baparekraf", logo: kemenparekrafBarparekraf },
-  { name: "Kemen PPPA", logo: kemenPppaLogo },
-  { name: "Papua Barat Daya", logo: papuaBaratDaya },
-  { name: "Kemenkoperasi", logo: kemenkoperasi },
-  { name: "Kemen Investasi BKPM", logo: kemenInvestasiBkpm },
-  { name: "Kemen ESDM", logo: kemenEsdm },
-  { name: "Kemen LHK", logo: kemenLhk },
-  { name: "KPAI", logo: kpai },
-  { name: "Kemen Perhubungan", logo: kemenPerhubungan },
-  { name: "Kemenko PMK", logo: kemenkoPmk },
+  { name: "Kemenparekraf/Baparekraf", logo: kemenparekrafBarparekraf, large: false },
+  { name: "Kemen PPPA", logo: kemenPppaLogo, large: false },
+  { name: "Papua Barat Daya", logo: papuaBaratDaya, large: false },
+  { name: "Kemenkoperasi", logo: kemenkoperasi, large: false },
+  { name: "Kemen Investasi BKPM", logo: kemenInvestasiBkpm, large: false },
+  { name: "Kemen ESDM", logo: kemenEsdm, large: false },
+  { name: "Kemen LHK", logo: kemenLhk, large: false },
+  { name: "KPAI", logo: kpai, large: true },
+  { name: "Kemen Perhubungan", logo: kemenPerhubungan, large: false },
+  { name: "Kemenko PMK", logo: kemenkoPmk, large: false },
 ];
 
 const consultingClientsRow2 = [
@@ -225,13 +225,13 @@ export default function Consulting() {
               {[...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1].map((client, i) => (
                 <div 
                   key={i} 
-                  className="h-12 md:h-14 flex items-center justify-center mx-8 flex-shrink-0"
+                  className={`flex items-center justify-center mx-8 flex-shrink-0 ${client.large ? 'h-16 md:h-20' : 'h-12 md:h-14'}`}
                   data-testid={`logo-consulting-row1-${i}`}
                 >
                   <img 
                     src={client.logo} 
                     alt={client.name}
-                    className="h-full w-auto object-contain max-w-[120px] md:max-w-[140px]"
+                    className={`h-full w-auto object-contain ${client.large ? 'max-w-[180px] md:max-w-[220px]' : 'max-w-[120px] md:max-w-[140px]'}`}
                   />
                 </div>
               ))}

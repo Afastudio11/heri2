@@ -286,6 +286,55 @@ export default function Consulting() {
           </div>
         </div>
       </section>
+      {/* Client Section */}
+      <section className="py-16 md:py-20 bg-[#FAFBFC] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+              SEKTOR PUBLIK
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dipercaya oleh Institusi Terkemuka</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Kemenko PMK, Kementerian Investasi/BKPM, KLHK, dan berbagai Pemerintah Daerah</p>
+          </div>
+        </div>
+        
+        <div className="relative">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FAFBFC] to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FAFBFC] to-transparent z-10" />
+          
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center animate-marquee-left">
+              {[...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1].map((client, i) => (
+                <div 
+                  key={i} 
+                  className={`flex items-center justify-center mx-8 flex-shrink-0 ${client.large ? 'h-20 md:h-28' : 'h-12 md:h-14'}`}
+                >
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className={`h-full w-auto object-contain ${client.large ? 'max-w-[240px] md:max-w-[300px]' : 'max-w-[120px] md:max-w-[140px]'}`}
+                  />
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex animate-marquee-right">
+              {[...consultingClientsRow2, ...consultingClientsRow2, ...consultingClientsRow2, ...consultingClientsRow2].map((client, i) => (
+                <div 
+                  key={i} 
+                  className="h-12 md:h-14 flex items-center justify-center mx-8 flex-shrink-0"
+                >
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="h-full w-auto object-contain max-w-[120px] md:max-w-[140px]"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Mengapa Izin Formal Tidak Cukup Section */}
       <section className="py-16 md:py-20 bg-[#1E40AF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -595,55 +644,6 @@ export default function Consulting() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-      {/* Client Section */}
-      <section className="py-16 md:py-20 bg-[#FAFBFC] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              SEKTOR PUBLIK
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dipercaya oleh Institusi Terkemuka</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Kemenko PMK, Kementerian Investasi/BKPM, KLHK, dan berbagai Pemerintah Daerah</p>
-          </div>
-        </div>
-        
-        <div className="relative">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FAFBFC] to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FAFBFC] to-transparent z-10" />
-          
-          <div className="flex flex-col gap-6">
-            <div className="flex items-center animate-marquee-left">
-              {[...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1, ...consultingClientsRow1].map((client, i) => (
-                <div 
-                  key={i} 
-                  className={`flex items-center justify-center mx-8 flex-shrink-0 ${client.large ? 'h-20 md:h-28' : 'h-12 md:h-14'}`}
-                >
-                  <img 
-                    src={client.logo} 
-                    alt={client.name}
-                    className={`h-full w-auto object-contain ${client.large ? 'max-w-[240px] md:max-w-[300px]' : 'max-w-[120px] md:max-w-[140px]'}`}
-                  />
-                </div>
-              ))}
-            </div>
-            
-            <div className="flex animate-marquee-right">
-              {[...consultingClientsRow2, ...consultingClientsRow2, ...consultingClientsRow2, ...consultingClientsRow2].map((client, i) => (
-                <div 
-                  key={i} 
-                  className="h-12 md:h-14 flex items-center justify-center mx-8 flex-shrink-0"
-                >
-                  <img 
-                    src={client.logo} 
-                    alt={client.name}
-                    className="h-full w-auto object-contain max-w-[120px] md:max-w-[140px]"
-                  />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

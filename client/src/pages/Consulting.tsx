@@ -1,4 +1,4 @@
-import { CheckCircle, Shield, Quote, Users, Briefcase, FolderOpen } from 'lucide-react';
+import { CheckCircle, Shield, Quote, Users, FolderOpen } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -14,6 +14,50 @@ import iconMultinasional from '@assets/Multinasional_1765872853365.png';
 import iconPemerintahDaerah from '@assets/Pemerintah_Daerah_1765872853365.png';
 import iconLembagaKeuangan from '@assets/Lembaga_Keuangan_1765872853365.png';
 import iconKonflikIndustri from '@assets/59pct_Konflik_industri_1765872969642.png';
+
+import kemenparekrafBarparekraf from '../assets/clients/kemenparekraf_baparekraf.png';
+import kemenPppaLogo from '../assets/clients/kemen_pppa_logo.png';
+import papuaBaratDaya from '../assets/clients/papua_barat_daya.png';
+import kemenkoperasi from '../assets/clients/kemenkoperasi.png';
+import kemenInvestasiBkpm from '../assets/clients/kemen_investasi_bkpm.png';
+import kemenEsdm from '../assets/clients/kemen_esdm.png';
+import kemenLhk from '../assets/clients/kemen_lhk.png';
+import kpai from '../assets/clients/kpai.png';
+import kemenPerhubungan from '../assets/clients/kemen_perhubungan.png';
+import kemenkoPmk from '../assets/clients/kemenko_pmk.png';
+import papua from '../assets/clients/papua.png';
+import bangkaBelitung from '../assets/clients/bangka_belitung.png';
+import bsj from '../assets/clients/bsj.png';
+import cifor from '../assets/clients/cifor.png';
+import saveTheChildren from '../assets/clients/save_the_children.png';
+import lego from '../assets/clients/lego.png';
+import tangerangSelatan from '../assets/clients/tangerang_selatan.png';
+import maybrat from '../assets/clients/maybrat.jpg';
+import sorong from '../assets/clients/sorong.png';
+import tanaToraja from '../assets/clients/tana_toraja.webp';
+
+const consultingClients = [
+  { name: "Kemenparekraf/Baparekraf", logo: kemenparekrafBarparekraf },
+  { name: "Kemen PPPA", logo: kemenPppaLogo },
+  { name: "Papua Barat Daya", logo: papuaBaratDaya },
+  { name: "Kemenkoperasi", logo: kemenkoperasi },
+  { name: "Kemen Investasi BKPM", logo: kemenInvestasiBkpm },
+  { name: "Kemen ESDM", logo: kemenEsdm },
+  { name: "Kemen LHK", logo: kemenLhk },
+  { name: "KPAI", logo: kpai },
+  { name: "Kemen Perhubungan", logo: kemenPerhubungan },
+  { name: "Kemenko PMK", logo: kemenkoPmk },
+  { name: "Papua", logo: papua },
+  { name: "Bangka Belitung", logo: bangkaBelitung },
+  { name: "British School Jakarta", logo: bsj },
+  { name: "CIFOR", logo: cifor },
+  { name: "Save the Children", logo: saveTheChildren },
+  { name: "LEGO", logo: lego },
+  { name: "Tangerang Selatan", logo: tangerangSelatan },
+  { name: "Maybrat", logo: maybrat },
+  { name: "Sorong", logo: sorong },
+  { name: "Tana Toraja", logo: tanaToraja },
+];
 
 const services = [
   { title: "Social License to Operate (SLO)", description: "Mendampingi perusahaan meraih legitimasi sosial.", icon: iconSLO, features: ["Pemetaan sosial & stakeholder", "Negosiasi komunitas", "Mediasi konflik", "Monitoring penerimaan"] },
@@ -167,34 +211,16 @@ export default function Consulting() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dipercaya oleh Institusi Terkemuka</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Kami telah bekerja sama dengan berbagai kementerian dan lembaga pemerintah dalam proyek strategis</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-[#F0F5FF] rounded-full flex items-center justify-center">
-                  <Briefcase className="w-10 h-10 text-[#1F68F5]" />
-                </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">Kementerian Perhubungan</h3>
-                <p className="text-gray-600 text-sm">Republik Indonesia</p>
-              </CardContent>
-            </Card>
-            <Card className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-[#F0F5FF] rounded-full flex items-center justify-center">
-                  <Briefcase className="w-10 h-10 text-[#1F68F5]" />
-                </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">Kementerian ESDM</h3>
-                <p className="text-gray-600 text-sm">Energi dan Sumber Daya Mineral</p>
-              </CardContent>
-            </Card>
-            <Card className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-[#F0F5FF] rounded-full flex items-center justify-center">
-                  <Briefcase className="w-10 h-10 text-[#1F68F5]" />
-                </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">Kementerian Pariwisata</h3>
-                <p className="text-gray-600 text-sm">Republik Indonesia</p>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-6">
+            {consultingClients.map((client, idx) => (
+              <div key={idx} className="bg-white rounded-xl p-4 flex items-center justify-center hover:shadow-lg transition-all border border-gray-100">
+                <img 
+                  src={client.logo} 
+                  alt={client.name}
+                  className="h-12 md:h-14 w-auto object-contain max-w-[80px] md:max-w-[100px]"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

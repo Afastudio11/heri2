@@ -16,7 +16,7 @@ export default function Contact() {
             <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
             <p className="text-lg opacity-90">Klik untuk chat langsung</p>
           </a>
-          <a href="mailto:cv.skyledproindonesia@gmail.com" className="p-8 bg-[#1F68F5] text-white rounded-[32px] flex flex-col items-center justify-center hover:bg-[#1a5ad4] transition-colors cursor-pointer">
+          <a href="mailto:contact@skyledpro.com" className="p-8 bg-[#1F68F5] text-white rounded-[32px] flex flex-col items-center justify-center hover:bg-[#1a5ad4] transition-colors cursor-pointer">
             <Mail size={40} className="mb-4" />
             <h3 className="text-xl font-bold mb-2">Email</h3>
             <p className="text-lg opacity-90">Klik untuk kirim email</p>

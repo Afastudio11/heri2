@@ -1,4 +1,4 @@
-import { CheckCircle, Shield, Quote, Users } from 'lucide-react';
+import { CheckCircle, Shield, Quote, Users, FileCheck, MapPin, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -14,6 +14,9 @@ import iconMultinasional from '@assets/Multinasional_1765872853365.png';
 import iconPemerintahDaerah from '@assets/Pemerintah_Daerah_1765872853365.png';
 import iconLembagaKeuangan from '@assets/Lembaga_Keuangan_1765872853365.png';
 import iconKonflikIndustri from '@assets/59pct_Konflik_industri_1765872969642.png';
+import ceritaAwalImage from '@assets/image_1765955798711.png';
+import faktaIndonesiaImage from '@assets/image_1765955809831.png';
+import masalahnyaImage from '@assets/image_1765955818573.png';
 
 const services = [
   { title: "Social License to Operate (SLO)", description: "Mendampingi perusahaan meraih legitimasi sosial.", icon: iconSLO, features: ["Pemetaan sosial & stakeholder", "Negosiasi komunitas", "Mediasi konflik", "Monitoring penerimaan"] },
@@ -102,6 +105,145 @@ export default function Consulting() {
           </div>
         </div>
       </section>
+
+      {/* Cerita Awal: Izin yang Tidak Cukup */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1F68F5] mb-6">
+                Cerita Awal: Izin yang Tidak Cukup
+              </h2>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed">
+                Bayangkan sebuah perusahaan sudah mengantongi semua izin: NIB, OSS, AMDAL, dan IMB. Namun begitu proyek dimulai, warga sekitar menolak, muncul demo, bahkan ada gugatan hukum. Izin formal tidak lagi cukup, perusahaan juga membutuhkan izin sosial.
+              </p>
+              <div className="flex items-start gap-6 bg-[#F0F5FF] rounded-xl p-6">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                    <FileCheck className="w-8 h-8 text-[#1F68F5]" />
+                  </div>
+                </div>
+                <div>
+                  <span className="text-[#1F68F5] font-bold text-sm uppercase tracking-wide">DATA</span>
+                  <p className="text-gray-700 mt-2 leading-relaxed">
+                    Menurut riset Stronge et al. (2024), lebih dari 59% konflik investasi global dipicu karena perusahaan gagal meraih <em className="font-semibold">Social License to Operate (SLO)</em>.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src={ceritaAwalImage} 
+                alt="Cerita Awal - Izin yang Tidak Cukup" 
+                className="w-full rounded-2xl shadow-lg object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fakta Indonesia */}
+      <section className="py-16 md:py-20 bg-[#1F68F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex justify-center mb-8">
+                <svg viewBox="0 0 800 350" className="w-full max-w-md" fill="currentColor">
+                  <path className="text-[#4A90D9]" d="M50,200 Q100,180 150,190 Q200,200 250,180 Q300,160 350,170 Q400,180 450,160 Q500,140 550,150 Q600,160 650,140 Q700,120 750,130 L750,250 Q700,260 650,250 Q600,240 550,250 Q500,260 450,250 Q400,240 350,250 Q300,260 250,250 Q200,240 150,250 Q100,260 50,250 Z" />
+                </svg>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Fakta Indonesia
+              </h2>
+              <ul className="text-white space-y-3 mb-6">
+                <li className="flex items-start gap-3">
+                  <span className="text-yellow-300 font-bold">•</span>
+                  <span>Rp1.418 triliun realisasi investasi pada 2023 (BKPM).</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-yellow-300 font-bold">•</span>
+                  <span>Kota satelit seperti Tangerang Selatan, Bekasi, Karawang, bahkan wilayah di luar pulau jawa menjadi hotspot investasi baru.</span>
+                </li>
+              </ul>
+              <p className="text-yellow-300 font-semibold italic mb-4">Namun di sisi lain</p>
+              <div className="border-2 border-dashed border-white/40 rounded-xl p-5 space-y-3">
+                <div className="flex items-start gap-3 text-white">
+                  <span className="text-yellow-300 font-bold">•</span>
+                  <span>51% konflik agraria 2023 terjadi akibat investasi tanpa persetujuan masyarakat (KPA).</span>
+                </div>
+                <div className="flex items-start gap-3 text-white">
+                  <span className="text-yellow-300 font-bold">•</span>
+                  <span>Kasus Tol Cikampek, PLTU Batang, dan pabrik di Bekasi jadi contoh nyata.</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src={faktaIndonesiaImage} 
+                alt="Fakta Indonesia" 
+                className="w-full rounded-2xl shadow-lg object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Masalahnya & Disinilah Skyled Hadir */}
+      <section className="py-16 md:py-20 bg-gradient-to-b from-[#1F68F5] to-[#0F4FC7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="relative">
+              <img 
+                src={masalahnyaImage} 
+                alt="Masalahnya" 
+                className="w-full rounded-2xl shadow-lg object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-6">
+                Masalahnya
+              </h2>
+              <p className="text-white text-lg leading-relaxed mb-8">
+                Hari ini, banyak perusahaan masih menganggap CSR cukup untuk meredam konflik masyarakat tersebut. Padahal, CSR sering hanya berupa kegiatan <em>charity</em> tahunan yang tidak menyentuh kebutuhan komunitas. Di sisi lain, trend ESG semakin ketat, tapi mayoritas perusahaan di Indonesia masih bingung menerapkannya.
+              </p>
+              <div className="bg-white/10 backdrop-blur rounded-xl p-5 mb-8">
+                <p className="text-white leading-relaxed">
+                  <span className="font-semibold text-yellow-300">Gap ini jelas:</span> tidak ada konsultan yang menjahit SLO–CSR–ESG menjadi satu alur strategi berkelanjutan.
+                </p>
+              </div>
+
+              <h3 className="text-2xl md:text-3xl font-bold text-[#1F68F5] mb-4 bg-white rounded-lg px-4 py-2 inline-block">
+                Disinilah Skyled Hadir
+              </h3>
+              <p className="text-white mb-6">
+                Skyled Pro Consulting dibangun untuk mengisi gap tersebut
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-white rounded-xl p-5 border-2 border-[#1F68F5] shadow-lg">
+                  <h4 className="text-[#1F68F5] font-bold text-sm mb-3">Social License to Operate (SLO)</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Mendampingi perusahaan meraih legitimasi sosial sebelum memulai operasi dan mempertahankannya.
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl p-5 border-2 border-[#1F68F5] shadow-lg">
+                  <h4 className="text-[#1F68F5] font-bold text-sm mb-3">Corporate Social Responsibility (CSR) / Corporate Community Responsibility (CCR)</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Mendesain program berbasis kebutuhan nyata, bukan sekadar <em>charity</em>.
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl p-5 border-2 border-[#1F68F5] shadow-lg">
+                  <h4 className="text-[#1F68F5] font-bold text-sm mb-3">Environment, Social, Government (ESG)</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Menyusun roadmap dan laporan keberlanjutan sesuai standar global.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#1F68F5] rounded-3xl p-8 md:p-12">

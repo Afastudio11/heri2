@@ -250,33 +250,11 @@ function PortfolioSection() {
   return (
     <section className="py-24 bg-white" id="portfolio">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div>
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Proyek Strategis (2025)</h2>
-            <p className="text-gray-600 max-w-xl text-lg">
-              Kepercayaan yang kami jawab dengan hasil nyata di lapangan.
-            </p>
-          </div>
-          <div className="flex items-center gap-2">
-            <Button
-              size="icon"
-              variant="outline"
-              onClick={scrollLeft}
-              className="rounded-full border-gray-300"
-              data-testid="button-portfolio-prev"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </Button>
-            <Button
-              size="icon"
-              variant="outline"
-              onClick={scrollRight}
-              className="rounded-full border-gray-300"
-              data-testid="button-portfolio-next"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </Button>
-          </div>
+        <div className="mb-12">
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">Proyek Strategis (2025)</h2>
+          <p className="text-gray-600 max-w-xl text-lg">
+            Kepercayaan yang kami jawab dengan hasil nyata di lapangan.
+          </p>
         </div>
 
         <div className="relative">
@@ -298,6 +276,27 @@ function PortfolioSection() {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="flex items-center justify-center gap-4 mt-8">
+          <Button
+            size="icon"
+            variant="outline"
+            onClick={scrollLeft}
+            className="rounded-full border-gray-300"
+            data-testid="button-portfolio-prev"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </Button>
+          <Button
+            size="icon"
+            variant="outline"
+            onClick={scrollRight}
+            className="rounded-full border-gray-300"
+            data-testid="button-portfolio-next"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </Button>
         </div>
       </div>
     </section>

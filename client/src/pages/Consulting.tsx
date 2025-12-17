@@ -1,4 +1,4 @@
-import { CheckCircle, Shield, Users, Lightbulb, TrendingUp, Target, BookOpen, UserCheck, FileText, ChevronLeft, ChevronRight, AlertTriangle, Scale, MessageSquare } from 'lucide-react';
+import { CheckCircle, Shield, Users, Lightbulb, TrendingUp, Target, BookOpen, UserCheck, FileText, ChevronLeft, ChevronRight, AlertTriangle, Scale, MessageSquare, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -472,29 +472,47 @@ export default function Consulting() {
       </section>
 
       {/* Metodologi Section */}
-      <section className="py-16 md:py-20 bg-[#FAFBFC]">
+      <section className="py-24 bg-slate-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-              METODOLOGI
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Insight, Capacity, Impact</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Kami bekerja dengan pendekatan tiga tahap untuk memastikan hasil yang terukur
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Metodologi Kami</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto">
+              Pendekatan tiga tahap yang terintegrasi untuk hasil maksimal.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {methodology.map((item, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all bg-white">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-[#1F68F5] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <item.icon className="w-8 h-8 text-white" />
+
+          <div className="relative">
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-200 -translate-y-1/2 z-0"></div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+              {[
+                { icon: <Lightbulb size={28} />, title: "Insight", desc: "Riset mendalam & data driven.", color: "bg-blue-600" },
+                { icon: <TrendingUp size={28} />, title: "Capacity", desc: "Peningkatan skill organisasi.", color: "bg-indigo-600" },
+                { icon: <Target size={28} />, title: "Impact", desc: "Tindakan nyata & terukur.", color: "bg-green-600" }
+              ].map((step, index) => (
+                <div key={index} className="group relative">
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-white border border-slate-200 text-slate-400 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-20">
+                    STEP 0{index + 1}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+
+                  <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center h-full group-hover:-translate-y-2">
+                    <div className={`w-16 h-16 ${step.color} rounded-2xl text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/10 group-hover:scale-110 transition-transform`}>
+                      {step.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
+                    <p className="text-slate-500 text-sm leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+
+                  {index < 2 && (
+                    <div className="md:hidden flex justify-center py-4 text-slate-300">
+                      <ArrowRight className="rotate-90 md:rotate-0" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

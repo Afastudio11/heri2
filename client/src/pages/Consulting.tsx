@@ -222,7 +222,6 @@ export default function Consulting() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
       {/* Hero Section - Original Style */}
       <section className="pt-24 pb-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -280,7 +279,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       {/* Mengapa Izin Formal Tidak Cukup Section */}
       <section className="py-16 md:py-20 bg-[#1E40AF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -304,7 +302,7 @@ export default function Consulting() {
                     <AlertTriangle className="w-5 h-5 text-red-400" />
                   </div>
                   <div>
-                    <h4 className="text-red-400 font-semibold mb-1">Risiko Penolakan Warga</h4>
+                    <h4 className="font-semibold mb-1 bg-[#00000000] text-[#ffffff]">Risiko Penolakan Warga</h4>
                     <p className="text-gray-500 text-sm">Proyek terhambat atau berhenti total akibat konflik sosial.</p>
                   </div>
                 </div>
@@ -363,7 +361,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       {/* Layanan Strategis Section */}
       <section className="py-24 bg-slate-50 relative overflow-hidden" id="services">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
@@ -512,7 +509,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       {/* Metodologi Section */}
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -570,7 +566,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       {/* Portofolio Section */}
       <section className="py-24 bg-[#1E40AF] text-white" id="portfolio">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -622,7 +617,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       {/* Client Section */}
       <section className="py-16 md:py-20 bg-[#FAFBFC] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -672,7 +666,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-24 bg-white" id="contact">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -694,7 +687,6 @@ export default function Consulting() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

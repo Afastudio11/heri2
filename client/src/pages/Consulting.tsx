@@ -1,4 +1,4 @@
-import { CheckCircle, Shield, Quote, Users, FileCheck, MapPin, AlertTriangle } from 'lucide-react';
+import { CheckCircle, Shield, Quote, Users, Briefcase, FolderOpen, FileText } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -14,9 +14,6 @@ import iconMultinasional from '@assets/Multinasional_1765872853365.png';
 import iconPemerintahDaerah from '@assets/Pemerintah_Daerah_1765872853365.png';
 import iconLembagaKeuangan from '@assets/Lembaga_Keuangan_1765872853365.png';
 import iconKonflikIndustri from '@assets/59pct_Konflik_industri_1765872969642.png';
-import ceritaAwalImage from '@assets/image_1765955798711.png';
-import faktaIndonesiaImage from '@assets/image_1765955809831.png';
-import masalahnyaImage from '@assets/image_1765955818573.png';
 
 const services = [
   { title: "Social License to Operate (SLO)", description: "Mendampingi perusahaan meraih legitimasi sosial.", icon: iconSLO, features: ["Pemetaan sosial & stakeholder", "Negosiasi komunitas", "Mediasi konflik", "Monitoring penerimaan"] },
@@ -106,140 +103,213 @@ export default function Consulting() {
         </div>
       </section>
 
-      {/* Cerita Awal: Izin yang Tidak Cukup */}
+      {/* Client Section */}
+      <section className="py-16 md:py-20 bg-[#FAFBFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+              KLIEN KAMI
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dipercaya oleh Institusi Terkemuka</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Kami telah bekerja sama dengan berbagai kementerian dan lembaga pemerintah dalam proyek strategis</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 mx-auto mb-4 bg-[#F0F5FF] rounded-full flex items-center justify-center">
+                  <Briefcase className="w-10 h-10 text-[#1F68F5]" />
+                </div>
+                <h3 className="font-bold text-gray-900 text-lg mb-2">Kementerian Perhubungan</h3>
+                <p className="text-gray-600 text-sm">Republik Indonesia</p>
+              </CardContent>
+            </Card>
+            <Card className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 mx-auto mb-4 bg-[#F0F5FF] rounded-full flex items-center justify-center">
+                  <Briefcase className="w-10 h-10 text-[#1F68F5]" />
+                </div>
+                <h3 className="font-bold text-gray-900 text-lg mb-2">Kementerian ESDM</h3>
+                <p className="text-gray-600 text-sm">Energi dan Sumber Daya Mineral</p>
+              </CardContent>
+            </Card>
+            <Card className="border border-gray-200 hover:border-[#1F68F5] hover:shadow-lg transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 mx-auto mb-4 bg-[#F0F5FF] rounded-full flex items-center justify-center">
+                  <Briefcase className="w-10 h-10 text-[#1F68F5]" />
+                </div>
+                <h3 className="font-bold text-gray-900 text-lg mb-2">Kementerian Pariwisata</h3>
+                <p className="text-gray-600 text-sm">Republik Indonesia</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1F68F5] mb-6">
-                Cerita Awal: Izin yang Tidak Cukup
-              </h2>
-              <p className="text-gray-700 text-lg mb-8 leading-relaxed">
-                Bayangkan sebuah perusahaan sudah mengantongi semua izin: NIB, OSS, AMDAL, dan IMB. Namun begitu proyek dimulai, warga sekitar menolak, muncul demo, bahkan ada gugatan hukum. Izin formal tidak lagi cukup, perusahaan juga membutuhkan izin sosial.
-              </p>
-              <div className="flex items-start gap-6 bg-[#F0F5FF] rounded-xl p-6">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                    <FileCheck className="w-8 h-8 text-[#1F68F5]" />
+          <div className="text-center mb-12">
+            <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+              PORTOFOLIO
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Proyek Terkini (2025)</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Berbagai proyek strategis yang telah kami kerjakan bersama mitra</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+              <CardContent className="p-0">
+                <div className="bg-[#1F68F5] p-6 text-white">
+                  <FolderOpen className="w-10 h-10 mb-4" />
+                  <h3 className="font-bold text-lg">Dokumen SLO Tambang Nikel</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">Penyusunan Dokumen Social License to Operate untuk tambang nikel di Papua Barat Daya</p>
+                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
+                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
+                    Papua Barat Daya
                   </div>
                 </div>
-                <div>
-                  <span className="text-[#1F68F5] font-bold text-sm uppercase tracking-wide">DATA</span>
-                  <p className="text-gray-700 mt-2 leading-relaxed">
-                    Menurut riset Stronge et al. (2024), lebih dari 59% konflik investasi global dipicu karena perusahaan gagal meraih <em className="font-semibold">Social License to Operate (SLO)</em>.
-                  </p>
+              </CardContent>
+            </Card>
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+              <CardContent className="p-0">
+                <div className="bg-[#1F68F5] p-6 text-white">
+                  <FolderOpen className="w-10 h-10 mb-4" />
+                  <h3 className="font-bold text-lg">Dokumen IPRO 4 Sektor</h3>
                 </div>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src={ceritaAwalImage} 
-                alt="Cerita Awal - Izin yang Tidak Cukup" 
-                className="w-full rounded-2xl shadow-lg object-cover"
-              />
-            </div>
+                <div className="p-6">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">Penyusunan Dokumen IPRO untuk 4 sektor di Provinsi Papua Barat Daya</p>
+                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
+                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
+                    Papua Barat Daya
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+              <CardContent className="p-0">
+                <div className="bg-[#1F68F5] p-6 text-white">
+                  <FolderOpen className="w-10 h-10 mb-4" />
+                  <h3 className="font-bold text-lg">Kelembagaan Desa Wisata</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">Konsultansi Kelembagaan Desa Wisata dan Koperasi Merah Putih</p>
+                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
+                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
+                    Nasional
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+              <CardContent className="p-0">
+                <div className="bg-[#1F68F5] p-6 text-white">
+                  <FolderOpen className="w-10 h-10 mb-4" />
+                  <h3 className="font-bold text-lg">Buku OPOP Jawa Timur</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">Penyusunan dan Penerbitan buku OPOP (One Pesantren One Product) Jawa Timur</p>
+                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
+                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
+                    Jawa Timur
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
+              <CardContent className="p-0">
+                <div className="bg-[#1F68F5] p-6 text-white">
+                  <FolderOpen className="w-10 h-10 mb-4" />
+                  <h3 className="font-bold text-lg">Program Aksi Generasi Iklim</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">Konsultansi Program Aksi Generasi Iklim (AGI) 2025</p>
+                  <div className="flex items-center gap-2 text-[#1F68F5] text-sm font-semibold">
+                    <span className="w-2 h-2 bg-[#1F68F5] rounded-full"></span>
+                    Nasional
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Fakta Indonesia */}
+      {/* Case Study Section */}
       <section className="py-16 md:py-20 bg-[#1F68F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex justify-center mb-8">
-                <svg viewBox="0 0 800 350" className="w-full max-w-md" fill="currentColor">
-                  <path className="text-[#4A90D9]" d="M50,200 Q100,180 150,190 Q200,200 250,180 Q300,160 350,170 Q400,180 450,160 Q500,140 550,150 Q600,160 650,140 Q700,120 750,130 L750,250 Q700,260 650,250 Q600,240 550,250 Q500,260 450,250 Q400,240 350,250 Q300,260 250,250 Q200,240 150,250 Q100,260 50,250 Z" />
-                </svg>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Fakta Indonesia
-              </h2>
-              <ul className="text-white space-y-3 mb-6">
-                <li className="flex items-start gap-3">
-                  <span className="text-yellow-300 font-bold">•</span>
-                  <span>Rp1.418 triliun realisasi investasi pada 2023 (BKPM).</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-yellow-300 font-bold">•</span>
-                  <span>Kota satelit seperti Tangerang Selatan, Bekasi, Karawang, bahkan wilayah di luar pulau jawa menjadi hotspot investasi baru.</span>
-                </li>
-              </ul>
-              <p className="text-yellow-300 font-semibold italic mb-4">Namun di sisi lain</p>
-              <div className="border-2 border-dashed border-white/40 rounded-xl p-5 space-y-3">
-                <div className="flex items-start gap-3 text-white">
-                  <span className="text-yellow-300 font-bold">•</span>
-                  <span>51% konflik agraria 2023 terjadi akibat investasi tanpa persetujuan masyarakat (KPA).</span>
-                </div>
-                <div className="flex items-start gap-3 text-white">
-                  <span className="text-yellow-300 font-bold">•</span>
-                  <span>Kasus Tol Cikampek, PLTU Batang, dan pabrik di Bekasi jadi contoh nyata.</span>
-                </div>
-              </div>
+          <div className="text-center mb-12">
+            <div className="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-2 rounded-full mb-4">
+              CASE STUDY
             </div>
-            <div className="relative">
-              <img 
-                src={faktaIndonesiaImage} 
-                alt="Fakta Indonesia" 
-                className="w-full rounded-2xl shadow-lg object-cover"
-              />
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Rencana Proyek 2026</h2>
+            <p className="text-white/80 max-w-2xl mx-auto">Proyek-proyek strategis yang akan kami kerjakan bersama mitra terpercaya</p>
           </div>
-        </div>
-      </section>
-
-      {/* Masalahnya & Disinilah Skyled Hadir */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-[#1F68F5] to-[#0F4FC7]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div className="relative">
-              <img 
-                src={masalahnyaImage} 
-                alt="Masalahnya" 
-                className="w-full rounded-2xl shadow-lg object-cover"
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-6">
-                Masalahnya
-              </h2>
-              <p className="text-white text-lg leading-relaxed mb-8">
-                Hari ini, banyak perusahaan masih menganggap CSR cukup untuk meredam konflik masyarakat tersebut. Padahal, CSR sering hanya berupa kegiatan <em>charity</em> tahunan yang tidak menyentuh kebutuhan komunitas. Di sisi lain, trend ESG semakin ketat, tapi mayoritas perusahaan di Indonesia masih bingung menerapkannya.
-              </p>
-              <div className="bg-white/10 backdrop-blur rounded-xl p-5 mb-8">
-                <p className="text-white leading-relaxed">
-                  <span className="font-semibold text-yellow-300">Gap ini jelas:</span> tidak ada konsultan yang menjahit SLO–CSR–ESG menjadi satu alur strategi berkelanjutan.
-                </p>
-              </div>
-
-              <h3 className="text-2xl md:text-3xl font-bold text-[#1F68F5] mb-4 bg-white rounded-lg px-4 py-2 inline-block">
-                Disinilah Skyled Hadir
-              </h3>
-              <p className="text-white mb-6">
-                Skyled Pro Consulting dibangun untuk mengisi gap tersebut
-              </p>
-              
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="bg-white rounded-xl p-5 border-2 border-[#1F68F5] shadow-lg">
-                  <h4 className="text-[#1F68F5] font-bold text-sm mb-3">Social License to Operate (SLO)</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Mendampingi perusahaan meraih legitimasi sosial sebelum memulai operasi dan mempertahankannya.
-                  </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="bg-white border-0 shadow-xl">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-[#F0F5FF] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-6 h-6 text-[#1F68F5]" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">Pengelolaan Dana CSR Kawasan Industri Bontang</h3>
+                    <p className="text-gray-600 text-sm mb-3">Kerjasama bersama DPC Masata Kota Bontang</p>
+                    <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-bold px-3 py-1 rounded-full">
+                      Rp1,5 Miliar
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-white rounded-xl p-5 border-2 border-[#1F68F5] shadow-lg">
-                  <h4 className="text-[#1F68F5] font-bold text-sm mb-3">Corporate Social Responsibility (CSR) / Corporate Community Responsibility (CCR)</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Mendesain program berbasis kebutuhan nyata, bukan sekadar <em>charity</em>.
-                  </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-white border-0 shadow-xl">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-[#F0F5FF] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-6 h-6 text-[#1F68F5]" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">Executive Training Direksi/Komisaris BUMD</h3>
+                    <p className="text-gray-600 text-sm mb-3">Penyelenggaraan 3 kelas bekerja sama dengan Lembaga Pranata UI</p>
+                    <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-bold px-3 py-1 rounded-full">
+                      Rp4,5 Miliar
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-white rounded-xl p-5 border-2 border-[#1F68F5] shadow-lg">
-                  <h4 className="text-[#1F68F5] font-bold text-sm mb-3">Environment, Social, Government (ESG)</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Menyusun roadmap dan laporan keberlanjutan sesuai standar global.
-                  </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-white border-0 shadow-xl">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-[#F0F5FF] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-6 h-6 text-[#1F68F5]" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">Training Tenaga Ahli DPR/DPD/DPRD</h3>
+                    <p className="text-gray-600 text-sm mb-3">Penyelenggaraan 4 kelas bekerja sama dengan Biru Muda Project (BMP)</p>
+                    <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-bold px-3 py-1 rounded-full">
+                      Rp1,8 Miliar
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
+            <Card className="bg-white border-0 shadow-xl">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-[#F0F5FF] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-6 h-6 text-[#1F68F5]" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">Proyek IPRO dan SLO Multi-Daerah</h3>
+                    <p className="text-gray-600 text-sm mb-3">Bekerja sama dengan IKA UNDIP, ILUNI UI, KAGAMA UGM, dan APEKSI</p>
+                    <div className="inline-block bg-[#F0F5FF] text-[#1F68F5] text-sm font-bold px-3 py-1 rounded-full">
+                      Rp1,8 Miliar
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

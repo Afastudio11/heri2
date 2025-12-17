@@ -290,7 +290,7 @@ export default function Consulting() {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Izin Formal Saja<br />
-                <span className="text-gray-400">Tidak Cukup.</span>
+                <span className="text-[#ffffff]">Tidak Cukup.</span>
               </h2>
               <p className="mb-8 leading-relaxed text-[#ffffff]">
                 Banyak perusahaan merasa aman setelah memiliki NIB, OSS, AMDAL, dan IMB. Namun, proyek sering terhenti karena gagal meraih <strong className="text-white">Social License to Operate (SLO)</strong>.

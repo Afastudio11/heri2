@@ -606,14 +606,6 @@ export default function Consulting() {
                 </div>
               </div>
             ))}
-             
-            <div className="rounded-2xl bg-[#1F68F5] p-8 flex flex-col justify-center items-center text-center h-[400px] hover:bg-[#1a5ad4] transition-colors cursor-pointer group">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform">
-                <ArrowRight size={32} />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Ingin Melihat Lebih Banyak?</h3>
-              <p className="text-blue-100">Jelajahi portofolio lengkap kami.</p>
-            </div>
           </div>
         </div>
       </section>

@@ -468,7 +468,7 @@ export default function Consulting() {
               {/* Service 3: Advising */}
               <div className="relative flex flex-col md:flex-row items-center group">
                 <div className="absolute left-1/2 -translate-x-1/2 bg-white p-2 rounded-full border border-slate-100 shadow-xl z-20 hidden md:block group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center text-white bg-[#1f68f5]">
                     <Users size={28} />
                   </div>
                 </div>

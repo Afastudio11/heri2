@@ -591,17 +591,15 @@ export default function Consulting() {
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                 
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="text-[#60A5FA] font-bold text-xs uppercase tracking-wider mb-2 block">
-                      {project.location}
-                    </span>
-                    <h3 className="text-2xl font-bold text-white mb-3 leading-tight group-hover:text-blue-100 transition-colors">
-                      {project.title}
-                    </h3>
-                    <div className="flex items-center gap-2 text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      <MapPin size={14} /> {project.description}
-                    </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="text-[#60A5FA] font-bold text-xs uppercase tracking-wider mb-2 block">
+                    {project.location}
+                  </span>
+                  <h3 className="text-2xl font-bold text-white mb-2 leading-tight group-hover:text-blue-100 transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="flex items-center gap-2 text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                    <MapPin size={14} /> {project.description}
                   </div>
                 </div>
               </div>

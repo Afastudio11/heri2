@@ -13,8 +13,6 @@ export default {
         "4xl": "2rem",
       },
       colors: {
-        "skyled-blue": "#1F68F5",
-        "flow-blue": "#3B82F6",
         skyled: {
           navy: "#1F68F5",
           blue: "#1F68F5",

@@ -370,7 +370,22 @@ export default function Consulting() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <img src={consultingHero} alt="Consulting Services" className="w-full max-w-md object-contain" loading="lazy" />
+              <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-4">
+                {[sloDoc1, sloDoc2, sloDoc3, iproDoc1, iproDoc2, iproDoc3].map((img, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <img 
+                      src={img} 
+                      alt={`Proyek Konsultasi ${idx + 1}`}
+                      className="w-full h-48 object-cover"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>

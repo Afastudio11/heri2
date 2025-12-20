@@ -17,7 +17,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row justify-center gap-3">
           <a 
-            href="https://wa.me/6287883184796" 
+            href="https://wa.me/6289630963302" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20b858] text-white px-6 py-3 rounded-full font-medium text-sm transition-all"
@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="col-span-1 md:col-span-2">
               <img src={logoBlack} alt="Skyled Pro" className="h-8 w-auto mb-3" />
               <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
-                Skyled Pro Indonesia adalah perusahaan event organizer dan production terkemuka. Mitra terpercaya Anda dalam menciptakan pengalaman luar biasa.
+                Skyled Pro Indonesia adalah perusahaan yang bergerak di bidang event organizer, consulting, dan production, dengan fokus menghadirkan solusi terintegrasi yang inovatif dan berdampak. Kami mengorkestrasi ide menjadi pengalaman nyata melalui perencanaan strategis, eksekusi profesional, serta produksi berkualitas tinggi.
               </p>
             </div>
 

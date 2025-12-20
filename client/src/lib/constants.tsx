@@ -65,7 +65,7 @@ export const CLIENTS = [
 
 export const CONTACT_INFO = {
   address: "Indonesia",
-  phone: "+62 878 8318 4796",
+  phone: "+62 896 3096 3302",
   email: "contact@skyledpro.com"
 };
 

@@ -14,7 +14,7 @@ export default function About() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Tentang Perusahaan</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                <span className="font-bold text-gray-900">Skyled Pro Indonesia</span> adalah perusahaan event organizer dan production terkemuka yang dikenal karena keahlian dan inovasinya dalam menciptakan event berkualitas tinggi.
+                <span className="font-bold text-gray-900">Skyled Pro Indonesia</span> adalah perusahaan yang bergerak di bidang event organizer, consulting, dan production, dengan fokus menghadirkan solusi terintegrasi yang inovatif dan berdampak. Kami mengorkestrasi ide menjadi pengalaman nyata melalui perencanaan strategis, eksekusi profesional, serta produksi berkualitas tinggi.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
                 Kami telah dipercaya menangani berbagai event prestisius, mulai dari ASEAN Blue Economy Forum, UNESCO Global Geopark Youth Forum, hingga Side Event MotoGP Mandalika.

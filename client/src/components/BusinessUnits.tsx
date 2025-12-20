@@ -72,8 +72,8 @@ export default function BusinessUnits() {
                 className="border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden h-full"
               >
                 <CardContent className="p-8 flex flex-col h-full text-center">
-                  <div className="mb-4 flex justify-center">
-                    <img src={service.icon} alt={service.title} className="w-12 h-12 object-contain" loading="lazy" />
+                  <div className="mb-6 flex justify-center">
+                    <img src={service.icon} alt={service.title} className="w-20 h-20 object-contain" loading="lazy" />
                   </div>
                   
                   <div className="text-[#1F68F5] font-bold text-xs tracking-widest uppercase mb-2">

@@ -69,45 +69,41 @@ export default function BusinessUnits() {
           {services.map((service, index) => (
             <ScrollAnimation key={service.id} delay={index * 0.1}>
               <Card 
-                className="border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#1F68F5] transition-all duration-300 overflow-hidden group h-full"
+                className="border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden h-full"
               >
-                <CardContent className="p-0 flex flex-col h-full">
-                  <div className="bg-[#1F68F5] group-hover:bg-[#1a5ad4] transition-colors p-6 text-white relative min-h-[120px] flex items-center">
-                    <div className="flex-shrink-0">
-                      <img src={service.icon} alt={service.title} className="w-24 h-24 object-contain drop-shadow-lg" loading="lazy" />
-                    </div>
-                    <div className="flex-1 text-center">
-                      <div className="text-white/80 font-bold text-xs tracking-wider mb-1 uppercase">
-                        {service.sub}
-                      </div>
-                      <h3 className="text-2xl font-extrabold uppercase tracking-wide">{service.title}</h3>
-                    </div>
+                <CardContent className="p-8 flex flex-col h-full text-center">
+                  <div className="mb-4 flex justify-center">
+                    <img src={service.icon} alt={service.title} className="w-12 h-12 object-contain" loading="lazy" />
                   </div>
                   
-                  <div className="p-6 flex-1 flex flex-col">
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                      {service.desc}
-                    </p>
-                    
-                    <div className="space-y-2 mb-6 flex-1">
-                      {service.features.map((feature, i) => (
-                        <div key={i} className="flex items-center gap-2">
-                          <div className="w-5 h-5 rounded-full bg-[#F0F5FF] text-[#1F68F5] flex items-center justify-center flex-shrink-0">
-                            <Check size={12} />
-                          </div>
-                          <span className="text-gray-700 text-sm">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <Link 
-                      href={service.link}
-                      className="text-[#1F68F5] font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
-                      data-testid={`link-consult-${service.id}`}
-                    >
-                      Lihat Detail Layanan <ArrowRight size={14} />
-                    </Link>
+                  <div className="text-[#1F68F5] font-bold text-xs tracking-widest uppercase mb-2">
+                    {service.sub}
                   </div>
+                  
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 uppercase">{service.title}</h3>
+                  
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                    {service.desc}
+                  </p>
+                  
+                  <div className="space-y-3 mb-6 flex-1 text-left">
+                    {service.features.map((feature, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <div className="w-4 h-4 rounded-full bg-[#1F68F5] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check size={10} className="text-white" />
+                        </div>
+                        <span className="text-gray-700 text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link 
+                    href={service.link}
+                    className="text-[#1F68F5] font-bold text-sm flex items-center justify-center gap-2 hover:gap-3 transition-all"
+                    data-testid={`link-consult-${service.id}`}
+                  >
+                    Lihat Detail Layanan <ArrowRight size={14} />
+                  </Link>
                 </CardContent>
               </Card>
             </ScrollAnimation>
